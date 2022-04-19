@@ -1,0 +1,89 @@
+extends usedCarBase 
+
+block content 
+    main.main  
+        .card-container
+            each car in cars
+                .card 
+                    .card__header
+                        .card__picture
+                            .card__picture-overlay &nbsp;
+                            img.card__picture-img(src=`img/cars/used-${car.name}-cover.jpg`, alt=`${car.name}`)
+                            //- img.card__picture-img(src="img/", alt=`${car.name}`)
+                        h3.heading-tertirary.heading-tertirary__used
+                            span= car.name
+
+                    .card__details
+                        h4.card__sub-heading= `${car.brand} `
+                        //- p.card__text= car.summary  
+                        .card__data
+                            <i class="fa fa-dashboard" style="font-size:20px;margin-right: 4px"></i>
+                            //- <i class="fa fa-car" style="font-size:20px"></i>
+                                
+                            span= `${car.travel} kms`
+                        .card__data
+                            <i class="fa fa-car" style="font-size:20px;margin-right: 4px"></i>
+                            span= car.bodyType 
+                        .card__data
+                            <i class="fa fa-dot-circle-o" style="font-size:20px;margin-right:4px"></i>
+                            span= `${car.mileage} kmpl`
+                        //- .card__data
+                        //-     <i class="fa fa-assistive-listening-systems" style="font-size:20px"></i>
+                        //-     span= car.engine
+                        //- .card__data
+                        //-     svg.card__icon
+                        //-         use(xlink:href='img/icons.svg#icon-user')
+                        //-     span= car.transmission 
+                        .card__data
+                            <i class="fa fa-assistive-listening-systems" style="font-size:20px;margin-right:4px"></i>
+                            span= car.fuelType 
+
+                    .card__footer
+                        p
+                            span.card__footer-value= `${car.price} Lack`
+                            span.card__footer-text 
+                        p.card__ratings
+                        a.btn.btn--green.btn--blue.btn--small(href=`/usedCarDeatils/${car.name}`) Details 
+                        // this might be a problem bcoz in the course he is using "slug" and V R using the names. Think carefully and then it will be resolved
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

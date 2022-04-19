@@ -1,0 +1,687 @@
+[
+    {
+        "brand": "Maruti Suzuki",
+        "name": "baleno",
+        "price": 6.35,
+        "rating": 4.2,
+        "bodyType": "hatchback",
+        "mileage": 22.94, 
+        "engine": 1197 ,
+        "transmission": "Manual & AMT",
+        "fuelType": "Petrol",
+        "seatingCapacity": 5,
+        "summary": "Maruti Suzuki Baleno is a 5 seater Hatchback available in a price range of ₹ 6.35 - 9.49 Lakh. It is available in 7 variants, 1 engine option and 2 transmission options : Manual and AMT. Other key specifications of the Baleno include a Kerb Weight of 920 kg and Bootspace of 318 litres. The Baleno is available in 6 colours. The mileage of Baleno ranges from 22.35 kmpl to 22.94 kmpl.",
+        "good": [
+            "Spacious cabin ",
+            "Peppy refined engine"
+        ],
+        "bad": [
+            "The cabin could be quieter",
+            "Lack of a powerful engine option"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Maruti Suzuki",
+        "name": "vitara-brezza",
+        "price": 7.68,
+        "rating": 4.1,
+        "bodyType": "suv",
+        "mileage": 17.03, 
+        "engine": 1462 ,
+        "transmission": "Manual & Automatic",
+        "fuelType": "Petrol",
+        "seatingCapacity": 5,
+        "summary": "Maruti Suzuki Vitara Brezza is a 5 seater Compact SUV available in a price range of ₹ 7.68 - 11.33 Lakh. It is available in 9 variants, 1 engine option and 2 transmission options : Manual and Automatic (Torque Converter). Other key specifications of the Vitara Brezza include a Ground Clearance of 198 mm, Kerb Weight of 1110 kg and Bootspace of 328 litres. The Vitara Brezza is available in 9 colours. The mileage of Vitara Brezza ranges from 17.03 kmpl to 18.76 kmpl.",
+        "good": [
+            "SUV stance",
+            "High seating, easy to drive",
+            "Peace of mind ownership"
+        ],
+        "bad": [
+            "Unexciting engine response",
+            "Firm slow-speed ride",
+            "Ordinary fit and finish"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Maruti Suzuki",
+        "name": "dzire",
+        "price": 6.09,
+        "rating": 4.3,
+        "bodyType": "sedan",
+        "mileage": 23.26, 
+        "engine": 1197 ,
+        "transmission": "Manual & AMT",
+        "fuelType": "Petrol",
+        "seatingCapacity": 5,
+        "summary": "Maruti Suzuki Dzire is a 5 seater Compact Sedan available in a price range of ₹ 6.09 - 9.13 Lakh. It is available in 7 variants, 1 engine option and 2 transmission options : Manual and AMT. Other key specifications of the Dzire include a Ground Clearance of 163 mm, Kerb Weight of 880 kg and Bootspace of 378 litres. The Dzire is available in 6 colours. The mileage of Dzire ranges from 23.26 kmpl to 24.12 kmpl.",
+        "good": [
+            "Proportionate compact sedan stance",
+            "Feature laden",
+            "Frugal motor"
+        ],
+        "bad": [
+            "Fit and finish is not segment-leading",
+            "Not involving to drive"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Maruti Suzuki",
+        "name": "ciaz",
+        "price": 8.67,
+        "rating": 4.1,
+        "bodyType": "sedan",
+        "mileage": 20.04, 
+        "engine": 1462 ,
+        "transmission": "Manual & Automatic ",
+        "fuelType": "Petrol",
+        "seatingCapacity": 5,
+        "summary": "Maruti Suzuki Ciaz is a 5 seater Sedan available in a price range of ₹ 8.67 - 11.66 Lakh. It is available in 8 variants, 1 engine option and 2 transmission options : Manual and Automatic (Torque Converter). Other key specifications of the Ciaz include a Ground Clearance of 170 mm, Kerb Weight of 1055 kg and Bootspace of 510 litres. The Ciaz is available in 7 colours. The mileage of Ciaz ranges from 20.04 kmpl to 20.65 kmpl.",
+        "good": [
+            "Very spacious cabin",
+            "Fuel efficient",
+            "Good value"
+        ],
+        "bad": [
+            "Bouncy high-speed ride quality",
+            "Lacks emotion"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Maruti Suzuki",
+        "name": "swift",
+        "price": 5.90 ,
+        "rating": 4.3,
+        "bodyType": "hatchback",
+        "mileage": 23.2, 
+        "engine": 1197 ,
+        "transmission": "Manual & AMT",
+        "fuelType": "Petrol",
+        "seatingCapacity": 5,
+        "summary": "Maruti Suzuki Swift is a 5 seater Hatchback available in a price range of ₹ 5.90 - 8.76 Lakh. It is available in 9 variants, 1 engine option and 2 transmission options : Manual and AMT. Other key specifications of the Swift include a Kerb Weight of 875 kg and Bootspace of 268 litres. The Swift is available in 9 colours. The mileage of Swift ranges from 23.2 kmpl to 23.76 kmpl.",
+        "good": [
+            "Fun to drive",
+            "Smooth, efficient engine",
+            "Effortless aftersales experience"
+        ],
+        "bad": [
+            "Lacks some new-age features",
+            "Build quality is not the best",
+            "Firm low-speed ride"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Maruti Suzuki",
+        "name": "ertiga",
+        "price": 8.11,
+        "rating": 4.4,
+        "bodyType": "muv",
+        "mileage": 17.99, 
+        "engine": 1462 ,
+        "transmission": "Manual & Automati",
+        "fuelType": "Petrol & CNG",
+        "seatingCapacity": 7,
+        "summary": "Maruti Suzuki Ertiga is a 7 seater MUV available in a price range of ₹ 8.11 - 10.84 Lakh. It is available in 7 variants, 1 engine option and 2 transmission options : Manual and Automatic (Torque Converter). Other key specifications of the Ertiga include a Ground Clearance of 180 mm, Kerb Weight of 1135 kg and Bootspace of 209 litres. The Ertiga is available in 5 colours. The mileage of Ertiga ranges from 17.99 km/kg to 26.2 km/kg.",
+        "good": [
+            "Value for money",
+            "Easy to drive",
+            "Good interior space"
+        ],
+        "bad": [
+            "The engine gets noisy past 2,500rpm",
+            "Bumpy low-speed ride",
+            "Interior plastic quality"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+
+    "",
+    {
+        "brand": "Hyundai",
+        "name": "creta",
+        "price": 10.22,
+        "rating": 4.4,
+        "bodyType": "suv",
+        "mileage": 17 , 
+        "engine": 1353 ,
+        "transmission": "Manual, Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Hyundai Creta is a 5 seater SUV available in a price range of ₹ 10.22 - 17.93 Lakh. It is available in 19 variants, 1 engine option and 4 transmission options : Manual, Automatic (CVT), Automatic (Torque Converter) and Automatic (Dual Clutch). Other key specifications of the Creta include a Ground Clearance of 190 mm and Bootspace of 433 litres. The Creta is available in 6 colours. The mileage of Creta ranges from 17 kmpl to 21 kmpl.",
+        "good": [
+            "Refined motor",
+            "Feature-laden",
+            "Strong market value"
+        ],
+        "bad": [
+            "Quirky styling",
+            "Not a driver's car",
+            "The rear headroom is tight for tall occupants"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Hyundai",
+        "name": "venue",
+        "price": 6.99,
+        "rating": 4.5,
+        "bodyType": "suv",
+        "mileage": 17.52, 
+        "engine": 998 ,
+        "transmission": "Manual, Clutchless Manual & Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Hyundai Venue is a 5 seater Compact SUV available in a price range of ₹ 6.99 - 11.88 Lakh. It is available in 18 variants, 1 engine option and 3 transmission options : Manual, Clutchless Manual and Automatic (Dual Clutch). Other key specifications of the Venue include a Ground Clearance of 195 mm and Bootspace of 350 litres. The Venue is available in 8 colours. The mileage of Venue ranges from 17.52 kmpl to 23.4 kmpl.",
+        "good": [
+            "Features list",
+            "Quality interiors",
+            "Lots of powertrain options"
+        ],
+        "bad": [
+            "Cabin space isn’t generous",
+            "Top-spec variants are costly",
+            "Engine options should be available across all trims"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Hyundai",
+        "name": "i20",
+        "price": 6.98,
+        "rating": 4.0,
+        "bodyType": "hatchback",
+        "mileage": 19.6, 
+        "engine": 998 ,
+        "transmission": "Manual, Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Hyundai i20 is a 5 seater Hatchback available in a price range of ₹ 6.98 - 11.47 Lakh. It is available in 24 variants, 1 engine option and 4 transmission options : Manual, Automatic (CVT), Clutchless Manual and Automatic (Dual Clutch). Other key specifications of the i20 include a Ground Clearance of 170 mm and Bootspace of 311 litres. The i20 is available in 8 colours. The mileage of i20 ranges from 19.65 kmpl to 25.2 kmpl.",
+        "good": [
+            "Conspicuous styling",
+            "Feature-loaded, spacious interior with safety equipment",
+            "Powertrain choices across a long list of trims"
+        ],
+        "bad": [
+            "Stiff slow-speed ride",
+            "Considerably more expensive now",
+            "Material quality inside the cabin could’ve been better"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Hyundai",
+        "name": "verna",
+        "price": 9.32,
+        "rating": 4.8,
+        "bodyType": "sedan",
+        "mileage": 17.7, 
+        "engine": 998 ,
+        "transmission": "Manual, Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Hyundai Verna is a 5 seater Sedan available in a price range of ₹ 9.32 - 15.36 Lakh. It is available in 12 variants, 1 engine option and 4 transmission options : Manual, Automatic (CVT), Automatic (Torque Converter) and Automatic (Dual Clutch). Other key specifications of the Verna include a Ground Clearance of 165 mm and Bootspace of 480 litres. The Verna is available in 6 colours. The mileage of Verna ranges from 17.7 kmpl to 25 kmpl.",
+        "good": [
+            "Sharp, stand-out styling",
+            "Feature-loaded interiors",
+            "Refined and capable powertrains"
+        ],
+        "bad": [
+            "The rear headroom is cramped for tall people",
+            "Isn’t as engaging to drive as rivals"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Hyundai",
+        "name": "elantra",
+        "price": 17.86,
+        "rating": 4.2,
+        "bodyType": "sedan",
+        "mileage": 17, 
+        "engine": 1493 ,
+        "transmission": "Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Hyundai Elantra is a Sedan available in a price range of ₹ 17.86 - 21.13 Lakh. It is available in 5 variants, 1 engine option. Other key specifications of the Elantra include a Ground Clearance of 165 mm and Bootspace of 458 litres. The Elantra is available in 4 colours. The mileage of Elantra ranges from 15 kmpl to 17.32 kmpl.",
+        "good": [
+            "Sharp styling",
+            "Feature-rich",
+            "Refined engine"
+        ],
+        "bad": [
+            "Not engaging to drive",
+            "Rear headroom"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+
+    "",
+    {
+        "brand": "Tata",
+        "name": "nexon",
+        "rating": 4.2,
+        "bodyType": "hatchback",
+        "price":  7.39,
+        "mileage": 16 , 
+        "engine": 1199 ,
+        "transmission": "Manual & AMT",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Tata Nexon is a 5 seater Compact SUV available in a price range of ₹ 7.39 - 13.74 Lakh. It is available in 52 variants, 1 engine option and 2 transmission options : Manual and AMT. Other key specifications of the Nexon include a Ground Clearance of 209 mm and Bootspace of 350 litres. The Nexon is available in 7 colours. The mileage of Nexon ranges from 16 kmpl to 22.4 kmpl.",
+        "good": [
+            "Upmarket looks, five-star G-NCAP safety",
+            "Spacious cabin compared to rivals",
+            "Easy to drive and live with"
+        ],
+        "bad": [
+            "Interior quality",
+            "Low-end grunt from motors",
+            "Infotainment screen not as good as rivals"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Tata",
+        "name": "altroz",
+        "rating": 4.6,
+        "bodyType": "hatchback",
+        "price": 5.99,
+        "mileage": 19.05, 
+        "engine": 1199 ,
+        "transmission": "Manual & Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Tata Altroz is a 5 seater Hatchback available in a price range of ₹ 5.99 - 10.00 Lakh. It is available in 25 variants, 1 engine option and 2 transmission options : Manual and Automatic (Torque Converter). Other key specifications of the Altroz include a Ground Clearance of 165 mm and Bootspace of 345 litres. The Altroz is available in 6 colours. The mileage of Altroz ranges from 19.05 kmpl to 25.11 kmpl.",
+        "good": [
+            "Fantastic looks, spacious cabin",
+            "Very good driving manners",
+            "Five-star G-NCAP safety rating"
+        ],
+        "bad": [
+            "Ride quality",
+            "Not quick enough for enthusiasts"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Tata",
+        "name": "harrier",
+        "rating": 4.3,
+        "bodyType": "suv",
+        "price": 14.49,
+        "mileage": 14.63, 
+        "engine": 1956 ,
+        "transmission": "Manual & Automatic",
+        "fuelType": "Diesel",
+        "seatingCapacity": 5,
+        "summary": "Tata Harrier is a 5 seater SUV available in a price range of ₹ 14.49 - 21.71 Lakh. It is available in 23 variants, 1 engine option and 2 transmission options : Manual and Automatic (Torque Converter). Other key specifications of the Harrier include a Ground Clearance of 205 mm, Kerb Weight of 1655 kg and Bootspace of 425 litres. The Harrier is available in 5 colours. The mileage of Harrier ranges from 14.63 kmpl to 16.35 kmpl.",
+        "good": [
+            "Spacious interiors",
+            "Potent powertrain",
+            "Dynamically sorted"
+        ],
+        "bad": [
+            "Fit and finish in some areas",
+            "Low-speed ride"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Tata",
+        "name": "safari",
+        "rating": 4.2,
+        "bodyType": "suv",
+        "price": 14.99,
+        "mileage": 14.08 , 
+        "engine": 1956 ,
+        "transmission": "Manual & Automatic",
+        "fuelType": "Diesel",
+        "seatingCapacity": 5,
+        "summary": "Tata Safari is a 6 seater SUV available in a price range of ₹ 14.99 - 23.30 Lakh. It is available in 30 variants, 1 engine option and 2 transmission options : Manual and Automatic (Torque Converter). Other key specifications of the Safari include a Ground Clearance of 205 mm, Kerb Weight of 1825 kg and Bootspace of 447 litres. The Safari is available in 8 colours. The mileage of Safari ranges from 14.08 kmpl to 16.14 kmpl.",
+        "good": [
+            "Comfortable, spacious cabin",
+            "Strong performance",
+            "Third-row usability"
+        ],
+        "bad": [
+            "Quality levels",
+            "Inconsistent steering response",
+            "Low boot space with all three rows up"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+
+    "",
+    {
+        "brand": "Mahindra",
+        "name": "xuv700",
+        "rating": 4.1,
+        "bodyType": "suv",
+        "price": 12.96,
+        "mileage": 15, 
+        "engine": 1997 ,
+        "transmission": "Manual & Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Mahindra XUV700 is a 5 seater SUV available in a price range of ₹ 12.96 - 23.80 Lakh. It is available in 23 variants, 1 engine option and 2 transmission options : Manual and Automatic (Torque Converter). The XUV700 is available in 5 colours",
+        "good": [
+            "Road presence",
+            "Powertrain options",
+            "Driving dynamics"
+        ],
+        "bad": [
+            "Low-speed ride",
+            "Last row ingress/egress"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Mahindra",
+        "name": "thar",
+        "rating": 4.3,
+        "bodyType": "suv",
+        "price": 13.17,
+        "mileage": 16, 
+        "engine": 1997 ,
+        "transmission": "Manual & Automatic ",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 4,
+        "summary": "Mahindra Thar is a 4 seater SUV available in a price range of ₹ 13.17 - 15.53 Lakh. It is available in 10 variants, 1 engine option and 2 transmission options : Manual and Automatic (Torque Converter). Other key specifications of the Thar include a Ground Clearance of 219 mm. The Thar is available in 6 colours.",
+        "good": [
+            "Probably the best affordable off-roader in the country",
+            "Improved cabin comfort",
+            "Potent powertrains and drivability"
+        ],
+        "bad": [
+            "Not a family car, even if it seats four",
+            "Lack of boot space",
+            "On-road dynamics could’ve been better"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Mahindra",
+        "name": "scorpio",
+        "rating": 4.8,
+        "bodyType": "suv",
+        "price": 13.19,
+        "mileage": 15, 
+        "engine": 2179 ,
+        "transmission": "Manual",
+        "fuelType": "Diesel",
+        "seatingCapacity": 7,
+        "summary": "Mahindra Scorpio is a 7 seater SUV available in a price range of ₹ 13.19 - 18.15 Lakh. It is available in 5 variants, 1 engine option and 1 transmission option : Manual. Other key specifications of the Scorpio include a Ground Clearance of 209 mm. The Scorpio is available in 5 colours. The mileage of Scorpio is 15 kmpl.",
+        "good": [
+            "Robust build",
+            "Strong engine performance",
+            "Drivability and rugged appeal"
+        ],
+        "bad": [
+            "Interiors aren't user friendly, fit and finish",
+            "Bumpy ride quality at speed",
+            "Feels outdated"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Mahindra",
+        "name": "alturas",
+        "rating": 4.6,
+        "bodyType": "suv",
+        "price": 28.85,
+        "mileage": 12.03, 
+        "engine": 2157 ,
+        "transmission": "Automatic",
+        "fuelType": "Diesel",
+        "seatingCapacity": 7,
+        "summary": "Mahindra Alturas G4 is a 7 seater SUV available in a price range of ₹ 28.85 - 31.85 Lakh. It is available in 2 variants, 1 engine option and 1 transmission option : Automatic (Torque Converter). Other key specifications of the Alturas G4 include a Ground Clearance of 244 mm and Bootspace of 234 litres. The Alturas G4 is available in 4 colours. The mileage of Alturas G4 is 12.03 kmpl.",
+        "good": [
+            "Macho exterior",
+            "Powerful motor",
+            "Spacious cabin, great fit and finish"
+        ],
+        "bad": [
+            "Bumpy ride quality",
+            "Uncomfortable third-row seating",
+            "Handling isn’t as good as rivals"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+
+    "",
+    {
+        "brand": "Kia",
+        "name": "carens",
+        "rating": 4.8,
+        "bodyType": "suv",
+        "price": 8.99,
+        "mileage": 15.7, 
+        "engine": 1353,
+        "transmission": "Manual, Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 6,
+        "summary": "Kia Carens is a 6 seater SUV available in a price range of ₹ 8.99 - 16.99 Lakh. It is available in 19 variants, 1 engine option and 3 transmission options : Manual, Automatic (Dual Clutch) and Automatic (Torque Converter). Other key specifications of the Carens include a Ground Clearance of 195 mm and Bootspace of 216 litres. The Carens is available in 8 colours. The mileage of Carens ranges from 15.7 kmpl to 21.3 kmpl.",
+        "good": [
+            "Powertrain, variant options",
+            "Usability of third-row"
+        ],
+        "bad": [
+            "Polarising exterior design",
+            "Vague steering"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Kia",
+        "name": "seltos",
+        "rating": 4.3,
+        "bodyType": "suv",
+        "price":  9.95 ,
+        "mileage": 16.1 , 
+        "engine": 1353 ,
+        "transmission": "Manual, Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Kia Seltos is a 5 seater SUV available in a price range of ₹ 9.95 - 18.19 Lakh. It is available in 22 variants, 1 engine option and 5 transmission options : Manual, Clutchless Manual, Automatic (Torque Converter), Automatic (CVT) and Automatic (Dual Clutch). Other key specifications of the Seltos include a Ground Clearance of 190 mm and Bootspace of 433 litres. The Seltos is available in 16 colours. The mileage of Seltos ranges from 16.1 kmpl to 20.83 kmpl.",
+        "good": [
+            "Exterior design",
+            "Interior fit and finish",
+            "Powertrain options and variants to suit all"
+        ],
+        "bad": [
+            "Inconsistent ride quality",
+            "Some trims are too expensive"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Kia",
+        "name": "carnival",
+        "rating": 4.1,
+        "bodyType": "muv",
+        "price": 25.48 ,
+        "mileage": 15, 
+        "engine": 2199,
+        "transmission": "Automatic",
+        "fuelType": "Diesel",
+        "seatingCapacity": 5,
+        "summary": "Kia Carnival is a MUV available in a price range of ₹ 25.48 - 34.48 Lakh. It is available in 5 variants, 1 engine option. Other key specifications of the Carnival include a Ground Clearance of 180 mm and Bootspace of 540 litres. The Carnival is available in 3 colours. The mileage of Carnival is 13.9 kmpl.",
+        "good": [
+            "Spacious interiors",
+            "Impressive ride quality",
+            "Premium people mover"
+        ],
+        "bad": [
+            "Cumbersome to drive in city",
+            "Unimpressive steering feel",
+            "Brakes could do with more bite"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Kia",
+        "name": "sonet",
+        "rating": 4.2,
+        "bodyType": "suv",
+        "price": 6.95 ,
+        "mileage": 18.2 , 
+        "engine": 998 ,
+        "transmission": "Manual, Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Kia Sonet is a 5 seater Compact SUV available in a price range of ₹ 6.95 - 13.68 Lakh. It is available in 27 variants, 1 engine option and 4 transmission options : Manual, Clutchless Manual, Automatic (Dual Clutch) and Automatic (Torque Converter). Other key specifications of the Sonet include a Bootspace of 392 litres. The Sonet is available in 11 colours. The mileage of Sonet ranges from 18.2 kmpl to 24.1 kmpl.",
+        "good": [
+            "Flamboyant styling",
+            "Easy to drive, refined motors",
+            "Boot capacity"
+        ],
+        "bad": [
+            "Slightly stiffer ride quality",
+            "The second-row seat isn’t spacious"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+
+    "",
+    {
+        "brand": "Mercedes",
+        "name": "a-class",
+        "rating": 4.9,
+        "bodyType": "sedan",
+        "price": 41.55,
+        "mileage": 15, 
+        "engine": 1332 ,
+        "transmission": "Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Mercedes-Benz A-Class Limousine is a Sedan available in a price range of ₹ 41.55 - 43.57 Lakh. It is available in 2 variants, 1 engine option. Other key specifications of the A-Class Limousine include a Bootspace of 405 litres. The A-Class Limousine is available in 6 colours. The mileage of A-Class Limousine ranges from 17.5 kmpl to 21.35 kmpl.",
+        "good": [
+            "Eye-catching styling",
+            "Efficient, sprightly engines"
+        ],
+        "bad": [
+            "Can't compete with similarly-priced SUVs",
+            "Ride quality"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Mercedes",
+        "name": "c-class",
+        "rating": 4.7,
+        "bodyType": "sedan",
+        "price": 49.99,
+        "mileage": 14, 
+        "engine": 1950 ,
+        "transmission": "Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Mercedes-Benz C Class is a Sedan available in a price range of ₹ 49.99 - 51.72 Lakh. It is available in 2 variants, 1 engine option. Other key specifications of the C Class include a Ground Clearance of 157 mm and Bootspace of 480 litres. The C Class is available in 6 colours.",
+        "good": [
+            "Premium, well-finished interiors",
+            "Spacious cabin"
+        ],
+        "bad": [
+            "Expensive vis a vis rivals",
+            "Stiff low-speed ride quality"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Mercedes",
+        "name": "g-class",
+        "rating": 4.9,
+        "bodyType": "suv",
+        "price": 93.43 ,
+        "mileage": 12, 
+        "engine": 2925 ,
+        "transmission": "Automatic",
+        "fuelType": "Diesel & Petrol",
+        "seatingCapacity": 5,
+        "summary": "Mercedes-Benz G-Class is a SUV available in a price range of ₹ 1.64 - 2.45 Crore. It is available in 2 variants, 1 engine option. Other key specifications of the G-Class include a Ground Clearance of 238 mm, Kerb Weight of 2453 kg and Bootspace of 480 litres. The G-Class is available in 8 colours. The mileage of G-Class ranges from 6.1 kmpl to 9.35 kmpl.",
+        "good": [
+            "mmense, unparalleled road presence",
+            "Serious off-road capability"
+        ],
+        "bad": [
+            "Mediocre handling",
+            "Unconventional, dated design"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Mercedes",
+        "name": "e-class",
+        "rating": 4.1,
+        "bodyType": "sedan",
+        "price": 65.70,
+        "mileage": 15, 
+        "engine": 1200,
+        "transmission": "Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Mercedes-Benz E-Class is a Sedan available in a price range of ₹ 65.70 - 83.49 Lakh. It is available in 5 variants, 1 engine option. Other key specifications of the E-Class include a Bootspace of 540 litres. The E-Class is available in 6 colours.",
+        "good": [
+            "Luxurious cabin",
+            "Rear seat space"
+        ],
+        "bad": [
+            "Low-speed ride",
+            "Not the most dynamic to drive"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Mercedes",
+        "name": "gls",
+        "rating": 4.2,
+        "bodyType": "suv",
+        "price": 98.12,
+        "mileage": 12, 
+        "engine": 2925 ,
+        "transmission": "Automatic",
+        "fuelType": "Diesel & Petrol",
+        "seatingCapacity": 5,
+        "summary": "Mercedes-Benz GLS is a SUV available at a price of ₹ 1.14 Crore. It is available in 2 variants, 1 engine option. Other key specifications of the GLS include a Ground Clearance of 200 mm, Kerb Weight of 2506 kg and Bootspace of 493 litres. The GLS is available in 6 colours. The mileage of GLS ranges from 10.1 kmpl to 12.5 kmpl.",
+        "good": [
+            "Powerful engines",
+            "Loaded with creature comforts",
+            "Endless personalisation options"
+        ],
+        "bad": [
+            "It feels cumbersome to drive in the city",
+            "The last row is a squeeze",
+            "Expensive"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Mercedes",
+        "name": "s-class",
+        "rating": 4.2,
+        "bodyType": "sedan",
+        "price": 89.53,
+        "mileage": 12, 
+        "engine": 2925 ,
+        "transmission": "Automatic",
+        "fuelType": "Diesel & Petrol",
+        "seatingCapacity": 5,
+        "summary": "Mercedes-Benz S-Class is a Sedan available in a price range of ₹ 1.59 - 1.66 Crore. It is available in 2 variants, 1 engine option. Other key specifications of the S-Class include a Bootspace of 550 litres. The S-Class is available in 5 colours. The mileage of S-Class is 12.82 kmpl.",
+        "good": [
+            "Technology laden",
+            "Superb refinement",
+            "Immersive comfort and luxury"
+        ],
+        "bad": [
+            "Exorbitant",
+            "Ground clearance",
+            "Urban driving is challenging"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    }
+]

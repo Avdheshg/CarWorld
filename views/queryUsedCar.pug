@@ -1,0 +1,30 @@
+extends usedCarBase 
+
+block content 
+    main.main 
+        .card-container
+            each car in cars
+                .card 
+                    .card__header
+                        .card__picture--queryCar
+                            .card__picture-overlay &nbsp;
+                        h3.heading-tertirary.heading-tertirary__used
+                            span= car.name 
+
+                    .card__details
+                        h4.card__sub-heading= `${car.brand} `
+                        p.card__text= car.summary  
+                        
+
+                    .card__footer
+                        p
+                            span.card__footer-value= `${car.price} Lack`
+                            span.card__footer-text 
+                        p.card__ratings
+                            //- span.card__footer-value= `Rating: ${car.rating}`
+                            span.card__footer-text
+                        //- a.btn.btn--green.btn--blue.btn--small(href=`/usedCar/${car.name}`) Details 
+                        a.btn.btn--green.btn--blue.btn--small(href=`/usedCarDeatils/${car.name}`) Details 
+                        // this might be a problem bcoz in the course he is using "slug" and V R using the names. Think carefully and then it will be resolved
+
+                        //- details btn will send usedCar page
