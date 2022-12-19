@@ -2,10 +2,30 @@
 // getting the model
 const NewCars = require('./../models/newCarsModel');
 
+// TOP RATED
+exports.topRatedCars = (req, res, next) => {
+    req.query.limit = "5";
+    req.query.sort = "-ratings";
+    next();
+}
+
+// TOP EFFICIENT
+exports.topEfficientCars = (req, res, next) => {
+    req.query.limit = "5";
+    req.query.sort = "-mileage";
+    next();
+}
+
+// TOP POWERFUL
+exports.topPowerfulCars = (req, res, next) => {
+    req.query.limit = "5";
+    req.query.sort = "-engine";
+    next();
+}
 
 exports.getAllCars = async (req, res) => {
     try {
-        console.log("*** complete query: *** ", req.query);
+        // console.log("*** complete query: *** ", req.query);
         
         const queryObj = { ...req.query };
 
@@ -15,32 +35,32 @@ exports.getAllCars = async (req, res) => {
 
         // 1B. Advanced filtering: gte
         let queryString = JSON.stringify(queryObj);
-        queryString = queryString.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);
-        // console.log("queryString", JSON.parse(queryString));
+        queryString = queryString.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);  
+        // console.log("queryString", JSON.parse(queryString));  
  
         let query = NewCars.find(JSON.parse(queryString));
         console.log(req.query.sort);
-
+  
         // Sorting
-        // price, cc, mileage, capacity, rating
-        if (req.query.sort) {
-            console.log("sort present"); 
+        // price, cc, mileage, capacity, rating  
+        if (req.query.sort) {  
+            console.log("sort present");   
             query = query.sort(req.query.sort);
         }
-        
+          
         // Pagination
-        const page = req.query.page * 1 || 1;
-        const limit = req.query.limit * 1 || 100;
+        const page = req.query.page * 1 || 1;    
+        const limit = req.query.limit * 1 || 9; 
         const skip = (page - 1) * limit;
 
         query = query.skip(skip).limit(limit);
 
        // ==== Execute the query   ====
        const cars = await query;
-       console.log("cars ", cars);
+    //    console.log("cars ", cars);
 
          // ==== Send Response   ====
-         res.status(200).render("overview", {
+         res.status(200).render("overview", {  
             title: "All Cars", 
             cars: cars
         });

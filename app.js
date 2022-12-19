@@ -53,35 +53,7 @@ module.exports = app;
 
 
 
-/* 
-    Tasks:
-        what if at btn of "20 Lacks", I want the cars under 10-20Lacks, basically how to implement the "and" query in query string and extract that in app.js
 
-        Range query ie cars between 10-15
-            NewCars.find({ price: {$gte: 10, $lt: 15} });   
-            How to write this in the query string 
-
-        * Active color for the curr page in pagination
-
-    Question    
-        If we click on the button “ under 10 lacs” and if V have used the route “/newCars/search?price[lte]=10” then the image are being searched for the location “/newCars/img/cars/altroz-cover.jpg”
-            app.js
-                app.use("/newCars", newCarsRouter);
-            newCarRoutes.js
-                router
-                .route("/search")
-                .get(newCarsController.getQueryCars);
-            
-
-        and if we click the same button and the route is “/newCars?price[lte]=10” then we are able to fetch the images because then we are searching for the images at “/img/cars/altroz-cover.jpg ”. Why this is happening?
-            app.js
-                app.use("/newCars", newCarsRouter);
-            newCarRoutes.js
-                router
-                .route("/")
-                .get(newCarsController.getQueryCars);
-
-*/
       
 
 

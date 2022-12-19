@@ -6,6 +6,22 @@ const newCarsController = require('./../controllers/newCarsController');
 
 const router = express.Router();
 
+// **** ALIASE ROUTES  **** 
+// TOP RATED
+router
+    .route("/top-rated")
+    .get(newCarsController.topRatedCars, newCarsController.getAllCars);
+
+// TOP EFFICIENT
+router
+    .route("/top-efficient")
+    .get(newCarsController.topEfficientCars, newCarsController.getAllCars);
+
+// TOP POWERFUL
+router
+    .route("/top-powerful")
+    .get(newCarsController.topPowerfulCars, newCarsController.getAllCars)
+
 router
     .route('/')
     .get(newCarsController.getAllCars);
