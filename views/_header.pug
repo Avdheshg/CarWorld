@@ -15,15 +15,32 @@ header.header
             //- a.nav__el.nav__el--cta(href='#') Sign up
 
 .search__cars
-    a.btn.btn--green.btn--small(href='/search/under-10') Under 10 Lacks
-    a.btn.btn--green.btn--small(href='/search/under-20') Under 20 Lacks
-    a.btn.btn--green.btn--small(href='/search/under-30') Under 30 Lacks
-    a.btn.btn--green.btn--small(href='/search/under-40') Under 40 Lacks
-    a.btn.btn--green.btn--small(href='/search/under-50') Under 50 Lacks
-    a.btn.btn--green.btn--small(href='/search/under-50-plus') 50+ Lacks
+    a.btn.btn--green.btn--small(href='/newCars?price[lte]=10') Under 10 Lacks
+    //- a.btn.btn--green.btn--small(href='/newCars?price[gte]=10,[lt]=15') Under 10 Lacks
+    a.btn.btn--green.btn--small(href='/newCars?price[lte]=20') Under 20 Lacks
+    a.btn.btn--green.btn--small(href='/newCars?price[lte]=30') Under 30 Lacks
+    a.btn.btn--green.btn--small(href='/newCars?price[lte]=40') Under 40 Lacks
+    a.btn.btn--green.btn--small(href='/newCars?price[lte]=50') Under 50 Lacks
+    a.btn.btn--green.btn--small(href='/newCars?price[gte]=50') 50+ Lacks
+
+.search__cars
+    p Sort By
+    a.btn.btn--green.btn--small(href='/newCars?sort=price') Price
+    a.btn.btn--green.btn--small(href='/newCars?sort=rating') Rating
+    a.btn.btn--green.btn--small(href='/newCars?sort=mileage') Mileage
+    a.btn.btn--green.btn--small(href='/newCars?sort=engine') Power
+    a.btn.btn--green.btn--small(href='/newCars?sort=seatingCapacity') Capacity
+
+.search__cars
+    p Sort By
+    a.btn.btn--green.btn--small(href='/newCars?page=1&limit=10') 1
+    a.btn.btn--green.btn--small(href='/newCars?page=2&limit=10') 2
+    a.btn.btn--green.btn--small(href='/newCars?page=3&limit=10') 3
+    a.btn.btn--green.btn--small(href='/newCars?page=4&limit=10') 4
+    a.btn.btn--green.btn--small(href='/newCars?page=5&limit=10') 5
+
+//- price, cc, mileage, capacity, rating
 
 
-
-
-
+        
 

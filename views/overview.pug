@@ -1,8 +1,10 @@
 extends base
 
 block content 
+    p=`Total cars = ${cars.length}`
     main.main  
         .card-container
+            
             each car in cars
                 .card 
                     .card__header
