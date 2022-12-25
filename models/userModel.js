@@ -17,13 +17,13 @@ const userSchema = new mongoose.Schema({
     photo: {
         type: String
     },
-    role: {
-        type: String,
-        enum: ['admin', 'user', 'uploader'], 
-        default: 'admin'
-    },
+    // role: {
+    //     type: String,
+    //     enum: ['admin', 'user', 'uploader'], 
+    //     default: 'admin'
+    // },
     password: {
-        type: String,
+        type: String,  
         required: [true, 'Please provide a password'],
         // minlength: 5,
         select: false   // pass will not be shown to the User
@@ -38,7 +38,8 @@ const userSchema = new mongoose.Schema({
             },
             message: 'Passwords are not the same!'
         }
-    }
+    },
+    passwordChangedAt: Date,
     
 });
 
@@ -61,6 +62,21 @@ userSchema.pre('save', async function(next) {
 userSchema.methods.correctPassword = async function(candidatePassword, userPassword) {
     return await bcrypt.compare(candidatePassword, userPassword);
 }
+
+userSchema.methods.changedPasswordAfter = function(JWTTimestamp) {
+    // console.log("times before ", this.passwordChangedAt, JWTTimestamp);
+
+    if (this.passwordChangedAt) {
+        const changedTimestamp = parseInt(this.passwordChangedAt.getTime() / 1000, 10);
+        console.log("times ", changedTimestamp, JWTTimestamp);
+
+        return JWTTimestamp < changedTimestamp;
+    }
+  
+    // False means NOT changed
+    return false;
+  };
+
 
 const User = mongoose.model('User', userSchema);
 

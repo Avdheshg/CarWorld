@@ -29,32 +29,30 @@ app.use((req, res, next) => {
 
 // requiring the Error class 
 // const AppError = require('./utils/appError'); 
-const globalErrorHandler = require('./controllers/errorController');
 
 const newCarsRouter = require('./routes/newCarsRoutes');
 const usedCarsRouter = require('./routes/usedCarRoutes');
 
+const userRouter = require("./routes/userRoutes");
+
 // ===== Setting the PUG    ==============================
 
+// app.use((req, res, next) => {
+   // console.log("** Headers ** ", req.headers);
+    // next();
+// })
+  
 // Mounting the Routers
 app.use("/newCars", newCarsRouter); 
 app.use("/usedCars", usedCarsRouter); 
-app.use("/", (req, res) => {
-    // res.status(200).render("index", {
-    //     message: "Hello"
-    // }) 
-    res.sendFile(path.join(__dirname, "/views/index.html"))
-}); 
 
-module.exports = app;
+// router for users
+app.use("/api/v1/users", userRouter);   
+
+module.exports = app;  
 
 
- // app -> Routes -> Controllers
-
-
-
-
-      
+// app -> Routes -> Controllers
 
 
 
@@ -62,9 +60,7 @@ module.exports = app;
 
 
 
-
-
-
+ 
 
 
 

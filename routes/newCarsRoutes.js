@@ -24,7 +24,8 @@ router
 
 router
     .route('/')
-    .get(newCarsController.getAllCars);
+    // .get(newCarsController.getAllCars);
+    .get(authController.protect ,newCarsController.getAllCars); 
 
 // router
 //     .route("/search")
