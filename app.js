@@ -41,13 +41,20 @@ const userRouter = require("./routes/userRoutes");
    // console.log("** Headers ** ", req.headers);
     // next();
 // })
+
   
 // Mounting the Routers
 app.use("/newCars", newCarsRouter); 
 app.use("/usedCars", usedCarsRouter); 
 
 // router for users
-app.use("/api/v1/users", userRouter);   
+app.use("/api/v1/users", userRouter);  
+
+
+// at home route, sending the Index file
+app.use("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/index.html"))
+}); 
 
 module.exports = app;  
 
