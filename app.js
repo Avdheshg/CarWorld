@@ -7,6 +7,8 @@ const morgan = require('morgan')
 const cookieParser = require("cookie-parser");
 const NewCars = require('./models/newCarsModel');
 
+// const viewRouter = require("./routes/viewRoutes");
+
 const app = express();
 
 app.use(morgan("dev"));
@@ -42,6 +44,12 @@ const userRouter = require("./routes/userRoutes");
     // next();
 // })
 
+// app.get("/", (req, res) => {
+//     res.status(200).render("base", {
+//         name: "Mercedes",
+//         user: "avdhesh"
+//     });
+// })
   
 // Mounting the Routers
 app.use("/newCars", newCarsRouter); 

@@ -60,6 +60,14 @@ userSchema.pre('save', async function(next) {
     next(); 
 });
 
+// for updating the password after the reset password req is made
+userSchema.pre("save", function(next) {
+    if (!this.isModified('password') || this.isNew) return next();
+
+    this.passwordChangedAt = Date.now() - 1000;
+    next();
+})
+
 // Defining an IM(will be available for all the files of a certain collection)
 userSchema.methods.correctPassword = async function(candidatePassword, userPassword) {
     return await bcrypt.compare(candidatePassword, userPassword);
@@ -91,6 +99,10 @@ userSchema.methods.createPasswordResetToken = function() {
     return resetToken;
 };
  
+
+
+    
+
 
 const User = mongoose.model('User', userSchema);
 

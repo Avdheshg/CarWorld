@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 // const util = require('util');
 const { promisify } = require("util");
 const sendEmail = require("./../utils/email");
+const crypto = require('crypto');
 
 
 // function for creating a new token
@@ -127,7 +128,7 @@ exports.protect = async (req, res, next) => {
   if (currentUser.changedPasswordAfter(decoded.iat)) {
     return res.status(401).json({
       status: "fail",
-      message: "User recently changed password! Please log in again.",
+      message: "User recently changed password! Please log in again.",  
     });
   }
 
@@ -218,8 +219,39 @@ exports.forgotPassword = async (req, res, next) => {
   }
 };
 
-exports.resetPassword = (req, res, next) => {
+exports.resetPassword = async (req, res, next) => {
+  // 1) Get user based on the token
+  const hashedToken = crypto.createHash('sha256').update(req.params.token).digest('hex');
+  console.log("---- running ------");
 
+  const user = await User.findOne({
+    passwordResetToken: hashedToken,
+    passwordResetExpires: { $gt: Date.now() }
+  });
+
+  // 2) If token has not expired, and there is user, set the new password
+  if (!user) {
+    return res.status(400).json({
+      status: "fail", 
+      message: "Token is invalid or has expired",
+    });
+  }
+
+  user.password = req.body.password;
+  user.passwordConfirm = req.body.passwordConfirm;
+  user.passwordResetToken = undefined;
+  user.passwordResetExpires = undefined;
+  await user.save();
+
+  // // 3) Update changedPasswordAt property for the user => implemented using the presave MW
+
+  // // 4) Log the user in, send JWT
+  const token = signToken(user._id);
+ 
+  res.status(200).json({
+    status: "success",
+    token,
+  });
 }
 
 /* 
@@ -234,15 +266,11 @@ exports.resetPassword = (req, res, next) => {
 
 
 
-
-
-
-
-
-
-
-
-
+// ******************************************************************************************
+// ******************************************************************************************
+// ******************************************************************************************
+// ******************************************************************************************
+// ******************************************************************************************
 
 
 
