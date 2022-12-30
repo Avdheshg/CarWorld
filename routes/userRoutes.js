@@ -1,13 +1,13 @@
 /*
     In routes.js => V only define functions which are related to the routes.
     Rest of the code will be in controller.js
-*/
-
+*/ 
+ 
 const express = require("express");
 const userController = require("./../controllers/userController");
 const authController = require("./../controllers/authController");
 
-const router = express.Router();
+const router = express.Router(); 
 
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);

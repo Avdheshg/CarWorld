@@ -14,6 +14,32 @@ const signToken = (id) => {
   });
 };
 
+// create and sending token and cookie
+const createSendToken = (user, statusCode, res) => {
+  const token = signToken(user._id);
+  const cookieOptions = {
+    expires: new Date(
+      Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+    ),
+    httpOnly: true
+  };
+  // if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
+
+  res.cookie('jwt', token, cookieOptions);
+
+  // Remove password from output
+  user.password = undefined;
+
+  res.status(statusCode).json({
+    status: 'success',
+    token,
+    data: {
+      user
+    }
+  });
+}
+
+//  ---------- Signup ---------------
 exports.signup = async (req, res, next) => {
   try {
     const newUser = await User.create({
@@ -24,17 +50,34 @@ exports.signup = async (req, res, next) => {
       // passwordChangedAt: req.body.passwordChangedAt
     });
 
-    // creating a token
-    // const token = signToken(newUser._id);
-    const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRES_IN});
+    // // creating a token
+    // // const token = signToken(newUser._id);
+    // const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRES_IN});
 
-    res.status(201).json({
-      status: "success",
-      token, // sending the Token
-      data: {
-        user: newUser, 
-      },
-    });
+    // // Cookie
+    // const cookieOptions = {
+    //   expires: new Date(
+    //     Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+    //   ),
+    //   secure: true,
+    //   httpOnly: true
+    // };
+    // // if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
+  
+    // res.cookie('jwt', token, cookieOptions);
+    
+    // // Remove password from output
+    // newUser.password = undefined;
+
+    // res.status(201).json({
+    //   status: "success",
+    //   token, // sending the Token
+    //   data: {
+    //     user: newUser, 
+    //   },
+    // });
+
+    createSendToken(newUser, 201, res);
   } catch (err) {
     res.status(404).json({
       status: "fail",
@@ -43,7 +86,7 @@ exports.signup = async (req, res, next) => {
   }
 };
 
-// Login
+//  ---------- Login ---------------
 exports.login = async (req, res, next) => {
   try {
     // object restructuring
@@ -71,12 +114,14 @@ exports.login = async (req, res, next) => {
     console.log(user);
  
     // 3. If everything ok, generate and send token to the Client
-    const token = signToken(user._id);
+    // const token = signToken(user._id);
  
-    res.status(200).json({
-      status: "success",
-      token,
-    });
+    // res.status(200).json({
+    //   status: "success",
+    //   token,
+    // });
+    createSendToken(user, 200, res);
+
   } catch (err) {
     res.status(401).json({ 
       status: "fail",
@@ -85,13 +130,17 @@ exports.login = async (req, res, next) => {
   }
 };
 
-// for protecting the routes
+// ---------- Protect ---------------       for protecting the routes
 exports.protect = async (req, res, next) => {
   // 1. Getting the token and checking if it exists
   let token;
   if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
+    // here means, authorization headers exists
     token = req.headers.authorization.split(" ")[1];
-  } 
+  } else if (req.cookies.jwt) {
+    // here means, authorization headers doesn't exists so checking if the cookie exists or not in the 
+    token = req.cookies.jwt;  
+  }
   // console.log(token);
 
   // else if (req.cookies.jwt) {
@@ -113,7 +162,7 @@ exports.protect = async (req, res, next) => {
     2 => calling the verify function which will return a promise after calling
   */
   // console.log(decoded);  
-  
+     
   // 3) Check if user still exists
   const currentUser = await User.findById(decoded.id);
   // console.log("currentUser", currentUser);
@@ -130,34 +179,37 @@ exports.protect = async (req, res, next) => {
       status: "fail",
       message: "User recently changed password! Please log in again.",  
     });
-  }
+  }    
 
   next();
-};
+}; 
 
-// Only for rendered pages, no errors!
+// ---------- IsLoggedIn ---------------      Only for rendered pages, no errors!
 exports.isLoggedIn = async (req, res, next) => {
-  // 1. Getting the token and checking if it exists
-  let token;
-  if ( req.headers.authorization && req.headers.authorization.startsWith("Bearer") ) {
-    token = req.headers.authorization.split(" ")[1];
-  } else if (req.cookies.jwt) {
-    token = req.cookies.jwt;
+  
+  // check if the cookie exists
+  if (req.cookies.jwt) {
+    // 1. Verify the token
+    const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET);
+
+    // 2. check if user still exists
+    const currentUser = await User.findById(decoded.id);
+    // console.log("currentUser", currentUser);
+    if (!currentUser) {
+      return next();
+    }
+
+    // 3. Check if user changed password after the token was issued
+    if (currentUser.changedPasswordAfter(decoded.iat)) {
+      return next(); 
+    }
+    
+    // Here means, user is logged in
+    res.locals.user = currentUser;
+    return next();
   }
-  // console.log(token);
 
-  if (!token) {
-    return res.status(401).json({
-      // unauthorized
-      status: "fail",
-      message: "you are not logged in. Please login to get access",
-    });
-  }
-
-  // 2. Verifying the token
-  const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-  // console.log(decoded);
-
+  // here means, V have no cookie
   next();
 };
 
@@ -254,6 +306,9 @@ exports.resetPassword = async (req, res, next) => {
   });
 }
 
+
+
+
 /* 
 
  */
@@ -271,9 +326,6 @@ exports.resetPassword = async (req, res, next) => {
 // ******************************************************************************************
 // ******************************************************************************************
 // ******************************************************************************************
-
-
-
 
 
 

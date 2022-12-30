@@ -10,7 +10,7 @@ block content
                     .card__header
                         .card__picture
                             .card__picture-overlay &nbsp;
-                            img.card__picture-img(src=`img/cars/${car.name}-cover.jpg`, alt=`${car.name}`)
+                            img.card__picture-img(src=`/img/cars/${car.name}-cover.jpg`, alt=`${car.name}`)
                             //- img.card__picture-img(src="img/", alt=`${car.name}`)
                         h3.heading-tertirary
                             span= car.name
@@ -21,7 +21,7 @@ block content
                         .card__data
                             
                             svg.card__icon
-                                use(xlink:href='img/icons.svg#icon-user')
+                                use(xlink:href='/img/icons.svg#icon-user')
                                 
                             span= car.seatingCapacity 
                         .card__data
@@ -30,7 +30,7 @@ block content
                             span= car.bodyType 
                         .card__data
                             svg.card__icon
-                                use(xlink:href='img/icons.svg#icon-flag')
+                                use(xlink:href='/img/icons.svg#icon-flag')
                             span= `${car.mileage} kmpl`
                         .card__data
                             <i class="fa fa-star" style="font-size:24px;margin-right:4px;color:#55c57a"></i>
@@ -47,9 +47,9 @@ block content
                             span.card__footer-value= `${car.price} Lack`
                             span.card__footer-text 
                         p.card__ratings
-                            span.card__footer-value= `Rating: ${car.rating}`
+                            span.card__footer-value= `Rating: ${car.rating} / 5`
                             span.card__footer-text
-                        a.btn.btn--green.btn--small(href=`/car/${car.name}`) Details 
+                        a.btn.btn--green.btn--small(href=`/newCars/${car.name}`) Details 
                         // this might be a problem bcoz in the course he is using "slug" and V R using the names. Think carefully and then it will be resolved
 
 

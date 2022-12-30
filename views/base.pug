@@ -8,7 +8,7 @@ html
       link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
       link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      title Car World | New Cars  
+      title= `Car World | ${title}`  
 
   body 
 
@@ -21,10 +21,12 @@ html
 
     // Footer
     include _footer
-
+   
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+    script(type="module" src='/js/login.js')
+    script(type="module" src='/js/alerts.js')
     // 7
     //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
-    //- script(src="/js/login.js")
         
 
 

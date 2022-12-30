@@ -8,40 +8,40 @@ header.header
         if user
             a.nav__el.nav__el--logout Log out
             a.nav__el(href='/me')
-                img.nav__user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
+                img.nav__user-img(src=`/img/defaultUser.jpg` alt=`Photo of ${user.name}`)
                 //- span= user.name.split(' ')[0]
         else
-            //- a.nav__el(href='/api/v1/users/login') Log in
-            //- a.nav__el.nav__el--cta(href='#') Sign up
+            a.nav__el(href='/login') Log in
+            a.nav__el.nav__el--cta(href='#') Sign up
 
-.search__cars
-    a.btn.btn--green.btn--small(href='/newCars?price[lte]=10') Under 10 Lacks
-    //- a.btn.btn--green.btn--small(href='/newCars?price[gte]=10,[lt]=15') Under 10 Lacks
-    a.btn.btn--green.btn--small(href='/newCars?price[lte]=20') Under 20 Lacks
-    a.btn.btn--green.btn--small(href='/newCars?price[lte]=30') Under 30 Lacks
-    a.btn.btn--green.btn--small(href='/newCars?price[lte]=40') Under 40 Lacks
-    a.btn.btn--green.btn--small(href='/newCars?price[lte]=50') Under 50 Lacks
-    a.btn.btn--green.btn--small(href='/newCars?price[gte]=50') 50+ Lacks
+//- .search__cars
+//-     a.btn.btn--green.btn--small(href='/newCars?price[lte]=10') Under 10 Lacks
+//-     //- a.btn.btn--green.btn--small(href='/newCars?price[gte]=10,[lt]=15') Under 10 Lacks
+//-     a.btn.btn--green.btn--small(href='/newCars?price[lte]=20') Under 20 Lacks
+//-     a.btn.btn--green.btn--small(href='/newCars?price[lte]=30') Under 30 Lacks
+//-     a.btn.btn--green.btn--small(href='/newCars?price[lte]=40') Under 40 Lacks
+//-     a.btn.btn--green.btn--small(href='/newCars?price[lte]=50') Under 50 Lacks
+//-     a.btn.btn--green.btn--small(href='/newCars?price[gte]=50') 50+ Lacks
 
-.search__cars
-    p Sort By
-    a.btn.btn--green.btn--small(href='/newCars?sort=price') Price
-    a.btn.btn--green.btn--small(href='/newCars?sort=rating') Rating
-    a.btn.btn--green.btn--small(href='/newCars?sort=mileage') Mileage
-    a.btn.btn--green.btn--small(href='/newCars?sort=engine') Power
-    a.btn.btn--green.btn--small(href='/newCars?sort=seatingCapacity') Capacity
+//- .search__cars
+//-     p Sort By
+//-     a.btn.btn--green.btn--small(href='/newCars?sort=price') Price
+//-     a.btn.btn--green.btn--small(href='/newCars?sort=rating') Rating
+//-     a.btn.btn--green.btn--small(href='/newCars?sort=mileage') Mileage
+//-     a.btn.btn--green.btn--small(href='/newCars?sort=engine') Power
+//-     a.btn.btn--green.btn--small(href='/newCars?sort=seatingCapacity') Capacity
 
-.search__cars
-    a.btn.btn--green.btn--small(href='/newCars?page=1&limit=9') 1
-    a.btn.btn--green.btn--small(href='/newCars?page=2&limit=9') 2
-    a.btn.btn--green.btn--small(href='/newCars?page=3&limit=9') 3
-    a.btn.btn--green.btn--small(href='/newCars?page=4&limit=9') 4
-    a.btn.btn--green.btn--small(href='/newCars?page=5&limit=9') 5
+//- .search__cars
+//-     a.btn.btn--green.btn--small(href='/newCars?page=1&limit=9') 1
+//-     a.btn.btn--green.btn--small(href='/newCars?page=2&limit=9') 2
+//-     a.btn.btn--green.btn--small(href='/newCars?page=3&limit=9') 3
+//-     a.btn.btn--green.btn--small(href='/newCars?page=4&limit=9') 4
+//-     a.btn.btn--green.btn--small(href='/newCars?page=5&limit=9') 5
 
-.search__cars
-    a.btn.btn--green.btn--small(href='/newCars/top-rated') Top Rated Cars
-    a.btn.btn--green.btn--small(href='/newCars/top-efficient') Top Efficient Cars
-    a.btn.btn--green.btn--small(href='/newCars/top-powerful') Top Powerful Cars
+//- .search__cars
+//-     a.btn.btn--green.btn--small(href='/newCars/top-rated') Top Rated Cars
+//-     a.btn.btn--green.btn--small(href='/newCars/top-efficient') Top Efficient Cars
+//-     a.btn.btn--green.btn--small(href='/newCars/top-powerful') Top Powerful Cars
 
 //- price, cc, mileage, capacity, rating
 

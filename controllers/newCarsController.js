@@ -58,7 +58,7 @@ exports.getAllCars = async (req, res) => {
        // ==== Execute the query   ====
        const cars = await query;
     //    console.log("cars ", cars);
-
+ 
          // ==== Send Response   ====
          res.status(200).render("overview", {  
             title: "All Cars", 
@@ -73,6 +73,34 @@ exports.getAllCars = async (req, res) => {
     
 };
    
+exports.getACar = async (req, res) => {
+    // console.log(req.params.id);
+    // const car = await NewCars.findById(req.params.id);
+    
+    try {
+        const car = await NewCars.findOne({name: req.params.carName});
+        console.log(car);
+
+        // If id is valid by syntax but not present in DB
+        if (!car) {
+            return res.status(404).json({  
+                status: 'fail',
+                message: 'Cannot find the car with given Name '
+            })
+        }
+    
+        res.status(200).render("car", {
+            title: car.title,
+            car: car
+        })
+    } catch (err) {
+        res.status(404).json({
+            status: 'fail',
+            message: 'Cannot find the car with given Name '
+        })
+    }
+}
+
 
 // query cars
 // exports.getQueryCars = async (req, res) => {  
@@ -111,30 +139,7 @@ exports.getAllCars = async (req, res) => {
 // }
 
 
-exports.getACar = async (req, res) => {
-    // console.log(req.params.id);
-    const car = await NewCars.findById(req.params.id);
 
-    try {
-
-        // If id is valid by syntax but not present in DB
-        if (!car) {
-            return next(new AppError('No tour found with that ID', 404));
-        }
-    
-        res.status(200).json({
-            status: 'success',
-            data: {
-                car
-            }
-        });
-    } catch (err) {
-        res.status(404).json({
-            status: 'fail',
-            message: 'Cannot find the car with given id '
-        })
-    }
-}
 
 exports.deleteCar = async (req, res) => {
     try {

@@ -13,7 +13,7 @@ router
     .get(newCarsController.topRatedCars, newCarsController.getAllCars);
 
 // TOP EFFICIENT
-router
+router  
     .route("/top-efficient")
     .get(newCarsController.topEfficientCars, newCarsController.getAllCars);
 
@@ -22,17 +22,19 @@ router
     .route("/top-powerful")
     .get(newCarsController.topPowerfulCars, newCarsController.getAllCars)
 
+// **** NORMAL ROUTES  ****
 router
     .route('/')
-    // .get(newCarsController.getAllCars);
-    .get(authController.protect ,newCarsController.getAllCars); 
+    .get(newCarsController.getAllCars);
+    // .get(authController.protect ,newCarsController.getAllCars); 
 
 // router
 //     .route("/search")
 //     .get(newCarsController.getQueryCars);
 
 router
-    .route('/:id')
+    // .route('/:id')
+    .route('/:carName')
     .get(newCarsController.getACar);  
 
 
