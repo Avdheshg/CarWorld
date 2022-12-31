@@ -1,3 +1,4 @@
+
 const path = require("path");
 const express = require('express');
 const dotenv = require('dotenv');
@@ -15,10 +16,10 @@ const viewRouter = require("./routes/viewRoutes");
 
 const app = express();
 
-app.use(morgan("dev"));
-
+// app.use(morgan("dev"));
+  
 app.set('view engine', 'pug');
-// using "path" for relative path
+// using "path" for relative path  
 app.set("views", path.join(__dirname, "views"));
  
 // for CSS files
@@ -29,15 +30,15 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use((req, res, next) => {
-    console.log("------- Inside cookie Parser");
-    console.log(req.cookies); 
+    // console.log("------- Inside cookie Parser");
+    // console.log("in app.js req.url", req.url);     
     next();
 })
-  
+
 // Mounting the Routers
-app.use("/", viewRouter); 
+// app.use("/", viewRouter);    
 app.use("/newCars", newCarsRouter); 
-app.use("/usedCars", usedCarsRouter); 
+app.use("/usedCars", usedCarsRouter);               
 
 // router for users
 app.use("/api/v1/users", userRouter);  

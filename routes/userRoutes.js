@@ -1,7 +1,3 @@
-/*
-    In routes.js => V only define functions which are related to the routes.
-    Rest of the code will be in controller.js
-*/ 
  
 const express = require("express");
 const userController = require("./../controllers/userController");
@@ -11,6 +7,7 @@ const router = express.Router();
 
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
+router.get('/logout', authController.logout);
 
 router.post("/forgotPassword", authController.forgotPassword);
 router.patch("/resetPassword/:token", authController.resetPassword);

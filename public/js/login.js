@@ -1,4 +1,6 @@
 
+
+
 // ------   Alerts   ------ 
 console.log("running alerts");
 const hideAlert = () => {
@@ -43,7 +45,7 @@ const login = async (email, password) => {
     } 
 };
 
-const loginForm = document.querySelector(".form");
+const loginForm = document.querySelector(".form");      
 if (loginForm) {
     document.querySelector(".form").addEventListener("submit", e => {
         e.preventDefault();
@@ -53,7 +55,33 @@ if (loginForm) {
         login(email, password);
     })
 }
- 
+
+// LogOut
+const logout = async () => {
+    try {
+      const res = await axios({
+        method: 'GET',
+        url: '/api/v1/users/logout'
+      });
+      if ((res.data.status = 'success')) {
+        location.reload(true);
+        window.setTimeout(() => {
+            location.assign('/login');
+        }, 200);
+      }
+    } catch (err) {
+      console.log(err.response);
+      showAlert('error', 'Error logging out! Try again.');
+    }
+};
+
+const logOutBtn = document.querySelector('.nav__el--logout');
+console.log(logOutBtn);
+
+if (logOutBtn) {
+    logOutBtn.addEventListener('click', logout);
+}
+
 
 
 

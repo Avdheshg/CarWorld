@@ -31,7 +31,7 @@ const createSendToken = (user, statusCode, res) => {
   user.password = undefined;
 
   res.status(statusCode).json({
-    status: 'success',
+    status: 'success',  
     token,
     data: {
       user
@@ -49,33 +49,6 @@ exports.signup = async (req, res, next) => {
       passwordConfirm: req.body.passwordConfirm,
       // passwordChangedAt: req.body.passwordChangedAt
     });
-
-    // // creating a token
-    // // const token = signToken(newUser._id);
-    // const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRES_IN});
-
-    // // Cookie
-    // const cookieOptions = {
-    //   expires: new Date(
-    //     Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
-    //   ),
-    //   secure: true,
-    //   httpOnly: true
-    // };
-    // // if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
-  
-    // res.cookie('jwt', token, cookieOptions);
-    
-    // // Remove password from output
-    // newUser.password = undefined;
-
-    // res.status(201).json({
-    //   status: "success",
-    //   token, // sending the Token
-    //   data: {
-    //     user: newUser, 
-    //   },
-    // });
 
     createSendToken(newUser, 201, res);
   } catch (err) {
@@ -111,7 +84,7 @@ exports.login = async (req, res, next) => {
       });
     }
  
-    console.log(user);
+    console.log(user);   
  
     // 3. If everything ok, generate and send token to the Client
     // const token = signToken(user._id);
@@ -130,6 +103,15 @@ exports.login = async (req, res, next) => {
   }
 };
 
+// ---------- Logout ---------------  
+exports.logout = (req, res) => {
+  res.cookie('jwt', 'loggedout', {
+    expires: new Date(Date.now() + 10 * 1000),
+    httpOnIy: true
+  });
+  res.status(200).json({ status: 'succes' });
+};
+
 // ---------- Protect ---------------       for protecting the routes
 exports.protect = async (req, res, next) => {
   // 1. Getting the token and checking if it exists
@@ -142,10 +124,6 @@ exports.protect = async (req, res, next) => {
     token = req.cookies.jwt;  
   }
   // console.log(token);
-
-  // else if (req.cookies.jwt) {
-  //   token = req.cookies.jwt;
-  // }
 
   if (!token) {
     return res.status(401).json({
@@ -186,27 +164,32 @@ exports.protect = async (req, res, next) => {
 
 // ---------- IsLoggedIn ---------------      Only for rendered pages, no errors!
 exports.isLoggedIn = async (req, res, next) => {
-  
-  // check if the cookie exists
-  if (req.cookies.jwt) {
-    // 1. Verify the token
-    const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET);
+  try {
+    // check if the cookie exists
+    if (req.cookies.jwt) {
+      // 1. Verify the token
+      
+      const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET);
 
-    // 2. check if user still exists
-    const currentUser = await User.findById(decoded.id);
-    // console.log("currentUser", currentUser);
-    if (!currentUser) {
+      // 2. check if user still exists
+      const currentUser = await User.findById(decoded.id);
+      // console.log("currentUser", currentUser);
+      if (!currentUser) {
+        return next();
+      }
+
+      // 3. Check if user changed password after the token was issued
+      if (currentUser.changedPasswordAfter(decoded.iat)) {
+        return next(); 
+      }
+      
+      // Here means, user is logged in
+      res.locals.user = currentUser;
       return next();
     }
-
-    // 3. Check if user changed password after the token was issued
-    if (currentUser.changedPasswordAfter(decoded.iat)) {
-      return next(); 
-    }
-    
-    // Here means, user is logged in
-    res.locals.user = currentUser;
-    return next();
+  } catch (err) {
+    console.log("------------ error in JWT vaerify  --------", err);
+    return next();    // moving to the next MW which means that there is not logged in user
   }
 
   // here means, V have no cookie
@@ -326,7 +309,6 @@ exports.resetPassword = async (req, res, next) => {
 // ******************************************************************************************
 // ******************************************************************************************
 // ******************************************************************************************
-
 
 
 
