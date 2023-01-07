@@ -5,14 +5,16 @@ header.header
         a(href="/")
             img(src='/img/logo-white.png' alt='logo')
     nav.nav.nav--user
-        if user
+        //- Show user btns instaed of Login and Logout, From authController: protect MW
+        - if (user || isOverviewPage)   
             //- a.nav__el.nav__el--logout(href='/login') Log out
             a.nav__el.nav__el--logout Log out
             a.nav__el(href='/me')
-                img.nav__user-img(src=`/img/defaultUser.jpg` alt=`Photo of ${user.name}`)
+                img.nav__user-img(src=`/img/defaultUser.jpg` alt=`Photo of user`)
                 //- span= user.name.split(' ')[0]
-        else
-            a.nav__el(href='/login') Log in
+        - else
+            - if (title === "Login")
+            //- a.nav__el(href='/login') Log in
             a.nav__el.nav__el--cta(href='#') Sign up
 
 //- <div class="dropdown">
@@ -24,64 +26,52 @@ header.header
 //-     </div>
 //- </div>
 
-.filter-btns
-    //- ================    Budget      ================
-    .dropdown
-        button.dropbtn Budget 
-        .dropdown-content
-            a(href="/newCars?price[gte]=0&price[lte]=10") 0-10L
-            a(href="/newCars?price[gte]=10&price[lte]=20") 10-20L
-            a(href="/newCars?price[gte]=20&price[lte]=30") 20-30L
-            a(href="/newCars?price[gte]=30&price[lte]=40") 30-40L
-            a(href="/newCars?price[gte]=50") Above 50L
+//- - if (!isCarDetailsPage)
+//- Show filter btns only for overview page, From newCarsController
+- if (isOverviewPage)     
+    .filter-btns
+        //- ================    Budget      ================
+        .dropdown
+            button.dropbtn Budget 
+            .dropdown-content
+                a(href="/newCars?price[gte]=0&price[lte]=10") 0-10L   
+                a(href="/newCars?price[gte]=10&price[lte]=20") 10-20L
+                a(href="/newCars?price[gte]=20&price[lte]=30") 20-30L
+                a(href="/newCars?price[gte]=30&price[lte]=40") 30-40L
+                a(href="/newCars?price[gte]=50") Above 50L
 
 
-    //- =============   Sort By    ================
-    .dropdown
-        button.dropbtn Sort By 
-        .dropdown-content
-            a(href="/newCars?sort=price") Price
-            a(href="/newCars?sort=rating") Rating
-            a(href="/newCars?sort=mileage") Mileage
-            a(href="/newCars?sort=engine") Power
-            a(href="/newCars?sort=seatingCapacity") Capacity
+        //- =============   Sort By    ================
+        .dropdown
+            button.dropbtn Sort By 
+            .dropdown-content
+                a(href="/newCars?sort=price") Price
+                a(href="/newCars?sort=rating") Rating
+                a(href="/newCars?sort=mileage") Mileage
+                a(href="/newCars?sort=engine") Power
+                a(href="/newCars?sort=seatingCapacity") Capacity
 
-    //- Budget
-    //- .dropdown
-    //-     button.dropbtn Budget 
-    //-     .dropdown-content
-    //-         a(href="/newCars?price[lte]=10") Under 10L
-    //-         a(href="/newCars?price[lte]=20") Under 20L
-    //-         a(href="/newCars?price[lte]=30") Under 30L
-    //-         a(href="/newCars?price[lte]=40") Under 40L
-    //-         a(href="/newCars?price[gte]=50") Above 50L
+    .search__cars
+        a.btn.btn--green.btn--small(href='/newCars/top-rated') Top Rated Cars
+        a.btn.btn--green.btn--small(href='/newCars/top-efficient') Top Efficient Cars
+        a.btn.btn--green.btn--small(href='/newCars/top-powerful') Top Powerful Cars
 
-//- .search__cars
-//-     p Sort By
-//-     a.btn.btn--green.btn--small(href='/newCars?sort=price') Price
-//-     a.btn.btn--green.btn--small(href='/newCars?sort=rating') Rating
-//-     a.btn.btn--green.btn--small(href='/newCars?sort=mileage') Mileage
-//-     a.btn.btn--green.btn--small(href='/newCars?sort=engine') Power
-//-     a.btn.btn--green.btn--small(href='/newCars?sort=seatingCapacity') Capacity
-
+//- =================       Pagination     =================
 //- - url = url + "/newCars"   
 //- - if (!hasQueryString) url = url + "?"
-.search__cars
-    a.btn.btn--green.btn--small(href=`${url}&page=1&limit=5`)= 1 
-    //- a.btn.btn--green.btn--small(href=`newCars?price[gte]=0&price[lte]=10&page=1&limit=5`) 1
-    a.btn.btn--green.btn--small(href=`${url}&page=2&limit=5`)= 2 
-    a.btn.btn--green.btn--small(href=`${url}&page=3&limit=5`) 3
-    a.btn.btn--green.btn--small(href=`${url}&page=4&limit=5`) 4
-    a.btn.btn--green.btn--small(href=`${url}&page=5&limit=5`) 5
+//- .search__cars
+    a.btn.btn--green.btn--small(href=`${url}page=1&limit=9`)= 1    
+    //- a.btn.btn--green.btn--small(href=`newCars?price[gte]=0&price[lte]=10&page=1&limit=9`) 1
+    a.btn.btn--green.btn--small(href=`${url}page=2&limit=9`)= 2 
+    a.btn.btn--green.btn--small(href=`${url}page=3&limit=9`) 3
+    a.btn.btn--green.btn--small(href=`${url}page=4&limit=9`) 4
+    a.btn.btn--green.btn--small(href=`${url}page=5&limit=9`) 5
 
-.search__cars
-    a.btn.btn--green.btn--small(href='/newCars/top-rated') Top Rated Cars
-    a.btn.btn--green.btn--small(href='/newCars/top-efficient') Top Efficient Cars
-    a.btn.btn--green.btn--small(href='/newCars/top-powerful') Top Powerful Cars
+
 
 //- price, cc, mileage, capacity, rating
 
    
-        
+          
 
    

@@ -14,6 +14,9 @@ If a compelte request is
     for us this problem is coming only in query btns and not on alias routes bcoz if the query is made using query btns then after that V also need to append pagination on it
 
 */
+
+console.log("*** newCarsRoutes.js  ***");
+
 // **** ALIASE ROUTES  **** 
 // TOP RATED
 router
@@ -33,8 +36,8 @@ router
 // **** NORMAL ROUTES  ****
 router
     .route('/')  
-    .get(newCarsController.getAllCars);
-    // .get(authController.protect ,newCarsController.getAllCars); 
+    // .get(newCarsController.getAllCars);
+    .get(authController.protect ,newCarsController.getAllCars); 
 
 // router   
 //     .route("/search")
@@ -43,7 +46,7 @@ router
 router
     // .route('/:id')
     .route('/:carName')
-    .get(newCarsController.getACar);  
+    .get(authController.protect ,newCarsController.getACar);  
 
 
 // implementing this route into the user Model
@@ -59,7 +62,14 @@ module.exports = router;
 
 
 
+/* 
+Making changes
+    newCarRoutes.js
+        router
+            .route('/newCars')  
+            .get(newCarsController.getAllCars);
 
+*/
 
 
 

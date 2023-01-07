@@ -1,8 +1,10 @@
 
 
+console.log("running login.js");
+
 
 // ------   Alerts   ------ 
-console.log("running alerts");
+// console.log("running alerts");
 const hideAlert = () => {
   const el = document.querySelector('.alert');
   if (el) el.parentElement.removeChild(el);
@@ -16,12 +18,13 @@ const showAlert = (type, msg) => {
   window.setTimeout(hideAlert, 5000);
 };
 
+
 const login = async (email, password) => {  
     try {
         const res = await axios({
             method: 'POST',
             url: '/api/v1/users/login',
-            data: {
+            data: {    
                 email,
                 password
             }
@@ -33,22 +36,22 @@ const login = async (email, password) => {
         showAlert('success', 'Logged in successfully!');
         // alert('Logged in successfully!');
         window.setTimeout(() => {
-            location.assign('/');
-        }, 1500);
+            location.assign('/newCars');
+        }, 1000);
       } 
     } catch (err) {
     //   console.log("err--------------", err);
      // alert(err.response.data.message);
     //   alert("Error axios", err);
     //   console.log("Error axios", err);
-        showAlert("error", err.response.data.message);
+      showAlert("error", err.response.data.message);
     } 
 };
 
 const loginForm = document.querySelector(".form");      
 if (loginForm) {
     document.querySelector(".form").addEventListener("submit", e => {
-        e.preventDefault();
+        e.preventDefault();        
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
     
@@ -64,10 +67,11 @@ const logout = async () => {
         url: '/api/v1/users/logout'
       });
       if ((res.data.status = 'success')) {
-        location.reload(true);
+        // location.reload(true); 
+        showAlert('success', 'Logged out successfully!');
         window.setTimeout(() => {
-            location.assign('/login');
-        }, 200);
+            location.assign('/');  
+        }, 1000);
       }
     } catch (err) {
       console.log(err.response);

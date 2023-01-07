@@ -5,6 +5,8 @@ const url = require("url");
 
 // TOP RATED
 exports.topRatedCars = (req, res, next) => {
+    console.log("*** newCarsCOntroller.js :: topRatedCars ***");
+    
     req.query.limit = "5";
     req.query.sort = "-ratings";
     next();
@@ -12,6 +14,8 @@ exports.topRatedCars = (req, res, next) => {
 
 // TOP EFFICIENT
 exports.topEfficientCars = (req, res, next) => {
+    console.log("*** newCarsCOntroller.js :: topEfficientCars ***");
+    
     req.query.limit = "5";
     req.query.sort = "-mileage";
     next();
@@ -19,15 +23,19 @@ exports.topEfficientCars = (req, res, next) => {
 
 // TOP POWERFUL
 exports.topPowerfulCars = (req, res, next) => {
+    console.log("*** newCarsCOntroller.js :: topPowerfulCars ***");
+    
     req.query.limit = "5";
     req.query.sort = "-engine";
     next();
 }
 
 exports.getAllCars = async (req, res) => {
+    console.log("*** newCarsCOntroller.js :: getAllCars ***");
+    
     try {
         // console.log("*** complete query: *** ", req.query);
-        
+            
         const queryObj = { ...req.query };             
 
         // 1A. Filtering
@@ -51,7 +59,7 @@ exports.getAllCars = async (req, res) => {
           
         // Pagination
         const page = req.query.page * 1 || 1;    
-        const limit = req.query.limit * 1 || 10;    
+        const limit = req.query.limit * 1 || 100;    
         const skip = (page - 1) * limit;
      
         
@@ -62,23 +70,34 @@ exports.getAllCars = async (req, res) => {
        const cars = await query;
         // console.log("cars ", cars);
 
-         // ==== Send Response   ====                     
+         // ==== Send Response   ====                              
         // res.status(200).json({  
         //     length: cars.length,  
         //     // range: rangeCars,      
         //     cars: cars
         // });
-        console.log("req.url", req.url);      
         
-        let replacedStr = req.url.replace("/", "/newCars");
-        // replacedStr = replacedStr.replace("page")
-        console.log("replace replacedStr", replacedStr);
+        // For pagination
+        // let replacedStr = req.url.replace("/", "/newCars");
+        // console.log("Before replace replacedStr", replacedStr);                             
+        // console.log("req.query.page", req.query.page);   
+        // if (req.query.page) {
+        //     pageIdx = replacedStr.indexOf("page");
+        //     console.log("pageIdx", pageIdx);
 
-        const hasQueryString = !(Object.keys(req.query).length === 0);
+        //     replacedStr = replacedStr.substring(0, pageIdx);
+
+        // } else {
+        //     replacedStr = replacedStr + "?";
+        // }   
+        // // replacedStr = replacedStr.replace("page")                                           
+        // console.log("After replace replacedStr", replacedStr);
+           
+        // const hasQueryString = !(Object.keys(req.query).length === 0);
+        
         res.status(200).render("overview", {  
             title: "New Cars",     
-            url: replacedStr,       
-            hasQueryString,
+            isOverviewPage: true,      // for header pug template ie to show filter btns only for overview page
             length: cars.length, 
             cars: cars
         });
@@ -87,18 +106,20 @@ exports.getAllCars = async (req, res) => {
         res.status(404).json({
             status: 'fail',
             message: err
-        });
+        });  
     }
     
 };
    
 exports.getACar = async (req, res) => {
-    // console.log(req.params.id);
+    console.log("*** newCarsCOntroller.js :: getACar ***");
+    
+    // console.log(req.params.id); 
     // const car = await NewCars.findById(req.params.id);
     
     try {
         const car = await NewCars.findOne({name: req.params.carName});
-        console.log(car);
+        // console.log(car);
 
         // If id is valid by syntax but not present in DB
         if (!car) {
@@ -110,7 +131,8 @@ exports.getACar = async (req, res) => {
     
         res.status(200).render("car", {
             title: car.title,
-            car: car
+            car: car,
+            isCarDetailsPage: true
         })
     } catch (err) {
         res.status(404).json({

@@ -1,7 +1,5 @@
 const User = require("./../models/userModel");
 const jwt = require("jsonwebtoken");
-// for making any function return the promise
-// const util = require('util');
 const { promisify } = require("util");
 const sendEmail = require("./../utils/email");
 const crypto = require('crypto');
@@ -9,6 +7,8 @@ const crypto = require('crypto');
 
 // function for creating a new token
 const signToken = (id) => {
+  console.log("*** authController.js :: signToken ***");
+
   return jwt.sign({ id: id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
@@ -16,6 +16,8 @@ const signToken = (id) => {
 
 // create and sending token and cookie
 const createSendToken = (user, statusCode, res) => {
+  console.log("*** authController.js :: createSendToken ***");
+
   const token = signToken(user._id);
   const cookieOptions = {
     expires: new Date(
@@ -41,6 +43,8 @@ const createSendToken = (user, statusCode, res) => {
 
 //  ---------- Signup ---------------
 exports.signup = async (req, res, next) => {
+  console.log("*** authController.js :: signup ***");
+
   try {
     const newUser = await User.create({
       name: req.body.name,
@@ -61,6 +65,8 @@ exports.signup = async (req, res, next) => {
 
 //  ---------- Login ---------------
 exports.login = async (req, res, next) => {
+  console.log("*** authController.js :: login ***");
+
   try {
     // object restructuring
     const { email, password } = req.body;
@@ -105,69 +111,84 @@ exports.login = async (req, res, next) => {
 
 // ---------- Logout ---------------  
 exports.logout = (req, res) => {
-  res.cookie('jwt', 'loggedout', {
+  console.log("*** authController.js :: logout ***");
+
+  // res.cookie('jwt', 'loggedout', {
+  res.cookie('jwt', '', {
     expires: new Date(Date.now() + 10 * 1000),
-    httpOnIy: true
+    httpOnly: true
   });
-  res.status(200).json({ status: 'succes' });
+  res.status(200).json({ status: 'success' });
 };
 
 // ---------- Protect ---------------       for protecting the routes
 exports.protect = async (req, res, next) => {
+  console.log("*** authController.js :: protect ***");
+
   // 1. Getting the token and checking if it exists
-  let token;
-  if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
-    // here means, authorization headers exists
-    token = req.headers.authorization.split(" ")[1];
-  } else if (req.cookies.jwt) {
-    // here means, authorization headers doesn't exists so checking if the cookie exists or not in the 
-    token = req.cookies.jwt;  
-  }
-  // console.log(token);
+  try {
+      let token;
+      if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
+        token = req.headers.authorization.split(" ")[1];
+      } else if (req.cookies.jwt) {
+        token = req.cookies.jwt;  
+      }
+      // console.log(token);
+   
+      if (!token) {
+        // return res.status(401).json({
+        //   status: "fail",
+        //   message: "you are not logged in. Please login to get access",
+        // });
+        throw "No token exists"
+      }
 
-  if (!token) {
-    return res.status(401).json({
-      // unauthorized
-      status: "fail",
-      message: "you are not logged in. Please login to get access",
-    });
-  }
+      // // 2. Verifying the token
+      const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+      
+      // console.log(decoded);  
+        
+      // 3) Check if user still exists
+      const currentUser = await User.findById(decoded.id);
+      // console.log("currentUser", currentUser);    
+      if (!currentUser) {
+        return res.status(401).json({
+          status: "fail",
+          message: "The user belonging to this token does no longer exist.",
+        });
+        
+      }
 
-  // // 2. Verifying the token
-  const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-  /*                          1                      2 
-    1 => promisifying the verify function
-    2 => calling the verify function which will return a promise after calling
-  */
-  // console.log(decoded);  
-     
-  // 3) Check if user still exists
-  const currentUser = await User.findById(decoded.id);
-  // console.log("currentUser", currentUser);
-  if (!currentUser) {
-    return res.status(401).json({
-      status: "fail",
-      message: "The user belonging to this token does no longer exist.",
-    });
-  }
+      // 4) Check if user changed password after the token was issued
+      if (currentUser.changedPasswordAfter(decoded.iat)) {    
+        return res.status(401).json({
+          status: "fail",
+          message: "User recently changed password! Please log in again.",  
+        });     
+      }
 
-  // 4) Check if user changed password after the token was issued
-  if (currentUser.changedPasswordAfter(decoded.iat)) {
-    return res.status(401).json({
-      status: "fail",
-      message: "User recently changed password! Please log in again.",  
-    });
-  }    
+      // Here means, user is logged in
+      res.locals.user = currentUser;    // sending this to change the login and signup buttons into user btns
 
+  } catch (err) {
+      console.log("protect MW error and no token present, so sending the Login Form. Error => ", err);
+      return res.status(200).render("login", {title: "Login"});
+      // next();
+  }  
+      
+  // console.log("protect MW, and calling the next MW");
   next();
-}; 
+};      
 
 // ---------- IsLoggedIn ---------------      Only for rendered pages, no errors!
+// We have defined this new middleware only for render pages and it is not in relation with the  back end. We will use this middleware only for checking if the user is logged in or not in case of rendering the pug templates
 exports.isLoggedIn = async (req, res, next) => {
+  console.log("*** authController.js :: isLoggedIn ***");
+
   try {
     // check if the cookie exists
-    if (req.cookies.jwt) {
-      // 1. Verify the token
+    if (req.cookies.jwt) {    
+      // 1. Verify the token   
       
       const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET);
 
@@ -186,7 +207,7 @@ exports.isLoggedIn = async (req, res, next) => {
       // Here means, user is logged in
       res.locals.user = currentUser;
       return next();
-    }
+    } 
   } catch (err) {
     console.log("------------ error in JWT vaerify  --------", err);
     return next();    // moving to the next MW which means that there is not logged in user
@@ -196,21 +217,10 @@ exports.isLoggedIn = async (req, res, next) => {
   next();
 };
 
-exports.restrictTo = (...roles) => {
-  return (req, res, next) => {
-    if (!roles.includes(req.user.role)) {
-      return res.status(403).json({
-        status: "fail",
-        message: "You are not allowed to perform this action",
-      });
-    }
-
-    next();
-  };
-};
 
 exports.forgotPassword = async (req, res, next) => {
-  console.log("--- Running ----");
+  console.log("*** authController.js :: forgotPassword ***");
+  // console.log("--- Running ----");
   // 1) Get user based on POSTed email
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
@@ -255,6 +265,7 @@ exports.forgotPassword = async (req, res, next) => {
 };
 
 exports.resetPassword = async (req, res, next) => {
+  console.log("*** authController.js :: resetPassword ***");
   // 1) Get user based on the token
   const hashedToken = crypto.createHash('sha256').update(req.params.token).digest('hex');
   console.log("---- running ------");

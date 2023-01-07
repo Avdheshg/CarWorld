@@ -14,20 +14,22 @@ const usedCarsRouter = require('./routes/usedCarRoutes');
 const userRouter = require("./routes/userRoutes");
 const viewRouter = require("./routes/viewRoutes");
 
-const app = express();
-
-// app.use(morgan("dev"));
+const app = express();    
+     
+// app.use(morgan("dev")); 
   
 app.set('view engine', 'pug');
-// using "path" for relative path  
+// using "path" for relative path    
 app.set("views", path.join(__dirname, "views"));
- 
-// for CSS files
+   
+// for CSS files 
 // app.use(express.static(`${__dirname}/public`));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.json());
 app.use(cookieParser());
+
+console.log("*** app.js  ***");
 
 app.use((req, res, next) => {
     // console.log("------- Inside cookie Parser");
@@ -36,10 +38,10 @@ app.use((req, res, next) => {
 })
 
 // Mounting the Routers
-// app.use("/", viewRouter);    
+app.use("/login", viewRouter);    
 app.use("/newCars", newCarsRouter); 
 app.use("/usedCars", usedCarsRouter);               
-
+   
 // router for users
 app.use("/api/v1/users", userRouter);  
 
@@ -53,11 +55,6 @@ module.exports = app;
 
 
 // app -> Routes -> Controllers
-
-
-// axios is not linked properly
-// Learn about axios because we are able to generate the cookie when we are making a request using postman but the same thing doesn't happened when we make a request using browser
-
 
 
  
