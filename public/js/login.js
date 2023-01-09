@@ -169,6 +169,48 @@ const forgotPasswordFunction = async (email) => {
 }
 
 
+// =================   PUG :: RESET PASSWORD     ================= 
+const resetPasswordForm = document.querySelector(".form--resetPassword");
+if (resetPasswordForm) {
+    resetPasswordForm.addEventListener("submit", e => {
+        e.preventDefault();
+
+        const password = document.getElementById("password").value;
+        const passwordConfirm = document.getElementById("confirm-password").value;
+        const token = document.getElementById("token-input").value;
+
+        console.log(password, passwordConfirm, token);
+        resetPasswordFunction(password, passwordConfirm, token);
+    })
+}
+
+const resetPasswordFunction = async (password, passwordConfirm, token) => {
+    console.log("*** login.js :: resetPasswordFunction  ***");  
+
+    try {
+        const  res = await axios({   
+            method: 'PATCH',
+            url: `/api/v1/users/resetPassword/${token}`,
+            data: {         
+                password,
+                passwordConfirm    
+            }
+        })   
+                 
+        console.log("POST req to /resetPassword is completed and the data is", res);       
+
+        if (res.data.status === 'success') {
+            showAlert('success', 'Password changed successfully!');
+            window.setTimeout(() => {    
+                location.assign('/api/v1/users/login');      
+            }, 1000);           
+        }        
+   
+    } catch (err) {
+        console.log("axios err",  err);
+        showAlert("error", err);    
+    }
+}
 
 
 

@@ -267,41 +267,52 @@ exports.forgotPassword = async (req, res, next) => {
   }
 };
 
+// ===========         Password Reset      =======================
+/* 
+Algorithm to implement reset password function 
+    1. Get the user based on the token
+    2. We will set the new password only when if the token has not expired and there is a user available for this token in the database
+    3. Update the changedPasswordAt property for the user
+    4. Finally, log the user in ie send the jwt token to the client
+*/
 exports.resetPassword = async (req, res, next) => {
-  console.log("*** authController.js :: resetPassword ***");
-  // 1) Get user based on the token
+  console.log("*** authController.js :: resetPassword  ***");
+           
+  // 1. Get the user based on the token
   const hashedToken = crypto.createHash('sha256').update(req.params.token).digest('hex');
-  console.log("---- running ------");
 
-  const user = await User.findOne({
-    passwordResetToken: hashedToken,
-    passwordResetExpires: { $gt: Date.now() }
-  });
-
-  // 2) If token has not expired, and there is user, set the new password
-  if (!user) {
+  const user = await User.findOne({passwordResetToken: hashedToken, passwordResetExpires: {$gt: Date.now()}});
+  
+  // 2. If user is present and the token is stil valid(not expired), set the password
+  if (!user) {   
     return res.status(400).json({
-      status: "fail", 
-      message: "Token is invalid or has expired",
-    });
+      status: "fail",      
+      message: "Token is invalid or has expired"   
+    })
   }
-
+      
+  // if the user exists
   user.password = req.body.password;
   user.passwordConfirm = req.body.passwordConfirm;
+
   user.passwordResetToken = undefined;
   user.passwordResetExpires = undefined;
+
   await user.save();
 
-  // // 3) Update changedPasswordAt property for the user => implemented using the presave MW
+  // 3. update the changedPasswordAt property for the curr user => presave MW
 
-  // // 4) Log the user in, send JWT
-  const token = signToken(user._id);
- 
+  // 4. Log the user in and send the JWT
+  // const token = jwt.sign({id: user._id}, "this is the secret of jwt");
+
   res.status(200).json({
     status: "success",
-    token,
-  });
+    // token
+  })
+
 }
+
+
 
 
 

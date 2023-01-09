@@ -7,8 +7,16 @@ const router = express.Router();
 
 console.log("*** userRoutes.js  ***");
     
+// ===========         SIGNUP    =============
 router.post('/signup', authController.signup);
+
+// ===========         LOGIN    =============
+router.get("/login", (req, res) => {     
+  res.status(200).render("login", {title: "Login"});
+})
 router.post('/login', authController.login);
+
+// ===========         LOGOUT    =============
 router.get('/logout', authController.logout);
 
 // ===========         Forgot Password     =============
@@ -18,6 +26,10 @@ router.get("/forgotPassword", (req, res) => {
 
 router.post("/forgotPassword", authController.forgotPassword);
 
+// ===========         Password Reset      =======================
+router.get("/resetPassword/:token", (req, res) => {     
+  res.status(200).render("resetPassword", {title: "Reset Password", resetToken: req.params.token});
+});
 
 router.patch("/resetPassword/:token", authController.resetPassword);
 

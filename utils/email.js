@@ -13,12 +13,12 @@ const sendEmail = async (options, req) => {
   });
 
   // sending the HTML for the email
-  const resetURL = `${req.protocol}://${req.get('host')}/resetPassword/${options.resetToken}`;
+  const resetURL = `${req.protocol}://${req.get('host')}/api/v1/users/resetPassword/${options.resetToken}`;
 
   const html = pug.renderFile(`${__dirname}/../views/emailPasswordReset.pug`, {
       firstName: this.firstName,
       url: resetURL,
-      subject: "Forgot Password"     
+      subject: "Forgot Password"      
   });
 
   // 2) Define the email options
