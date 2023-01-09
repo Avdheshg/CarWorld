@@ -15,23 +15,23 @@ If a compelte request is
 
 */
 
-console.log("*** newCarsRoutes.js  ***");
+console.log("*** newCarsRoutes.js  ***");  
 
 // **** ALIASE ROUTES  **** 
 // TOP RATED
 router
     .route("/top-rated")
-    .get(newCarsController.topRatedCars, newCarsController.getAllCars);
+    .get(authController.protect, newCarsController.topRatedCars, newCarsController.getAllCars);
 
 // TOP EFFICIENT
 router  
     .route("/top-efficient")
-    .get(newCarsController.topEfficientCars, newCarsController.getAllCars);
+    .get(authController.protect, newCarsController.topEfficientCars, newCarsController.getAllCars);
 
 // TOP POWERFUL
 router
     .route("/top-powerful")
-    .get(newCarsController.topPowerfulCars, newCarsController.getAllCars)
+    .get(authController.protect, newCarsController.topPowerfulCars, newCarsController.getAllCars)
  
 // **** NORMAL ROUTES  ****
 router

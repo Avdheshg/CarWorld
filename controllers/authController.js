@@ -55,6 +55,7 @@ exports.signup = async (req, res, next) => {
     });
 
     createSendToken(newUser, 201, res);
+    
   } catch (err) {
     res.status(404).json({
       status: "fail",
@@ -241,11 +242,13 @@ exports.forgotPassword = async (req, res, next) => {
   const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\nIf you didn't forget your password, please ignore this email!`;
 
   try {
-    await sendEmail({
-      email: user.email,
-      subject: 'Your password reset token (valid for 10 min)',
-      message
-    });
+    await sendEmail(
+      {
+        email: user.email,
+        subject: 'Your password reset token (valid for 10 min)',   
+        message,
+        resetToken      
+      }, req);
 
     res.status(200).json({
       status: 'success',

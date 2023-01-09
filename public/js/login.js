@@ -18,7 +18,7 @@ const showAlert = (type, msg) => {
   window.setTimeout(hideAlert, 5000);
 };
 
-
+// ============   LOGIN    ============ 
 const login = async (email, password) => {  
     try {
         const res = await axios({
@@ -40,15 +40,11 @@ const login = async (email, password) => {
         }, 1000);
       } 
     } catch (err) {
-    //   console.log("err--------------", err);
-     // alert(err.response.data.message);
-    //   alert("Error axios", err);
-    //   console.log("Error axios", err);
       showAlert("error", err.response.data.message);
     } 
 };
 
-const loginForm = document.querySelector(".form");      
+const loginForm = document.querySelector(".form--login");      
 if (loginForm) {
     document.querySelector(".form").addEventListener("submit", e => {
         e.preventDefault();        
@@ -59,7 +55,7 @@ if (loginForm) {
     })
 }
 
-// LogOut
+// ============   LogOut    ============ 
 const logout = async () => {
     try {
       const res = await axios({
@@ -80,24 +76,128 @@ const logout = async () => {
 };
 
 const logOutBtn = document.querySelector('.nav__el--logout');
-console.log(logOutBtn);
+// console.log(logOutBtn);
 
 if (logOutBtn) {
     logOutBtn.addEventListener('click', logout);
 }
 
+// ============   SIGNUP    ============ 
+const signupForm = document.querySelector(".signup-form");
+if (signupForm) {
+    console.log("*** login.js :: signupForm  ***");
+    signupForm.addEventListener("submit", e => {   
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;        
+        const password = document.getElementById("password").value;
+        const passwordConfirm = document.getElementById("confirm-password").value;
+
+        // console.log("email", email, " password", password);
+        signupFunction(name, email, password, passwordConfirm);       
+    })
+}     
+
+const signupFunction = async (name, email, password, passwordConfirm) => {
+    console.log("*** login.js => 6. signup Function  ***");
+    try {
+        console.log("Making a POST request in axios to post /signup route");
+
+        const res = await axios({
+            method: 'POST',
+            url: '/api/v1/users/signup',
+            data: {
+                name,
+                email,
+                password,
+                passwordConfirm 
+            }
+        })
+
+        console.log("POST req completed to  post /signup and the data is received. Now calling the home MW ");
+        console.log(res);
+
+        if (res.data.status === 'success') {
+            showAlert('success', 'New Account created successfully!');
+            window.setTimeout(() => {
+                location.assign('/home');      
+            }, 1000);    
+        }        
+        
+    } catch (err) {           
+        console.log(err);
+        showAlert("error", err);   
+    }
+}
+
+
+// =================   PUG :: FORGOT PASSWORD     =================   
+const forgotPassword = document.querySelector(".form--forgotPassword");
+if (forgotPassword) {
+    console.log("forgotPassword present")
+    forgotPassword.addEventListener("submit", e => {
+        e.preventDefault();    
+        const email = document.getElementById("email").value;
+
+        forgotPasswordFunction(email);
+    })
+} 
+   
+const forgotPasswordFunction = async (email) => {   
+    console.log("*** login.js :: forgotPasswordFunction  ***");  
+
+    try {
+
+        var res = await axios({
+            method: 'POST',
+            url: '/api/v1/users/forgotPassword',  
+            data: {    
+                email
+            }
+        })
+
+        console.log("POST req to /forgotPassword is completed and the data is", res);   
+
+        if (res.data.status === 'success') {
+            showAlert('success', 'Email sent successfully!');
+        }        
+   
+    } catch (err) {    
+        console.log("axios err",  err);  
+        showAlert("error", err);    
+    }
+}
 
 
 
-                     
-/* 
-    Try with the incorrect email, password
-        Error: "Incorrect email password"
-    Try with the correct  
 
-    
-*/
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

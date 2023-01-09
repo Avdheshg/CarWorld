@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
+const pug = require('pug');
 
-const sendEmail = async options => {
+const sendEmail = async (options, req) => {
   // 1) Create a transporter
   const transporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
@@ -11,17 +12,30 @@ const sendEmail = async options => {
     }
   });
 
+  // sending the HTML for the email
+  const resetURL = `${req.protocol}://${req.get('host')}/resetPassword/${options.resetToken}`;
+
+  const html = pug.renderFile(`${__dirname}/../views/emailPasswordReset.pug`, {
+      firstName: this.firstName,
+      url: resetURL,
+      subject: "Forgot Password"     
+  });
+
   // 2) Define the email options
   const mailOptions = {
-    from: 'Jonas Schmedtmann <hello@jonas.io>',
+    from: 'Avdhesh Gautam <hello@avdhesh.io>',
     to: options.email,
     subject: options.subject,  
+    html,
     text: options.message
-    // html:
   };
 
   // 3) Actually send the email
-  await transporter.sendMail(mailOptions);
+  try {
+    await transporter.sendMail(mailOptions);
+  } catch (err) {
+      console.log("error in the transporter",  err);
+  }
 };
 
-module.exports = sendEmail;  
+module.exports = sendEmail;    

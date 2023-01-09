@@ -12,14 +12,6 @@ exports.getOverview = async (req, res) => {
     });
 }
 
-// Tour
-exports.getTour = (req, res) => {
-    console.log("*** ViewsController.js :: get a Tour ***");
-    res.status(200).render('tour', {
-        title: 'The Forest Hiker Tour'
-    })
-}
-
 // Login
 exports.getLoginForm = (req, res) => {
     console.log("*** ViewsController.js :: getLoginFrom ***");
@@ -29,5 +21,12 @@ exports.getLoginForm = (req, res) => {
     });
 }
 
-
+// Login
+exports.getSignupForm = (req, res) => {
+    console.log("*** ViewsController.js :: getSignupFrom ***");
+    // deliver the login page
+    res.status(200).render("signup", {
+        title: "Log In"
+    });
+}
 

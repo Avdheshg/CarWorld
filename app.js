@@ -36,13 +36,14 @@ app.use((req, res, next) => {
     // console.log("in app.js req.url", req.url);     
     next();
 })
-
+    
 // Mounting the Routers
-app.use("/login", viewRouter);    
+// app.use("/login", viewRouter);    
+app.use("/auth", viewRouter);    
 app.use("/newCars", newCarsRouter); 
 app.use("/usedCars", usedCarsRouter);               
    
-// router for users
+// router for users   
 app.use("/api/v1/users", userRouter);  
 
 
