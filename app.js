@@ -13,10 +13,11 @@ const newCarsRouter = require('./routes/newCarsRoutes');
 const usedCarsRouter = require('./routes/usedCarRoutes');
 const userRouter = require("./routes/userRoutes");
 const viewRouter = require("./routes/viewRoutes");
+const bookingRouter = require('./routes/bookingRoutes');
 
 const app = express();    
      
-// app.use(morgan("dev")); 
+app.use(morgan("dev")); 
   
 app.set('view engine', 'pug');
 // using "path" for relative path    
@@ -26,7 +27,7 @@ app.set("views", path.join(__dirname, "views"));
 // app.use(express.static(`${__dirname}/public`));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(express.json());
+app.use(express.json());  
 app.use(cookieParser());
 
 console.log("*** app.js  ***");
@@ -41,11 +42,19 @@ app.use((req, res, next) => {
 // app.use("/login", viewRouter);    
 app.use("/auth", viewRouter);    
 app.use("/newCars", newCarsRouter); 
-app.use("/usedCars", usedCarsRouter);               
+app.use("/usedCars", usedCarsRouter);         
+app.use("/bookings", bookingRouter);           
    
 // router for users   
-app.use("/api/v1/users", userRouter);  
+app.use("/api/v1/users", userRouter);       
 
+// ===========    
+const stripe = require('stripe')('sk_test_tR3PYbcVNZZ796tH88S4VQ2u');
+
+app.get('/order/success/:car', async (req, res) => {  
+  res.status(200).sendFile(`${__dirname}/paymentSuccess.html`);
+});
+// ===========
 
 // at home route, sending the Index file
 app.use("/", (req, res) => {
@@ -56,7 +65,7 @@ module.exports = app;
 
 
 // app -> Routes -> Controllers
-
+// 4242 4242 4242 4242
 
  
 

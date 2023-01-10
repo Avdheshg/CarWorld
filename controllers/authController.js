@@ -170,6 +170,7 @@ exports.protect = async (req, res, next) => {
 
       // Here means, user is logged in
       res.locals.user = currentUser;    // sending this to change the login and signup buttons into user btns
+      req.user = currentUser;
 
   } catch (err) {
       console.log("protect MW error and no token present, so sending the Login Form. Error => ", err);
