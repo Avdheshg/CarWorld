@@ -4,11 +4,13 @@ const NewCars = require('./../models/newCarsModel');
 const url = require("url");
 
 // TOP RATED
+// send totalCars along with the request to next MW
 exports.topRatedCars = (req, res, next) => {
     console.log("*** newCarsCOntroller.js :: topRatedCars ***");
     
     req.query.limit = "5";
     req.query.sort = "-ratings";
+    res.locals.aliasRoues = true;
     next();
 }
 
@@ -18,6 +20,7 @@ exports.topEfficientCars = (req, res, next) => {
     
     req.query.limit = "5";
     req.query.sort = "-mileage";
+    res.locals.aliasRoues = true;
     next();
 }
 
@@ -27,6 +30,7 @@ exports.topPowerfulCars = (req, res, next) => {
     
     req.query.limit = "5";
     req.query.sort = "-engine";
+    res.locals.aliasRoues = true;
     next();
 }
 
@@ -45,61 +49,57 @@ exports.getAllCars = async (req, res) => {
         // 1B. Advanced filtering: gte
         let queryString = JSON.stringify(queryObj);
         queryString = queryString.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);  
-          console.log("queryString", JSON.parse(queryString));  
     
         let query = NewCars.find(JSON.parse(queryString));
-        // console.log(req.query.sort);
   
         // Sorting
-        // price, cc, mileage, capacity, rating              
         if (req.query.sort) {  
-            console.log("sort present");     
             query = query.sort(req.query.sort);
         }       
-          
+
+        // ==== Execute the query   ====  
+        let cars = await query;
+        let totalCars = cars.length;
+                
         // Pagination
         const page = req.query.page * 1 || 1;    
-        const limit = req.query.limit * 1 || 100;    
+        const limit = req.query.limit * 1 || 9;    
         const skip = (page - 1) * limit;
-     
-        
+
+        let paginationActiveBtn = page;
 
         query = query.skip(skip).limit(limit);
     
-       // ==== Execute the query   ====
-       const cars = await query;
-        // console.log("cars ", cars);
+        // ==== Execute the query with pagination   ====  
+        cars = await query;
+        console.log("cars", cars);
 
-         // ==== Send Response   ====                              
-        // res.status(200).json({  
-        //     length: cars.length,  
-        //     // range: rangeCars,      
-        //     cars: cars
-        // });
-        
-        // For pagination
-        // let replacedStr = req.url.replace("/", "/newCars");
-        // console.log("Before replace replacedStr", replacedStr);                             
-        // console.log("req.query.page", req.query.page);   
-        // if (req.query.page) {
-        //     pageIdx = replacedStr.indexOf("page");
-        //     console.log("pageIdx", pageIdx);
+        // ==== Constructing pagination URL   ====
+        let paginateURL = req.protocol + '://' + req.get('host') + req.originalUrl;
+        // if queryString is not present      
+        if (Object.keys(req.query).length === 0) {       
+            paginateURL = paginateURL + "?"; 
+        } else if (!req.query.page) {   
+            paginateURL = paginateURL + "&";   
+        } else {   
+            paginateURL = paginateURL.split("page")[0];
+        }
 
-        //     replacedStr = replacedStr.substring(0, pageIdx);
-
-        // } else {
-        //     replacedStr = replacedStr + "?";
-        // }   
-        // // replacedStr = replacedStr.replace("page")                                           
-        // console.log("After replace replacedStr", replacedStr);
-           
-        // const hasQueryString = !(Object.keys(req.query).length === 0);
+        let paginationBtnCount = totalCars / 9;
+        if (totalCars % 9 !== 0) {
+            paginationBtnCount = Math.floor(paginationBtnCount) + 1;
+        } 
+        console.log("length", totalCars, "paginationBtnCount",paginationBtnCount);
         
         res.status(200).render("overview", {  
-            title: "New Cars",     
-            isOverviewPage: true,      // for header pug template ie to show filter btns only for overview page
+            title: "New Cars",          
             length: cars.length, 
-            cars: cars
+            paginateURL,
+            paginationBtnCount,
+            paginationActiveBtn,
+            isOverviewPage: true,
+            // aliasRoutes,
+            cars
         });
     } catch (err) {
         console.log(err);     
@@ -114,12 +114,8 @@ exports.getAllCars = async (req, res) => {
 exports.getACar = async (req, res) => {
     console.log("*** newCarsCOntroller.js :: getACar ***");
     
-    // console.log(req.params.id); 
-    // const car = await NewCars.findById(req.params.id);
-    
     try {
         const car = await NewCars.findOne({name: req.params.carName});
-        // console.log(car);
 
         // If id is valid by syntax but not present in DB
         if (!car) {

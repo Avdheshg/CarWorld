@@ -132,11 +132,12 @@ const signupFunction = async (name, email, password, passwordConfirm) => {
 
 
 // =================   PUG :: FORGOT PASSWORD     =================   
-const forgotPassword = document.querySelector(".form--forgotPassword");
+const forgotPassword = document.querySelector(".form--forgotPassword");  
 if (forgotPassword) {
     console.log("forgotPassword present")
     forgotPassword.addEventListener("submit", e => {
         e.preventDefault();    
+        document.querySelector(".forgot-password-submit").textContent = 'Sending Email...';
         const email = document.getElementById("email").value;
 
         forgotPasswordFunction(email);
@@ -226,19 +227,19 @@ export const bookCar = async carID => {
     await stripe.redirectToCheckout({
       sessionId: session.data.session.id
     });
-    showAlert('success', 'Congratulations');
+    showAlert('success', 'Congratulations');  
   } catch (err) {
     console.log(err);
     showAlert('error', err);
   }
 };
-
+    
 const bookBtn = document.getElementById('book-car');
 if (bookBtn)
   bookBtn.addEventListener('click', e => {
     e.target.textContent = 'Processing...'; 
-    const { tourId } = e.target.dataset;
-    bookCar(tourId);  
+    const { carId } = e.target.dataset;
+    bookCar(carId);  
 });  
 
 

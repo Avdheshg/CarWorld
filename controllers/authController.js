@@ -92,14 +92,7 @@ exports.login = async (req, res, next) => {
     }
  
     console.log(user);   
- 
-    // 3. If everything ok, generate and send token to the Client
-    // const token = signToken(user._id);
- 
-    // res.status(200).json({
-    //   status: "success",
-    //   token,
-    // });
+    
     createSendToken(user, 200, res);
 
   } catch (err) {
@@ -159,7 +152,7 @@ exports.protect = async (req, res, next) => {
         });
         
       }
-
+    
       // 4) Check if user changed password after the token was issued
       if (currentUser.changedPasswordAfter(decoded.iat)) {    
         return res.status(401).json({

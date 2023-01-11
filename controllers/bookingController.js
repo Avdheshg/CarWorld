@@ -11,10 +11,10 @@ exports.getCheckoutSession = async (req, res, next) => {
     try {
         // 1) Get the currently booked Car
         const car = await Car.findById(req.params.carID);
-        console.log("image url", `${req.protocol}://${req.get('host')}/img/cars/${car.name}-1.jpg`);
+        console.log("req.params.carID", req.params.carID);
       
         // 2) Create checkout session
-        if (car.price > 10) {
+        if (car.price > 10) {  
             car.price = 99999999;
         } else {
           car.price = car.price * 10000000;
@@ -42,7 +42,7 @@ exports.getCheckoutSession = async (req, res, next) => {
           
         // 3) Create session as response
         res.status(200).json({
-          status: 'success',     
+          status: 'success',          
           session
         });
     } catch (err) {

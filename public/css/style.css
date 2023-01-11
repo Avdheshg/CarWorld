@@ -1228,6 +1228,13 @@ body {
   margin: 0 auto;
 }
 
+.forgot-password {
+  color: grey;
+  font-size: 1.4rem;
+  margin: 2rem 0 0 1rem;
+  display: block;
+}
+
 .login-form {
   margin: 0 auto;
   max-width: 55rem;
@@ -1267,6 +1274,16 @@ body {
 }
 .form__input::-webkit-input-placeholder {
   color: #bbb;
+}
+
+.form__btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.forgot-password-submit {
+  display: block;
+  margin-top: 2rem;
 }
 
 .form__group:not(:last-child) {
@@ -1336,12 +1353,12 @@ body {
   height: 5rem;
 }
 
-.search__cars {
+/* .search__cars {
   display: flex;
   justify-content: space-between;
   padding: 5em;
   font-size: .2em;
-}
+} */
 
 .heading-tertirary__used  span {
   padding: 1rem 1.5rem;
@@ -1419,4 +1436,28 @@ background: linear-gradient(90deg, rgba(0,24,36,1) 0%, rgba(9,99,127,1) 24%, rgb
   background-color: #55c57a;
 }
 
+
+
+/* -------  PAGINATION      ------ */
+.search__cars {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 5em;
+  font-size: .2em;
+  /* border-radius: 1px solid #20bf6b; */
+}
+
+.alias__routeBtns {
+  justify-content: space-between;
+}
+
+/* PAGINATION ACTIVE BTN */
+.pagination__active {
+  background-color: #20bf6b;
+  color: #fff;
+}
+.pagination__inactive {
+  border: 1px solid #20bf6b !important;
+}
 

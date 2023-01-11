@@ -16,17 +16,8 @@ header.header
             - if (title === "Login")
             //- a.nav__el(href='/auth/login') Log in
             a.nav__el.nav__el--cta(href='/auth/signup') Sign up
+            
 
-//- <div class="dropdown">
-//-     <button class="dropbtn">Budget</button>
-//-     <div class="dropdown-content">
-//-         <a href="#">Link 1</a>
-//-         <a href="#">Link 2</a>
-//-         <a href="#">Link 3</a>
-//-     </div>
-//- </div>
-
-//- - if (!isCarDetailsPage)
 //- Show filter btns only for overview page, From newCarsController
 - if (isOverviewPage)     
     .filter-btns
@@ -50,28 +41,8 @@ header.header
                 a(href="/newCars?sort=mileage") Mileage
                 a(href="/newCars?sort=engine") Power
                 a(href="/newCars?sort=seatingCapacity") Capacity
-
-    .search__cars
+                
+    .search__cars.alias__routeBtns
         a.btn.btn--green.btn--small(href='/newCars/top-rated') Top Rated Cars
         a.btn.btn--green.btn--small(href='/newCars/top-efficient') Top Efficient Cars
-        a.btn.btn--green.btn--small(href='/newCars/top-powerful') Top Powerful Cars
-
-//- =================       Pagination     =================
-//- - url = url + "/newCars"   
-//- - if (!hasQueryString) url = url + "?"
-//- .search__cars
-    a.btn.btn--green.btn--small(href=`${url}page=1&limit=9`)= 1    
-    //- a.btn.btn--green.btn--small(href=`newCars?price[gte]=0&price[lte]=10&page=1&limit=9`) 1
-    a.btn.btn--green.btn--small(href=`${url}page=2&limit=9`)= 2 
-    a.btn.btn--green.btn--small(href=`${url}page=3&limit=9`) 3
-    a.btn.btn--green.btn--small(href=`${url}page=4&limit=9`) 4
-    a.btn.btn--green.btn--small(href=`${url}page=5&limit=9`) 5
-
-
-
-//- price, cc, mileage, capacity, rating
-
-   
-          
-
-   
+        a.btn.btn--green.btn--small(href='/newCars/top-powerful') Top Powerful Cars   

@@ -1,7 +1,7 @@
 extends base
 
 block content 
-    p=`Total cars = ${length}`
+    //- p=`Total cars = ${length}`
     main.main  
         .card-container
             
@@ -51,6 +51,14 @@ block content
                             span.card__footer-text
                         a.btn.btn--green.btn--small(href=`/newCars/${car.name}`) Details 
                         // this might be a problem bcoz in the course he is using "slug" and V R using the names. Think carefully and then it will be resolved
+
+    //- =================       Pagination     =================
+    //- paginateURL : coming from newCarsController
+    - if (!aliasRoues)
+        .search__cars
+            p= `${paginationActiveBtn}`
+            - for (var i = 1; i <= `${paginationBtnCount}`; i++)  
+                a.btn.btn--small(class=`pagination__${i === paginationActiveBtn ? 'active' : 'inactive' }` href=`${paginateURL}page=${i}`)= `${i}`                      
 
 
 
