@@ -118,17 +118,19 @@ exports.logout = (req, res) => {
 // ---------- Protect ---------------       for protecting the routes
 exports.protect = async (req, res, next) => {
   console.log("*** authController.js :: protect ***");
-
+  let restrictedCar = undefined;
+    
   // 1. Getting the token and checking if it exists
+  // console.log("url => ", req);   
   try {
       let token;
       if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
         token = req.headers.authorization.split(" ")[1];
       } else if (req.cookies.jwt) {
-        token = req.cookies.jwt;  
+        token = req.cookies.jwt;                                                
       }
       // console.log(token);
-   
+                                                                                                    
       if (!token) {
         // return res.status(401).json({
         //   status: "fail",
@@ -150,7 +152,6 @@ exports.protect = async (req, res, next) => {
           status: "fail",
           message: "The user belonging to this token does no longer exist.",
         });
-        
       }
     
       // 4) Check if user changed password after the token was issued
@@ -166,8 +167,15 @@ exports.protect = async (req, res, next) => {
       req.user = currentUser;
 
   } catch (err) {
+    // if (Object.keys(req.params.carName).length === 0) {          
+    //   paginateURL = paginateURL + "?"; 
+    // }
+    if (req.params.carName !== undefined) {   
+      restrictedCar = req.params.carName;      
+      console.log("req.params.carName", req.params.carName);
+    }
       console.log("protect MW error and no token present, so sending the Login Form. Error => ", err);
-      return res.status(200).render("login", {title: "Login"});
+      return res.status(200).render("login", {title: "Login", restrictedCar});
       // next();
   }  
       
@@ -233,7 +241,7 @@ exports.forgotPassword = async (req, res, next) => {
   const resetURL = `${req.protocol}://${req.get('host')}/api/v1/users/resetPassword/${resetToken}`;
   // console.log();
 
-  const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\nIf you didn't forget your password, please ignore this email!`;
+  const message = `Forgot your password? click the given button and submit your new password and passwordConfirm.\nIf you didn't forget your password, please ignore this email!`;
 
   try {
     await sendEmail(
@@ -281,7 +289,7 @@ exports.resetPassword = async (req, res, next) => {
   if (!user) {   
     return res.status(400).json({
       status: "fail",      
-      message: "Token is invalid or has expired"   
+      message: "Token is invalid or has expired"        
     })
   }
       
@@ -305,8 +313,7 @@ exports.resetPassword = async (req, res, next) => {
   })
 
 }
-
-
+ 
 
 
 

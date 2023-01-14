@@ -72,7 +72,7 @@ exports.getAllCars = async (req, res) => {
     
         // ==== Execute the query with pagination   ====  
         cars = await query;
-        console.log("cars", cars);
+        // console.log("cars", cars);
 
         // ==== Constructing pagination URL   ====
         let paginateURL = req.protocol + '://' + req.get('host') + req.originalUrl;
@@ -84,12 +84,12 @@ exports.getAllCars = async (req, res) => {
         } else {   
             paginateURL = paginateURL.split("page")[0];
         }
-
+   
         let paginationBtnCount = totalCars / 9;
         if (totalCars % 9 !== 0) {
             paginationBtnCount = Math.floor(paginationBtnCount) + 1;
         } 
-        console.log("length", totalCars, "paginationBtnCount",paginationBtnCount);
+        // console.log("length", totalCars, "paginationBtnCount",paginationBtnCount);
         
         res.status(200).render("overview", {  
             title: "New Cars",          
@@ -100,14 +100,14 @@ exports.getAllCars = async (req, res) => {
             isOverviewPage: true,
             // aliasRoutes,
             cars
-        });
-    } catch (err) {
+        });      
+    } catch (err) {  
         console.log(err);     
         res.status(404).json({
             status: 'fail',
             message: err
         });  
-    }
+    }     
     
 };
    
@@ -126,7 +126,7 @@ exports.getACar = async (req, res) => {
         }
     
         res.status(200).render("car", {
-            title: car.title,
+            title: car.name,
             car: car,
             isCarDetailsPage: true
         })

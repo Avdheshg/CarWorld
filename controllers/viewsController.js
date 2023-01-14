@@ -26,7 +26,7 @@ exports.getSignupForm = (req, res) => {
     console.log("*** ViewsController.js :: getSignupFrom ***");
     // deliver the login page
     res.status(200).render("signup", {
-        title: "Log In"
+        title: "Signup"
     });
 }
 

@@ -39,7 +39,7 @@ app.use((req, res, next) => {
 })
     
 // Mounting the Routers
-// app.use("/login", viewRouter);    
+// app.use("/login", viewRouter);       
 app.use("/auth", viewRouter);    
 app.use("/newCars", newCarsRouter); 
 app.use("/usedCars", usedCarsRouter);         
@@ -58,7 +58,7 @@ app.get('/order/success/:car', async (req, res) => {
 
 // at home route, sending the Index file
 app.use("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/index.html"))
+    res.sendFile(path.join(__dirname, "/index.html"));
 }); 
 
 module.exports = app;  

@@ -6,19 +6,11 @@ const newCarsController = require('./../controllers/newCarsController');
 
 const router = express.Router();     
 // console.log("inside car router");
-/* 
-If a compelte request is 
-    "/newCars/top-rated" or "/newCars?price[gte]=0&price[lte]=10" and when that will come into this router then it will become
-    "/top-rated"    or      "/?price[gte]=0&price[lte]=10"
-
-    for us this problem is coming only in query btns and not on alias routes bcoz if the query is made using query btns then after that V also need to append pagination on it
-
-*/
 
 console.log("*** newCarsRoutes.js  ***");  
-
+  
 // **** ALIASE ROUTES  **** 
-// TOP RATED
+// TOP RATED    
 router
     .route("/top-rated")
     .get(authController.protect, newCarsController.topRatedCars, newCarsController.getAllCars);
@@ -26,7 +18,7 @@ router
 // TOP EFFICIENT
 router  
     .route("/top-efficient")
-    .get(authController.protect, newCarsController.topEfficientCars, newCarsController.getAllCars);
+    .get(authController.protect, newCarsController.topEfficientCars, newCarsController.getAllCars);       
 
 // TOP POWERFUL
 router

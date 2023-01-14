@@ -1,5 +1,101 @@
 [
     {
+        "brand": "Audi",
+        "name": "q7",
+        "price": 98.55,
+        "rating": 4.1,
+        "bodyType": "suv",
+        "mileage": 10.4, 
+        "engine": 2995 ,
+        "transmission": "AMT",
+        "fuelType": "Petrol",
+        "seatingCapacity": 5,
+        "summary": "The Mercedes AMG GT 4-Door Coupe is the world’s most powerful four-door coupe. It offers hooligan performance with its earth-shattering 900Nm of torque and an impressive handling, which is a Mercedes AMG trait. At Rs 2.42 crore (ex-showroom), it sure is expensive, but the strong performance and luxurious cabin is hard to find in such a body style.",
+        "good": [
+            "Stunning SUV design",
+            "Smooth and powerful drivetrain",
+            "Comfortable SUV"
+        ],
+        "bad": [
+            "Cabin not quite pampering",
+            "Limited powertrain options",
+            "Not a off-roader"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Hyundai",
+        "name": "venue",
+        "price": 6.99,
+        "rating": 4.5,
+        "bodyType": "suv",
+        "mileage": 17.52, 
+        "engine": 998 ,
+        "transmission": "Manual, Clutchless Manual & Automatic",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "Hyundai Venue is a 5 seater Compact SUV available in a price range of ₹ 6.99 - 11.88 Lakh. It is available in 18 variants, 1 engine option and 3 transmission options : Manual, Clutchless Manual and Automatic (Dual Clutch). Other key specifications of the Venue include a Ground Clearance of 195 mm and Bootspace of 350 litres. The Venue is available in 8 colours. The mileage of Venue ranges from 17.52 kmpl to 23.4 kmpl.",
+        "good": [
+            "Features list",
+            "Quality interiors",
+            "Lots of powertrain options"
+        ],
+        "bad": [
+            "Cabin space isn’t generous",
+            "Top-spec variants are costly",
+            "Engine options should be available across all trims"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "BMW",
+        "name": "x5",
+        "price": 92,
+        "rating": 4.6,
+        "bodyType": "suv",
+        "mileage": 10.2, 
+        "engine": 2998,
+        "transmission": "AMT",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "The Mercedes AMG GT 4-Door Coupe is the world’s most powerful four-door coupe. It offers hooligan performance with its earth-shattering 900Nm of torque and an impressive handling, which is a Mercedes AMG trait. At Rs 2.42 crore (ex-showroom), it sure is expensive, but the strong performance and luxurious cabin is hard to find in such a body style.",
+        "good": [
+            "An SUV that's capable on and off-road",
+            "Equally suited to the self or chauffeur-driven",
+            "Cheaper starting price"
+        ],
+        "bad": [
+            "Slightly stiff ride quality",
+            "Too wide for everyday usability",
+            "The rear seat is not as great as some rivals"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Mercedes",
+        "name": "amg-gt",
+        "price": 98,
+        "rating": 4.9,
+        "bodyType": "coupe",
+        "mileage": 8.8, 
+        "engine": 3982 ,
+        "transmission": "AMT",
+        "fuelType": "Petrol",
+        "seatingCapacity": 2,
+        "summary": "The Mercedes AMG GT 4-Door Coupe is the world’s most powerful four-door coupe. It offers hooligan performance with its earth-shattering 900Nm of torque and an impressive handling, which is a Mercedes AMG trait. At Rs 2.42 crore (ex-showroom), it sure is expensive, but the strong performance and luxurious cabin is hard to find in such a body style.",
+        "good": [
+            "Luxurious cabin",
+            "Striking coupe design",
+            "The most powerful two-door coupe"
+        ],
+        "bad": [
+            "Unforgiving ride",
+            "Ground clearance",
+            "Extremely expensive"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
         "brand": "Maruti Suzuki",
         "name": "baleno",
         "price": 6.35,
@@ -91,6 +187,31 @@
         ],
         "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
     },
+
+    {
+        "brand": "Audi",
+        "name": "r8",
+        "price": 99.99,
+        "rating": 4.5,
+        "bodyType": "coupe",
+        "mileage": 8.1, 
+        "engine": 5204  ,
+        "transmission": "AMT",
+        "fuelType": "Petrol",
+        "seatingCapacity": 2,
+        "summary": "The Mercedes AMG GT 4-Door Coupe is the world’s most powerful four-door coupe. It offers hooligan performance with its earth-shattering 900Nm of torque and an impressive handling, which is a Mercedes AMG trait. At Rs 2.42 crore (ex-showroom), it sure is expensive, but the strong performance and luxurious cabin is hard to find in such a body style.",
+        "good": [
+            "A supercar that can be used everyday",
+            "Fabulous V10 engine",
+            "Sorted ride and handling"
+        ],
+        "bad": [
+            "ide gets uncomfortable in sportier modes",
+            "Low seating makes getting in and out difficult",
+            "Thirsty engine"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
     {
         "brand": "Maruti Suzuki",
         "name": "swift",
@@ -167,30 +288,6 @@
     },
     {
         "brand": "Hyundai",
-        "name": "venue",
-        "price": 6.99,
-        "rating": 4.5,
-        "bodyType": "suv",
-        "mileage": 17.52, 
-        "engine": 998 ,
-        "transmission": "Manual, Clutchless Manual & Automatic",
-        "fuelType": "Petrol & Diesel",
-        "seatingCapacity": 5,
-        "summary": "Hyundai Venue is a 5 seater Compact SUV available in a price range of ₹ 6.99 - 11.88 Lakh. It is available in 18 variants, 1 engine option and 3 transmission options : Manual, Clutchless Manual and Automatic (Dual Clutch). Other key specifications of the Venue include a Ground Clearance of 195 mm and Bootspace of 350 litres. The Venue is available in 8 colours. The mileage of Venue ranges from 17.52 kmpl to 23.4 kmpl.",
-        "good": [
-            "Features list",
-            "Quality interiors",
-            "Lots of powertrain options"
-        ],
-        "bad": [
-            "Cabin space isn’t generous",
-            "Top-spec variants are costly",
-            "Engine options should be available across all trims"
-        ],
-        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
-    },
-    {
-        "brand": "Hyundai",
         "name": "i20",
         "price": 6.98,
         "rating": 4.0,
@@ -261,6 +358,30 @@
     },
 
     "",
+    {
+        "brand": "Mercedes",
+        "name": "cla",
+        "price": 66.05,
+        "rating": 4.0,
+        "bodyType": "sedan",
+        "mileage": 11.5, 
+        "engine": 1993 ,
+        "transmission": "AMT",
+        "fuelType": "Petrol & Diesel",
+        "seatingCapacity": 5,
+        "summary": "The Mercedes AMG GT 4-Door Coupe is the world’s most powerful four-door coupe. It offers hooligan performance with its earth-shattering 900Nm of torque and an impressive handling, which is a Mercedes AMG trait. At Rs 2.42 crore (ex-showroom), it sure is expensive, but the strong performance and luxurious cabin is hard to find in such a body style.",
+        "good": [
+            "Beautiful design ",
+            "Driving dynamics ",
+            "Comfortable, spacious "
+        ],
+        "bad": [
+            "Boot space",
+            "isn't the easiest to get in/out",
+            "Ride is a tad noisy"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
     {
         "brand": "Tata",
         "name": "nexon",

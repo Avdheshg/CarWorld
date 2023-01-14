@@ -19,10 +19,10 @@ const showAlert = (type, msg) => {
 };
 
 // ============   LOGIN    ============ 
-const login = async (email, password) => {  
+const login = async (email, password, restrictedCar) => {  
     try {
         const res = await axios({
-            method: 'POST',
+            method: 'POST', 
             url: '/api/v1/users/login',
             data: {    
                 email,
@@ -33,10 +33,22 @@ const login = async (email, password) => {
         console.log(res);
         
       if (res.data.status === 'success') {
-        showAlert('success', 'Logged in successfully!');
+        let redirectURL = "/newCars";
+
+        // console.log("restrictedCar", typeof restrictedCar)
+        // console.log("undefined", typeof undefined)
+        if (restrictedCar !== "undefined") {
+            // console.log("restrictedCar", restrictedCar !== undefined)  
+            redirectURL = `/newCars/${restrictedCar}`;
+        }
+
+        // console.log(`redirectURL: ${redirectURL}, restrictedCar: ${restrictedCar}`);
+
+        showAlert('success', 'Logged in successfully!');   
         // alert('Logged in successfully!');
-        window.setTimeout(() => {
+        window.setTimeout(() => {  
             location.assign('/newCars');
+            location.assign(`${redirectURL}`);
         }, 1000);
       } 
     } catch (err) {
@@ -50,10 +62,17 @@ if (loginForm) {
         e.preventDefault();        
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-    
-        login(email, password);
+        
+        const restrictedCar = document.getElementById("restricted-car").value;      // from protect MW, authController
+
+        // console.log("document.getElementById('restricted-car'))", document.getElementById("restricted-car"))
+
+        // console.log("restrictedCar", restrictedCar)
+
+        login(email, password, restrictedCar);
     })
 }
+// console.log("document.getElementById('restricted__car'))", document.getElementById("restricted__car"))
 
 // ============   LogOut    ============ 
 const logout = async () => {
@@ -201,10 +220,10 @@ const resetPasswordFunction = async (password, passwordConfirm, token) => {
         console.log("POST req to /resetPassword is completed and the data is", res);       
 
         if (res.data.status === 'success') {
-            showAlert('success', 'Password changed successfully!');
+            showAlert('success', 'Password changed successfully! Please login again');
             window.setTimeout(() => {    
                 location.assign('/api/v1/users/login');      
-            }, 1000);           
+            }, 2000);           
         }        
    
     } catch (err) {
@@ -271,8 +290,18 @@ if (bookBtn)
 
 
 
+/* 
 
 
+ 
+    
+    
+    
+  
+
+
+
+*/
 
 
 
