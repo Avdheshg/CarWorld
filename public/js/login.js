@@ -19,13 +19,13 @@ const showAlert = (type, msg) => {
 };
 
 // ============   LOGIN    ============ 
-const login = async (email, password, restrictedCar) => {  
+const login = async (email, password, restrictedHomeRoute) => {  
     try {
         const res = await axios({
             method: 'POST', 
             url: '/api/v1/users/login',
             data: {    
-                email,
+                email, 
                 password
             }
         });   
@@ -35,14 +35,18 @@ const login = async (email, password, restrictedCar) => {
       if (res.data.status === 'success') {
         let redirectURL = "/newCars";
 
-        // console.log("restrictedCar", typeof restrictedCar)
+        // console.log("restrictedHomeRoute", typeof restrictedHomeRoute)
         // console.log("undefined", typeof undefined)
-        if (restrictedCar !== "undefined") {
-            // console.log("restrictedCar", restrictedCar !== undefined)  
-            redirectURL = `/newCars/${restrictedCar}`;
+        if (restrictedHomeRoute !== "undefined") {
+            if (restrictedHomeRoute.includes("brand")) {
+                redirectURL = `/newCars?${restrictedHomeRoute}`;
+            } else {
+                redirectURL = `/newCars/${restrictedHomeRoute}`;
+            }
+            // console.log("restrictedHomeRoute", restrictedHomeRoute !== undefined)  
         }
 
-        // console.log(`redirectURL: ${redirectURL}, restrictedCar: ${restrictedCar}`);
+        // console.log(`redirectURL: ${redirectURL}, restrictedHomeRoute: ${restrictedHomeRoute}`);
 
         showAlert('success', 'Logged in successfully!');   
         // alert('Logged in successfully!');
@@ -63,13 +67,13 @@ if (loginForm) {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
         
-        const restrictedCar = document.getElementById("restricted-car").value;      // from protect MW, authController
+        const restrictedHomeRoute = document.getElementById("restricted-home").value;      // from protect MW, authController
 
         // console.log("document.getElementById('restricted-car'))", document.getElementById("restricted-car"))
 
-        // console.log("restrictedCar", restrictedCar)
+        // console.log("restrictedHomeRoute", restrictedHomeRoute)
 
-        login(email, password, restrictedCar);
+        login(email, password, restrictedHomeRoute);
     })
 }
 // console.log("document.getElementById('restricted__car'))", document.getElementById("restricted__car"))

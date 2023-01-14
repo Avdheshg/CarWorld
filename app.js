@@ -63,6 +63,9 @@ app.use("/", (req, res) => {
 
 module.exports = app;  
 
+// const str = "/q7";
+// console.log(str.includes("brand"));
+
 
 // app -> Routes -> Controllers
 // 4242 4242 4242 4242

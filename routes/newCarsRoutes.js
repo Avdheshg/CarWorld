@@ -31,7 +31,7 @@ router
     // .get(newCarsController.getAllCars);
     .get(authController.protect ,newCarsController.getAllCars); 
 
-// router   
+// router      
 //     .route("/search")
 //     .get(newCarsController.getQueryCars);    
 
@@ -47,21 +47,6 @@ module.exports = router;
 
   
 
-/*
-    tourRoute == newCarRute
-*/
-
-
-
-
-/* 
-Making changes
-    newCarRoutes.js
-        router
-            .route('/newCars')  
-            .get(newCarsController.getAllCars);
-
-*/
 
 
 

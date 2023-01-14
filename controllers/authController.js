@@ -118,7 +118,10 @@ exports.logout = (req, res) => {
 // ---------- Protect ---------------       for protecting the routes
 exports.protect = async (req, res, next) => {
   console.log("*** authController.js :: protect ***");
-  let restrictedCar = undefined;
+
+  // for home restricted route
+  // let restrictedHomeCar = undefined, hoemRestrictedBrand = undefined;
+  let restrictedHomeRoute= undefined;
     
   // 1. Getting the token and checking if it exists
   // console.log("url => ", req);   
@@ -167,15 +170,16 @@ exports.protect = async (req, res, next) => {
       req.user = currentUser;
 
   } catch (err) {
-    // if (Object.keys(req.params.carName).length === 0) {          
-    //   paginateURL = paginateURL + "?"; 
-    // }
+
+    if (req.query.brand !== undefined) {
+      restrictedHomeRoute = `brand=${req.query.brand}`;
+    }
     if (req.params.carName !== undefined) {   
-      restrictedCar = req.params.carName;      
+      restrictedHomeRoute = `${req.params.carName}`;      
       console.log("req.params.carName", req.params.carName);
     }
       console.log("protect MW error and no token present, so sending the Login Form. Error => ", err);
-      return res.status(200).render("login", {title: "Login", restrictedCar});
+      return res.status(200).render("login", {title: "Login", restrictedHomeRoute});
       // next();
   }  
       
