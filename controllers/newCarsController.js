@@ -50,6 +50,7 @@ exports.getAllCars = async (req, res) => {
         paginationActiveBtn: tempOptions.paginationActiveBtn,
         isOverviewPage: tempOptions.isOverviewPage,
         imageURL: `/img/cars/`,
+        newCarDetails: true,
         cars: tempOptions.cars
     });
     
@@ -59,7 +60,7 @@ exports.getACar = async (req, res) => {
     console.log("*** newCarsCOntroller.js :: getACar ***");
 
     const tempOptions = await overviewQueryCars.getCarDetails(req, res, NewCars);
-    // console.log("newCarsCOntroller tempOptions", tempOptions)                       
+    // console.log("newCarsCOntroller tempOptions", tempOptions)                         
 
     res.status(200).render("car", { 
         title: tempOptions.title,
@@ -91,34 +92,6 @@ exports.getACar = async (req, res) => {
 
 
 
-/* 
-
-
-
-  { _id: 63c01574c229381dd478e59f, brand: 'Tata' },
-  { _id: 63c01574c229381dd478e5a4, brand: 'Mahindra' },
-  { _id: 63c01574c229381dd478e5a7, brand: 'Kia' },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
 
 
 

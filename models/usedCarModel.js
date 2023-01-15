@@ -42,7 +42,8 @@ const oldCarsSchema = new mongoose.Schema({
         // required: [true, 'A car  must have a travelled range']
     }, 
     emi: {
-        type: Number,
+        type: String,
+        trim: true,
         // required: [true, 'A car  must have a travelled range']
     }, 
     summary: {

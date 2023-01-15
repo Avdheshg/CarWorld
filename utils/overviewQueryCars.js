@@ -10,7 +10,7 @@ exports.queryCars = async (req, res, modelName) => {
             
         const queryObj = { ...req.query };             
     
-        // 1A. Filtering
+        // 1A. Filtering   
         const excludedFields = ["sort", "limit", "page", "fields"];
         excludedFields.forEach(curr => delete queryObj[curr]);
     
@@ -28,7 +28,7 @@ exports.queryCars = async (req, res, modelName) => {
         // ==== Execute the query   ====  
         let cars = await query;
         let totalCars = cars.length;
-                
+
         // Pagination
         const page = req.query.page * 1 || 1;    
         const limit = req.query.limit * 1 || 9;    

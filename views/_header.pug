@@ -1,6 +1,9 @@
+
+- let url = newCarDetails ? "newCars" : "usedCars";
+- let homeBtnText = newCarDetails ? "New Cars" : "used Cars";
 header.header
     nav.nav.nav--tours
-        a.nav__el(href='/newCars') All Cars
+        a.nav__el(href=`/${url}`)= `All ${homeBtnText}`
     .header__logo
         a(href="/")
             img(src='/img/logo-white.png' alt='logo')
@@ -25,37 +28,55 @@ header.header
         .dropdown
             button.dropbtn Budget 
             .dropdown-content
-                a(href="/newCars?price[gte]=0&price[lte]=10") 0-10L   
-                a(href="/newCars?price[gte]=10&price[lte]=20") 10-20L
-                a(href="/newCars?price[gte]=20&price[lte]=30") 20-30L
-                a(href="/newCars?price[gte]=30&price[lte]=40") 30-40L
-                a(href="/newCars?price[gte]=50") Above 50L
+                //- a(href="/newCars?price[gte]=0&price[lte]=10") 0-10L   
+                a(href=`/${url}?price[gte]=0&price[lte]=10`) 0-10L   
+                a(href=`/${url}?price[gte]=10&price[lte]=20`) 10-20L
+                a(href=`/${url}?price[gte]=20&price[lte]=30`) 20-30L
+                a(href=`/${url}?price[gte]=30&price[lte]=40`) 30-40L
+                a(href=`/${url}?price[gte]=50`) Above 50L
 
         //- ================    Brand      ================
         .dropdown
             button.dropbtn Brand 
             .dropdown-content
-                a(href="/newCars?brand=Audi") Audi   
-                a(href="/newCars?brand=Hyundai") Hyundai
-                a(href="/newCars?brand=BMW") BMW
-                a(href="/newCars?brand=Mercedes") Mercedes
-                a(href="/newCars?brand=Maruti Suzuki") Maruti Suzuki
-                a(href="/newCars?brand=Tata") Tata
-                a(href="/newCars?brand=Mahindra") Mahindra
-                a(href="/newCars?brand=Kia") Kia
+                a(href=`/${url}?brand=BMW`) BMW
+                a(href=`/${url}?brand=Mercedes`) Mercedes
+                a(href=`/${url}?brand=Maruti Suzuki`) Maruti Suzuki
+                
+                - if (newCarDetails)
+                    a(href=`/${url}?brand=Audi`) Audi   
+                    a(href=`/${url}?brand=Hyundai`) Hyundai
+                    a(href=`/${url}?brand=Tata`) Tata
+                    a(href=`/${url}?brand=Mahindra`) Mahindra
+                    a(href=`/${url}?brand=Kia`) Kia
 
+                - if (!newCarDetails)
+                    a(href=`/${url}?brand=Renault`) Renault   
+                    a(href=`/${url}?brand=Toyota`) Toyota
+                    a(href=`/${url}?brand=MG`) MG
+                    a(href=`/${url}?brand=Skoda`) Skoda
+                    a(href=`/${url}?brand=Jaguar`) Jaguar
+                    a(href=`/${url}?brand=Lexus`) Lexus
 
         //- =============   Sort By    ================
         .dropdown
             button.dropbtn Sort By 
             .dropdown-content
-                a(href="/newCars?sort=price") Price
-                a(href="/newCars?sort=rating") Rating
-                a(href="/newCars?sort=mileage") Mileage
-                a(href="/newCars?sort=engine") Power
-                a(href="/newCars?sort=seatingCapacity") Capacity
+                a(href=`/${url}?sort=price`) Price
+                a(href=`/${url}?sort=mileage`) Mileage
+
+                - if (newCarDetails)
+                    a(href=`/${url}?sort=rating`) Rating
+                    a(href=`/${url}?sort=engine`) Power
+                    a(href=`/${url}?sort=seatingCapacity`) Capacity
                 
-    .search__cars.alias__routeBtns
-        a.btn.btn--green.btn--small(href='/newCars/top-rated') Top Rated Cars
-        a.btn.btn--green.btn--small(href='/newCars/top-efficient') Top Efficient Cars
-        a.btn.btn--green.btn--small(href='/newCars/top-powerful') Top Powerful Cars   
+                - if (!newCarDetails)
+                    a(href=`/${url}?sort=travel`) Travel
+                    a(href=`/${url}?sort=emi`) EMI
+
+                
+    - if (newCarDetails)
+        .search__cars.alias__routeBtns
+            a.btn.btn--green.btn--small(href='/newCars/top-rated') Top Rated Cars
+            a.btn.btn--green.btn--small(href='/newCars/top-efficient') Top Efficient Cars
+            a.btn.btn--green.btn--small(href='/newCars/top-powerful') Top Powerful Cars   

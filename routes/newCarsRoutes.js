@@ -7,7 +7,7 @@ const newCarsController = require('./../controllers/newCarsController');
 const router = express.Router();     
 // console.log("inside car router");
 
-console.log("*** newCarsRoutes.js  ***");  
+console.log("*** newCarsRoutes.js  ***");   
   
 // **** ALIASE ROUTES  **** 
 // TOP RATED    
@@ -32,7 +32,7 @@ router
     .get(authController.protect ,newCarsController.getAllCars); 
 
 // router      
-//     .route("/search")
+//     .route("/search") 
 //     .get(newCarsController.getQueryCars);    
 
 router

@@ -65,12 +65,7 @@ app.use("/", (req, res) => {
 
 module.exports = app;  
 
-// const str = "/q7";
-// console.log(str.includes("brand"));
 
-
-// app -> Routes -> Controllers
-// 4242 4242 4242 4242
 
  
 
@@ -90,82 +85,81 @@ module.exports = app;
 
 
 
+/* 
 
+Brand Names
+    common
+        BMW     
+        Mercedes         
+        Maruti Suzuki
 
+    Used Cars
+        Renault     
+        Toyota             
+        MG      
+        Skoda           
+        Jaguar      
+        Lexus
 
+    New Cars
+        Audi        
+        Hyundai            
+        Tata        
+        Mahindra        
+        Kia
 
+Car Fields
+    Common:
+        price
+        bodyType
+        mileage
+        fuelType
 
+    NewCars
+        rating
+        engine
+        transmission
+        seatingCapacity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-    
-    {
-        "brand": "",
-        "name": "",
-        "rating": 4.2,
-        "bodyType": "hatchback",
-        "price": 4,
-        "mileage": 15, 
-        "engine": 1200,
-        "transmission": "",
-        "fuelType": "",
-        "seatingCapacity": 5,
-        "summary": "",
-        "good": [
-            ""
-        ],
-        "bad": [
-            ""
-        ],
-        "images": [
-
-        ]
-    },
+    UsedCars
+        travel
+        city
+        emi
 
 
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
