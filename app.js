@@ -14,6 +14,7 @@ const usedCarsRouter = require('./routes/usedCarRoutes');
 const userRouter = require("./routes/userRoutes");
 const viewRouter = require("./routes/viewRoutes");
 const bookingRouter = require('./routes/bookingRoutes');
+// const asd = require('./dev-data/data/import-dev-data');
 
 const app = express();    
      
@@ -33,16 +34,17 @@ app.use(cookieParser());
 console.log("*** app.js  ***");
 
 app.use((req, res, next) => {
-    // console.log("------- Inside cookie Parser");
-    // console.log("in app.js req.url", req.url);     
+    res.locals.homeRoute = "newCars"; 
     next();
 })
-    
 // Mounting the Routers
-// app.use("/login", viewRouter);       
-app.use("/auth", viewRouter);    
 app.use("/newCars", newCarsRouter); 
-app.use("/usedCars", usedCarsRouter);         
+app.use((req, res, next) => {
+    res.locals.homeRoute = "usedCars"; 
+    next();
+})
+app.use("/usedCars", usedCarsRouter);   
+
 app.use("/bookings", bookingRouter);           
    
 // router for users   

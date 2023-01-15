@@ -36,6 +36,15 @@ const oldCarsSchema = new mongoose.Schema({
         trim: true,
         required: [true, 'A car  must have a travelled range']
     }, 
+    city: {
+        type: String,
+        trim: true,
+        // required: [true, 'A car  must have a travelled range']
+    }, 
+    emi: {
+        type: Number,
+        // required: [true, 'A car  must have a travelled range']
+    }, 
     summary: {
         type: String
     }

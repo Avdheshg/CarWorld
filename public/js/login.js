@@ -19,11 +19,11 @@ const showAlert = (type, msg) => {
 };
 
 // ============   LOGIN    ============ 
-const login = async (email, password, restrictedHomeRoute) => {  
+const login = async (email, password, restrictedHomeRoute, homeRoute) => {  
     try {
         const res = await axios({
             method: 'POST', 
-            url: '/api/v1/users/login',
+            url: '/api/v1/users/login',                 // to userRouter
             data: {    
                 email, 
                 password
@@ -32,51 +32,48 @@ const login = async (email, password, restrictedHomeRoute) => {
 
         console.log(res);
         
-      if (res.data.status === 'success') {
-        let redirectURL = "/newCars";
+        if (res.data.status === 'success') {
+            // let redirectURL = "/newCars";
+            let redirectURL = `/${homeRoute}`;
 
-        // console.log("restrictedHomeRoute", typeof restrictedHomeRoute)
-        // console.log("undefined", typeof undefined)
-        if (restrictedHomeRoute !== "undefined") {
-            if (restrictedHomeRoute.includes("brand")) {
-                redirectURL = `/newCars?${restrictedHomeRoute}`;
-            } else {
-                redirectURL = `/newCars/${restrictedHomeRoute}`;
+            if (restrictedHomeRoute !== "undefined") {
+                if (restrictedHomeRoute.includes("brand")) {
+                    redirectURL = `/newCars?${restrictedHomeRoute}`;
+                } else {
+                    redirectURL = `/newCars/${restrictedHomeRoute}`;
+                }
             }
-            // console.log("restrictedHomeRoute", restrictedHomeRoute !== undefined)  
-        }
-
-        // console.log(`redirectURL: ${redirectURL}, restrictedHomeRoute: ${restrictedHomeRoute}`);
-
-        showAlert('success', 'Logged in successfully!');   
-        // alert('Logged in successfully!');
-        window.setTimeout(() => {  
-            location.assign('/newCars');
-            location.assign(`${redirectURL}`);
-        }, 1000);
-      } 
+            showAlert('success', 'Logged in successfully!');   
+            window.setTimeout(() => {  
+                // location.assign('/newCars');    
+                location.assign(`${redirectURL}`);
+            }, 1000);
+        } 
     } catch (err) {
-      showAlert("error", err.response.data.message);
+      showAlert("error", err.response.data.message);   
     } 
 };
 
 const loginForm = document.querySelector(".form--login");      
 if (loginForm) {
+    let homeRoute;
+    document.getElementById("login-btn").addEventListener("click", e => {
+        console.log("LoginForm e.target.dataset", e.target.dataset.homeRoute);
+        homeRoute = e.target.dataset.homeRoute;
+    })
     document.querySelector(".form").addEventListener("submit", e => {
         e.preventDefault();        
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
         
-        const restrictedHomeRoute = document.getElementById("restricted-home").value;      // from protect MW, authController
+        const restrictedHomeRoute = document.getElementById("restricted-home").value;      // from protect MW, authController. This will have a value only when V R coming from the home page and user is not logged in ie url contains carName or brand name
+        // const {homeRoute} = e.target.dataset;
+        // console.log(" e.target.dataset", e.target.dataset)
 
-        // console.log("document.getElementById('restricted-car'))", document.getElementById("restricted-car"))
-
-        // console.log("restrictedHomeRoute", restrictedHomeRoute)
-
-        login(email, password, restrictedHomeRoute);
+        // login(email, password, restrictedHomeRoute);
+        login(email, password, restrictedHomeRoute, homeRoute);
     })
 }
-// console.log("document.getElementById('restricted__car'))", document.getElementById("restricted__car"))
 
 // ============   LogOut    ============ 
 const logout = async () => {
@@ -234,22 +231,24 @@ const resetPasswordFunction = async (password, passwordConfirm, token) => {
         console.log("axios err",  err);
         showAlert("error", err);    
     }
-}
+} 
 
 
 // ============   STRIPE    ============    
 const stripe = Stripe('pk_test_51KpmUbSBCMWBXDgK2FzvAYGeudRKsTBjgamSnxEBAmsZggYohMDrBRg9BEe6CxBml3IBTW80dR7SV8ZLUxzxLmdC00Wj0S8h8P');
 
-export const bookCar = async carID => {
+export const bookCar = async ( carId, modelName ) => {
   try {
     // 1) Get checkout session from API
-    const session = await axios(`/bookings/checkout-session/${carID}`);
-    console.log(session);
+    console.log("url is", `/bookings/checkout-session/${carId}/${modelName}`);
+    const session = await axios(`/bookings/checkout-session/${carId}/${modelName}`); 
+    // const session = await axios(`/bookings/checkout-session/${carID}`);
+    console.log("session", session.data);
 
-    // 2) Create checkout form + chanre credit card
-    await stripe.redirectToCheckout({
+    // 2) Create checkout form + charge credit card
+    await stripe.redirectToCheckout({      
       sessionId: session.data.session.id
-    });
+    });     
     showAlert('success', 'Congratulations');  
   } catch (err) {
     console.log(err);
@@ -261,8 +260,9 @@ const bookBtn = document.getElementById('book-car');
 if (bookBtn)
   bookBtn.addEventListener('click', e => {
     e.target.textContent = 'Processing...'; 
-    const { carId } = e.target.dataset;
-    bookCar(carId);  
+    console.log("e.target.dataset", e.target.dataset);
+    const { carId, modelName } = e.target.dataset;
+    bookCar( carId, modelName );  
 });  
 
 

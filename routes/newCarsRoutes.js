@@ -11,7 +11,7 @@ console.log("*** newCarsRoutes.js  ***");
   
 // **** ALIASE ROUTES  **** 
 // TOP RATED    
-router
+router  
     .route("/top-rated")
     .get(authController.protect, newCarsController.topRatedCars, newCarsController.getAllCars);
 

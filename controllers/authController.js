@@ -132,21 +132,14 @@ exports.protect = async (req, res, next) => {
       } else if (req.cookies.jwt) {
         token = req.cookies.jwt;                                                
       }
-      // console.log(token);
                                                                                                     
       if (!token) {
-        // return res.status(401).json({
-        //   status: "fail",
-        //   message: "you are not logged in. Please login to get access",
-        // });
         throw "No token exists"
       }
 
       // // 2. Verifying the token
       const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
       
-      // console.log(decoded);  
-        
       // 3) Check if user still exists
       const currentUser = await User.findById(decoded.id);
       // console.log("currentUser", currentUser);    
@@ -170,17 +163,16 @@ exports.protect = async (req, res, next) => {
       req.user = currentUser;
 
   } catch (err) {
+    console.log("authController, req.locals", res.locals);
 
     if (req.query.brand !== undefined) {
       restrictedHomeRoute = `brand=${req.query.brand}`;
     }
     if (req.params.carName !== undefined) {   
       restrictedHomeRoute = `${req.params.carName}`;      
-      console.log("req.params.carName", req.params.carName);
     }
       console.log("protect MW error and no token present, so sending the Login Form. Error => ", err);
-      return res.status(200).render("login", {title: "Login", restrictedHomeRoute});
-      // next();
+      return res.status(200).render("login", {title: "Login", restrictedHomeRoute, homeRoute: res.locals.homeRoute});
   }  
       
   // console.log("protect MW, and calling the next MW");

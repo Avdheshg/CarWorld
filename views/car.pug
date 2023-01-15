@@ -4,7 +4,7 @@ block content
     section.section-header
         .header__hero
             .header__hero-overlay &nbsp;
-            img.header__hero-img(src=`/img/cars/${car.name}-cover.jpg`, alt='Tour 5')
+            img.header__hero-img(src=`${imageURL}${car.name}-cover.jpg`, alt='Car image')
 
         .heading-box
             h1.heading-primary
@@ -12,11 +12,13 @@ block content
             .heading-box__group
                 .heading-box__detail
                     svg.heading-box__icon
-                        use(xlink:href='/img/icons.svg#icon-clock')
-                    span.heading-box__text= `${car.price} Lack` 
-                .heading-box__detail
-                    <i class="fa fa-star" style="font-size:24px;margin-right:4px;color:#fff"></i>
-                    span.heading-box__text= `${car.rating} / 5`
+                        //- use(xlink:href='/img/icons.svg#icon-clock')
+                    <i class="fa-solid fa-indian-rupee-sign"> </i> 
+                    span.heading-box__text= ` ${car.price} Lack` 
+                - if (newCarDetails)
+                    .heading-box__detail
+                        <i class="fa fa-star" style="font-size:24px;margin-right:4px;color:#fff"></i>
+                        span.heading-box__text= `${car.rating} / 5`
 
     section.section-description
         .overview-box
@@ -30,66 +32,94 @@ block content
                         span.overview-box__text= `${car.mileage} KMPL` 
                     .overview-box__detail
                         svg.overview-box__icon
-                            use(xlink:href='/img/icons.svg#icon-trending-up')
-                        span.overview-box__label Engine
-                        span.overview-box__text= `${car.engine} cc`
-                    .overview-box__detail
-                        svg.overview-box__icon
                             use(xlink:href='/img/icons.svg#icon-user')
-                        span.overview-box__label Seating Capacity
-                        span.overview-box__text= car.seatingCapacity  
-                    .overview-box__detail
-                        svg.overview-box__icon
-                            use(xlink:href='/img/icons.svg#icon-star')
-                        span.overview-box__label Transmission
-                        span.overview-box__text=`${car.transmission}`
+                        span.overview-box__label Body Type
+                        span.overview-box__text= car.bodyType  
+                    - if (newCarDetails)
+                        .overview-box__detail
+                            svg.overview-box__icon
+                                use(xlink:href='/img/icons.svg#icon-user')
+                            span.overview-box__label Seating Capacity
+                            span.overview-box__text= car.seatingCapacity  
+                        .overview-box__detail
+                            svg.overview-box__icon
+                                use(xlink:href='/img/icons.svg#icon-trending-up')
+                            span.overview-box__label Engine
+                            span.overview-box__text= `${car.engine} cc`
+                        .overview-box__detail
+                            svg.overview-box__icon
+                                use(xlink:href='/img/icons.svg#icon-star')
+                            span.overview-box__label Transmission
+                            span.overview-box__text=`${car.transmission}`
+                    - if (!newCarDetails)
+                        .overview-box__detail
+                            svg.overview-box__icon
+                                use(xlink:href='/img/icons.svg#icon-user')
+                            span.overview-box__label Seating Capacity
+                            span.overview-box__text= car.seatingCapacity  
+                        .overview-box__detail
+                            svg.overview-box__icon
+                                use(xlink:href='/img/icons.svg#icon-trending-up')
+                            span.overview-box__label Travel
+                            span.overview-box__text= `${car.travel} kms` 
+                        .overview-box__detail
+                            svg.overview-box__icon
+                                use(xlink:href='/img/icons.svg#icon-star')
+                            span.overview-box__label Fuel Type
+                            span.overview-box__text=`${car.fuelType}`
+                        .overview-box__detail
+                            svg.overview-box__icon
+                                use(xlink:href='/img/icons.svg#icon-star')
+                            span.overview-box__label City
+                            span.overview-box__text= car.city
+                        .overview-box__detail
+                            svg.overview-box__icon
+                                use(xlink:href='/img/icons.svg#icon-star')
+                            span.overview-box__label EMI
+                            span.overview-box__text= car.emi
 
         .description-box
             h2.heading-secondary.ma-bt-lg= `About ${car.brand} ${car.name}`
             p.description__text= car.summary 
-            //- p.description__text Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!
 
     section.section-pictures
         .picture-box
-            img.picture-box__img.picture-box__img--1(src=`/img/cars/${car.name}-1.jpg`, alt=`${car.name} image-1`)
+            img.picture-box__img.picture-box__img--1(src=`${imageURL}${car.name}-1.jpg`, alt=`${car.name} image-1`)
             //- p= {console.log(src)}; 
         .picture-box
-            img.picture-box__img.picture-box__img--2(src=`/img/cars/${car.name}-2.jpg`, alt=`${car.name} image-2`)
+            img.picture-box__img.picture-box__img--2(src=`${imageURL}${car.name}-2.jpg`, alt=`${car.name} image-2`)
         .picture-box
-            img.picture-box__img.picture-box__img--3(src=`/img/cars/${car.name}-3.jpg`, alt=`${car.name} image-3`)
+            img.picture-box__img.picture-box__img--3(src=`${imageURL}${car.name}-3.jpg`, alt=`${car.name} image-3`)
 
     //- section.section-map
     //-     #map
 
-    section.section-reviews
-        .reviews
+    - if (newCarDetails)
+        section.section-reviews
+            .reviews
 
-            .reviews__card
-                .reviews__avatar
-                    //- img.reviews__avatar-img(src='/img/users/user-7.jpg', alt='Jim Brown')
-                    h6.reviews__user The Good
-                each goodReview in car.good
-                    p.reviews__text= `${goodReview}` 
-                    //- p.reviews__text= `${car.good[1]}` 
-                    //- p.reviews__text= `${car.good[2]}` 
+                .reviews__card
+                    .reviews__avatar
+                        h6.reviews__user The Good
+                    each goodReview in car.good
+                        p.reviews__text= `${goodReview}`  
 
-            .reviews__card
-                .reviews__avatar
-                    //- img.reviews__avatar-img(src='/img/users/user-7.jpg', alt='Jim Brown')
-                    h6.reviews__user Needs Improvement
-                each badReview in car.bad
-                    p.reviews__text= `${badReview}` 
-                    //- p.reviews__text= `${car.bad[1]}` 
+                .reviews__card
+                    .reviews__avatar
+                        h6.reviews__user Needs Improvement
+                    each badReview in car.bad
+                        p.reviews__text= `${badReview}` 
                 
     section.section-cta
         .cta
             .cta__img.cta__img--logo
-                img(src='/img/logo-white.png', alt='Natours logo')
+                img(src='/img/logo-white.png', alt='Car World logo')
             img.cta__img.cta__img--1(src=`/img/`, alt=``)
             img.cta__img.cta__img--2(src=`/img/`, alt=``) 
             .cta__content
                 h2.heading-secondary What are you waiting for?
-                button.btn.btn--green.span-all-rows#book-car(data-car-id=`${car._id}`)= ` Book ${car.name} now!`
+                - let modelName = newCarDetails ? "NewCars" : "UsedCars"
+                button.btn.btn--green.span-all-rows#book-car(data-car-id=`${car._id}`, data-model-name=`${modelName}`)= ` Book ${car.name} now!`
 
 
     script(src='https://js.stripe.com/v3/')

@@ -12,10 +12,10 @@ block content
           label.form__label(for='password') Password                
           input#password.form__input(type='password', placeholder='••••••••',value="wqe980l123", required, minlength='8')
         .form__group.form__btns
-          button.btn.btn--green Login
+          button.btn.btn--green#login-btn(data-home-route=`${homeRoute}`) Login
           a.forgot-password(href="/api/v1/users/forgotPassword") Forgot Password
 
     input#restricted-home(type='hidden', value=`${restrictedHomeRoute}`)
       
 
-          
+             

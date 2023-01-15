@@ -12,9 +12,8 @@ block content
                 span=  `${car.brand} ${car.name}`
             .heading-box__group
                 .heading-box__detail
-                    <i class="fa fa-money" style="font-size:24px;margin-right:4px"></i>
-                    h3 
-                        span.heading-box__text= `${car.price} Lack` 
+                    <i class="fa-solid fa-indian-rupee-sign"> </i> 
+                    span.heading-box__text= `${car.price} Lack` 
                 
 
     section.section-description
@@ -29,14 +28,14 @@ block content
                         span.overview-box__text= `${car.mileage} KMPL` 
                     .overview-box__detail
                         svg.overview-box__icon
-                            use(xlink:href='/img/icons.svg#icon-trending-up')
-                        span.overview-box__label Travel
-                        span.overview-box__text= `${car.travel} kms`
-                    .overview-box__detail
-                        svg.overview-box__icon
                             use(xlink:href='/img/icons.svg#icon-user')
                         span.overview-box__label Seating Capacity
-                        span.overview-box__text 5 
+                        span.overview-box__text= car.seatingCapacity 
+                    .overview-box__detail
+                        svg.overview-box__icon
+                            use(xlink:href='/img/icons.svg#icon-trending-up')
+                        span.overview-box__label Travel
+                        span.overview-box__text= `${car.travel} kms` 
                     .overview-box__detail
                         svg.overview-box__icon
                             use(xlink:href='/img/icons.svg#icon-star')

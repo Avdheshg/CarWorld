@@ -8,6 +8,13 @@ const router = express.Router();
 console.log("*** userRoutes.js  ***");
     
 // ===========         SIGNUP    =============
+router.get("/signup", (req, res) => {
+  console.log("*** ViewsController.js :: getSignupFrom ***");
+  // deliver the login page
+  res.status(200).render("signup", {
+      title: "Signup"
+  });
+});
 router.post('/signup', authController.signup);
 
 // ===========         LOGIN    =============

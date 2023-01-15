@@ -7,6 +7,8 @@
         "mileage": 14,  
         "travel": "20,946", 
         "fuelType": "Petrol",
+        "city": "Gurgaon",
+        "emi": 4344,
         "summary": "Renault KWID is a 5 seater Hatchback available in a price range of Rs. 4.49 - 5.83 Lakh*. It is available in 8 variants, 2 engine options that are BS4/BS6 compliant and 2 transmission options: Manual & Automatic. Other key specifications of the KWID include a kerb weight of, ground clearance of 184 and boot space of 279 Liters. The KWID is available in 7 colours. Over 882 User reviews basis Mileage, Performance, Price and overall experience of users for Renault KWID."
     },
     {
@@ -17,6 +19,8 @@
         "mileage": 11, 
         "travel": "67,976", 
         "fuelType": "Diesel",
+        "city": "Delhi",
+        "emi": 50882,
         "summary": "Toyota Innova Crysta is a 7 seater MUV available in a price range of Rs. 17.86 - 25.68 Lakh*. It is available in 18 variants, 2 engine options that are BS6 compliant and 2 transmission options: Manual & Automatic. Other key specifications of the Innova Crysta include a kerb weight of 1920 and boot space of 300 Liters. The Innova Crysta is available in 7 colours. Over 161 User reviews basis Mileage, Performance, Price and overall experience of users for Toyota Innova Crysta."
     },
 
@@ -28,6 +32,8 @@
         "mileage": 15, 
         "travel": "14,234", 
         "fuelType": "Petrol",
+        "city": "Bangalore",
+        "emi": 18616,
         "summary": "Maruti Suzuki Vitara Brezza is a 5 seater Compact SUV available in a price range of ₹ 7.68 - 11.33 Lakh. It is available in 9 variants, 1 engine option and 2 transmission options : Manual and Automatic (Torque Converter). Other key specifications of the Vitara Brezza include a Ground Clearance of 198 mm, Kerb Weight of 1110 kg and Bootspace of 328 litres. The Vitara Brezza is available in 9 colours. The mileage of Vitara Brezza ranges from 17.03 kmpl to 18.76 kmpl."
     },
     {
@@ -38,6 +44,8 @@
         "mileage": 12, 
         "travel": "42,623", 
         "fuelType": "Diesel",
+        "city": "Jaipur",
+        "emi": 46911,
         "summary": "MG Hector Plus is a 6 seater SUV available in a price range of Rs. 16.14 - 20.74 Lakh*. It is available in 10 variants, 2 engine options that are BS6 compliant and 2 transmission options: Automatic & Manual. Other key specifications of the Hector Plus include a kerb weight of and boot space of 155 l Liters. The Hector Plus is available in 6 colours. Over 148 User reviews basis Mileage, Performance, Price and overall experience of users for MG Hector Plus."
     },
 
@@ -49,6 +57,8 @@
         "mileage": 17, 
         "travel": "19,000", 
         "fuelType": "Petrol",
+        "city": "Mumbai",
+        "emi": 14800,
         "summary": "Skoda Octavia is a 5 seater Sedan available in a price range of Rs. 26.29 - 29.29 Lakh*. It is available in 2 variants, a 1984 cc, BS6 and a single Automatic transmission. Other key specifications of the Octavia include a kerb weight of 1459, ground clearance of 137 and boot space of 600 Liters. The Octavia is available in 5 colours. Over 29 User reviews basis Mileage, Performance, Price and overall experience of users for Skoda Octavia."
     },
 
@@ -60,6 +70,8 @@
         "mileage": 13, 
         "travel": "96,345", 
         "fuelType": "Diesel",
+        "city": "Gurgaon",
+        "emi": 84000,
         "summary": "Mercedes-Benz C Class is a Sedan available in a price range of ₹ 49.99 - 51.72 Lakh. It is available in 2 variants, 1 engine option. Other key specifications of the C Class include a Ground Clearance of 157 mm and Bootspace of 480 litres. The C Class is available in 6 colours."
     },
 
@@ -71,6 +83,8 @@
         "mileage": 9, 
         "travel": "98,114", 
         "fuelType": "Diesel",
+        "city": "Agra",
+        "emi": 44662,
         "summary": "Mercedes-Benz GLA is a 5 seater Luxury available in a price range of Rs. 44.00 - 48.10 Lakh*. It is available in 3 variants, 2 engine options that are BS6 compliant and a single Automatic transmission. Other key specifications of the GLA include a kerb weight of and boot space of Liters. The GLA is available in 5 colours. Over 19 User reviews basis Mileage, Performance, Price and overall experience of users for Mercedes-Benz GLA."
     },
 
@@ -81,6 +95,8 @@
         "bodyType": "sedan",
         "mileage": 10, 
         "travel": "64,634", 
+        "city": "Pune",
+        "emi": 80869,
         "fuelType": "Petrol Diesel",
         "summary": "BMW 5 Series is a 5 seater Sedan available in a price range of Rs. 63.90 - 74.00 Lakh*. It is available in 3 variants, 3 engine options that are BS6 compliant and a single Automatic transmission. Other key specifications of the 5 Series include a kerb weight of and boot space of Liters. The 5 Series is available in 4 colours. Over 3 User reviews basis Mileage, Performance, Price and overall experience of users for BMW 5 Series."
     },
@@ -93,6 +109,8 @@
         "mileage": 11, 
         "travel": "63,134", 
         "fuelType": "Diesel",
+        "city": "Gurgaon",
+        "emi": 90458,
         "summary": "BMW X5 is a 5 seater Luxury available in a price range of Rs. 77.90 - 92.90 Lakh*. It is available in 4 variants, 2 engine options that are BS6 compliant and a single Automatic transmission. Other key specifications of the X5 include a kerb weight of and boot space of Liters. The X5 is available in 3 colours. Over 32 User reviews basis Mileage, Performance, Price and overall experience of users for BMW X5."
     },
     {
@@ -103,6 +121,8 @@
         "mileage": 8, 
         "travel": "14,134", 
         "fuelType": "Petrol",
+        "city": "Chennai",
+        "emi": 65214,
         "summary": "Jaguar F-Pace is a 5 seater SUV available in a price range of Rs. 74.86 Lakh - 1.51 Cr*. It is available in 3 variants, 2 engine options that are BS6 compliant and a single Automatic transmission. Other key specifications of the F-Pace include a kerb weight of and boot space of 793 Liters. The F-Pace is available in 24 colours. Over 5 User reviews basis Mileage, Performance, Price and overall experience of users for Jaguar F-Pace."
     },
 
@@ -114,9 +134,11 @@
         "mileage": 10, 
         "travel": "49,134", 
         "fuelType": "Diesel",
+        "city": "Gurgaon",
+        "emi": 98245,
         "summary": "Lexus LS is a 4 seater Super Luxury available in a price range of Rs. 1.91 - 2.22 Cr*. It is available in 3 variants, Other key specifications of the LS include a kerb weight of 2280Kg, ground clearance of 147mm and boot space of 430 Liters. The LS is available in 12 colours. Over 6 User reviews basis Mileage, Performance, Price and overall experience of users for Lexus LS."
     }
-]
+] 
 
 
 

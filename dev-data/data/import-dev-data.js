@@ -16,8 +16,7 @@ const DB = process.env.DATABASE.replace(
   process.env.DATABASE_PASSWORD
 );
 
-mongoose
-  .connect(DB, {
+mongoose.connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: true,
@@ -52,18 +51,28 @@ const importData = async () => {
 // used cars
 const importDataUsedCars = async () => {
   try {
-    await UsedCars.create(usedCars);
-    console.log("Data successfully loaded ***********");
+    const cars = await UsedCars.create(usedCars);
+    console.log("Data successfully loaded ***********", cars);
   } catch (err) {
     console.log(err);
   }
   process.exit();
 };
 
-// Delete the data
-const deleteData = async () => {
+// Delete new cars data
+const deleteNewCars = async () => {
   try {
     await NewCars.deleteMany();
+    console.log("Data successfully deleted");
+  } catch (err) {
+    console.log(err);
+  }
+  process.exit();
+};
+
+const deleteUsedCars = async () => {
+  try {
+    await UsedCars.deleteMany();
     console.log("Data successfully deleted");
   } catch (err) {
     console.log(err);
@@ -75,8 +84,10 @@ if (process.argv[2] === "--import") {
   importData();
 } else if (process.argv[2] === "--import-used") {
   importDataUsedCars();
-} else if (process.argv[2] === "--delete") {
-  deleteData();
+} else if (process.argv[2] === "--deleteNewCars") {
+  deleteNewCars();
+} else if (process.argv[2] === "--deleteUsedCars") {
+  deleteUsedCars();
 }
 
 // console.log(process.argv);

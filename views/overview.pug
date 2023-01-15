@@ -10,47 +10,67 @@ block content
                     .card__header
                         .card__picture
                             .card__picture-overlay &nbsp;
-                            img.card__picture-img(src=`/img/cars/${car.name}-cover.jpg`, alt=`${car.name}`)
-                            //- img.card__picture-img(src="img/", alt=`${car.name}`)
+                            img.card__picture-img(src=`${imageURL}${car.name}-cover.jpg`, alt=`${car.name}`)
                         h3.heading-tertirary
                             span= car.name
 
                     .card__details
                         h4.card__sub-heading= `${car.brand} `
-                        //- p.card__text= car.summary  
-                        .card__data
-                            
-                            svg.card__icon
-                                use(xlink:href='/img/icons.svg#icon-user')
-                                
-                            span= car.seatingCapacity 
-                        .card__data
-                            //- svg.card__icon
-                            <i class="fa fa-car" style="font-size:20px;margin-right:4px;color:#55c57a"></i>
-                            span= car.bodyType 
-                        .card__data
-                            svg.card__icon
-                                use(xlink:href='/img/icons.svg#icon-flag')
-                            span= `${car.mileage} kmpl`
-                        .card__data
-                            <i class="fa fa-star" style="font-size:24px;margin-right:4px;color:#55c57a"></i>
-                            span= `${car.engine} cc`
-                        .card__data
-                            <i class="fa fa-gear" style="font-size:24px;margin-right:4px;color:#55c57a"></i>
-                            span= car.transmission 
-                        .card__data
-                            <i class="fa fa-assistive-listening-systems" style="font-size:20px;margin-right:4px;margin-right:4px;color:#55c57a"></i>
-                            span= car.fuelType 
+                        - if (title === "New Cars")
+                            .card__data
+                                svg.card__icon
+                                    use(xlink:href='/img/icons.svg#icon-user')
+                                span= car.seatingCapacity 
+                            .card__data
+                                //- svg.card__icon
+                                <i class="fa fa-car" style="font-size:20px;margin-right:4px;color:#55c57a"></i>
+                                span= car.bodyType 
+                            .card__data
+                                svg.card__icon
+                                    use(xlink:href='/img/icons.svg#icon-flag')
+                                span= `${car.mileage} kmpl`
+                            .card__data
+                                <i class="fa fa-star" style="font-size:24px;margin-right:4px;color:#55c57a"></i>
+                                span= `${car.engine} cc`
+                            .card__data
+                                <i class="fa fa-gear" style="font-size:24px;margin-right:4px;color:#55c57a"></i>
+                                span= car.transmission 
+                            .card__data
+                                <i class="fa fa-assistive-listening-systems" style="font-size:20px;margin-right:4px;margin-right:4px;color:#55c57a"></i>
+                                span= car.fuelType 
+
+                        - if (title === "Used Cars")
+                            .card__data
+                                <i class="fa fa-dashboard" style="font-size:20px;margin-right: 4px"></i>
+                                span= `${car.travel} kms`
+                            .card__data
+                                    <i class="fa fa-car" style="font-size:20px;margin-right: 4px"></i>
+                                    span= car.bodyType 
+                            .card__data
+                                <i class="fa fa-dot-circle-o" style="font-size:20px;margin-right:4px"></i>
+                                span= `${car.mileage} kmpl`
+                            .card__data
+                                <i class="fa fa-assistive-listening-systems" style="font-size:20px"></i>
+                                span= car.fuelType
+                            .card__data
+                                <i class="fa-light fa-user"></i>
+                                <i class="fa-solid fa-location-dot" style="font-size:20px"></i>  
+                                span= car.city
+                            .card__data
+                                <i class="fa-solid fa-wallet" style="font-size:20px"></i> 
+                                span= car.emi
 
                     .card__footer
-                        p
-                            span.card__footer-value= `${car.price} Lack`
+                        p   
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                            span.card__footer-value= ` ${car.price} Lakh`
                             span.card__footer-text 
                         p.card__ratings
-                            span.card__footer-value= `Rating: ${car.rating} / 5`
-                            span.card__footer-text
-                        a.btn.btn--green.btn--small(href=`/newCars/${car.name}`) Details 
-                        // this might be a problem bcoz in the course he is using "slug" and V R using the names. Think carefully and then it will be resolved
+                            - if (title === "New Cars")
+                                span.card__footer-value= `Rating: ${car.rating} / 5`
+                                span.card__footer-text
+                        - let resource = title === "New Cars" ? "newCars" : "usedCars"
+                            a.btn.btn--green.btn--small(href=`/${resource}/${car.name}`) Details 
 
     //- =================       Pagination     =================
     //- paginateURL : coming from newCarsController
