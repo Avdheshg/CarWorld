@@ -1,5 +1,8 @@
 :root {
   --section-rotate: 9vw;
+  --color-newCars: #55c57a; 
+  --color-usedCars: #00AE89; 
+  /* --color-usedCars: ;  */
 }
 
 ::-moz-selection {
@@ -146,7 +149,8 @@ body {
   text-transform: uppercase;
   font-weight: 300;
 }
-.heading-primary span,
+/* at end, overriden */
+.heading-primary span,            
 .heading-tertirary span {
   padding: 1rem 1.5rem;
   line-height: 1;
@@ -376,7 +380,7 @@ body {
     from(#7dd56f),
     to(#28b487)
   );
-  background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
+  background-image: linear-gradient(to right bottom, #454944, #28b487);
   opacity: 0.85;
 }
 
@@ -630,7 +634,7 @@ body {
   flex-direction: column;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+  /* align-items: center; */
 }
 .reviews:before,
 .reviews:after {
@@ -1459,5 +1463,83 @@ background: linear-gradient(90deg, rgba(0,24,36,1) 0%, rgba(9,99,127,1) 24%, rgb
 }
 .pagination__inactive {
   border: 1px solid #20bf6b !important;
+}
+
+.pagination__used-active {
+  background-color: var(--color-usedCars) !important;
+  color: #fff;
+  /* border: 1px solid #2B2E4A !important; */
+}
+
+.pagination__used-inactive {
+  /* background-color: #2B2E4A !important; */
+  border: 1px solid var(--color-usedCars) !important;
+}
+
+/* CARD ICONS */
+.card__data i,
+.heading-box__detail i,
+i {
+    font-size:20px;
+    /* margin-right: 4px */
+    margin: 4px;
+}
+.heading-box__detail span {
+  font-size: 2rem;
+}
+
+.new-cars-color {
+  color:#55c57a;
+}
+
+.used-cars-bg {
+  background-color: var(--color-usedCars) !important;
+  /* background-image: none; */
+}
+.used-cars-color {
+  color: var(--color-usedCars) !important;
+}
+
+.used-cars-overlay {
+  background-image: -webkit-gradient( linear, left top, right bottom, from(#7dd56f), to(#28b487) );
+  background-image: linear-gradient(to right bottom, #7dd56f, var(--color-usedCars));
+
+  /* background-image: -webkit-gradient( linear, left top, right bottom, from(#7dd56f), to(#28b487) );
+  background-image: linear-gradient(to right bottom, #7dd56f, #28b487); */
+}
+
+/* .dropdown:hover.used-cars-bg  {
+  background-color: #313664;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #55c57a;
+} */
+
+.heading-tertirary .used-cars-bg,
+.heading-primary .used-cars-bg {
+  background-color: var(--color-usedCars) !important;
+  background: rgb(2,0,36);
+  /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(27,29,51,1) 40%, rgba(33,128,147,1) 100%); */
+}
+
+/* FOOTER */
+.footer__copyright-color {
+  color: #55c57a;
+}
+
+.footer__copyright--used-color {
+  color: var(--color-usedCars);
+}
+
+/* car details, i */
+.overview-box__detail i {
+  margin-right: 1rem;
+}
+
+/* BOOK NOW Btn image */
+.cta__img--1 {
+  transform: translate(25%, -50%) scale(0.97);
+  object-fit: cover;
 }
 

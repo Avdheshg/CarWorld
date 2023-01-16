@@ -8,13 +8,13 @@ block content
 
         .heading-box
             h1.heading-primary
-                span=  `${car.brand} ${car.name}`
+                span(class=`${carColor}-bg`)=  `${car.brand} ${car.name}`
             .heading-box__group
                 .heading-box__detail
                     svg.heading-box__icon
                         //- use(xlink:href='/img/icons.svg#icon-clock')
                     <i class="fa-solid fa-indian-rupee-sign"> </i> 
-                    span.heading-box__text= ` ${car.price} Lack` 
+                    span.heading-box__text= ` ${car.price} Lakh` 
                 - if (newCarDetails)
                     .heading-box__detail
                         <i class="fa fa-star" style="font-size:24px;margin-right:4px;color:#fff"></i>
@@ -26,55 +26,43 @@ block content
                 .overview-box__group
                     h2.heading-secondary.ma-bt-lg Details 
                     .overview-box__detail
-                        svg.overview-box__icon
-                            use(xlink:href='/img/icons.svg#icon-calendar')
+                        i.fa-solid.fa-circle-dot(class=`${carColor}-color`)
                         span.overview-box__label Mileage
                         span.overview-box__text= `${car.mileage} KMPL` 
                     .overview-box__detail
-                        svg.overview-box__icon
-                            use(xlink:href='/img/icons.svg#icon-user')
+                        i.fa.fa-car(class=`${carColor}-color`)
                         span.overview-box__label Body Type
                         span.overview-box__text= car.bodyType  
-                    - if (newCarDetails)
+                    .overview-box__detail
+                        i.fa-solid.fa-user(class=`${carColor}-color`)
+                        span.overview-box__label Seating Capacity
+                        span.overview-box__text= car.seatingCapacity 
+                    .overview-box__detail
+                        i.fa-solid.fa-gas-pump(class=`${carColor}-color`)
+                        span.overview-box__label Fuel Type
+                        span.overview-box__text=`${car.fuelType}`
+
+                    - if (newCarDetails) 
                         .overview-box__detail
-                            svg.overview-box__icon
-                                use(xlink:href='/img/icons.svg#icon-user')
-                            span.overview-box__label Seating Capacity
-                            span.overview-box__text= car.seatingCapacity  
-                        .overview-box__detail
-                            svg.overview-box__icon
-                                use(xlink:href='/img/icons.svg#icon-trending-up')
+                            i.fa-solid.fa-gauge-high(class=`${carColor}-color`)
                             span.overview-box__label Engine
                             span.overview-box__text= `${car.engine} cc`
                         .overview-box__detail
-                            svg.overview-box__icon
-                                use(xlink:href='/img/icons.svg#icon-star')
+                            i.fa-solid.fa-gear(class=`${carColor}-color`)
                             span.overview-box__label Transmission
                             span.overview-box__text=`${car.transmission}`
+
                     - if (!newCarDetails)
                         .overview-box__detail
-                            svg.overview-box__icon
-                                use(xlink:href='/img/icons.svg#icon-user')
-                            span.overview-box__label Seating Capacity
-                            span.overview-box__text= car.seatingCapacity  
-                        .overview-box__detail
-                            svg.overview-box__icon
-                                use(xlink:href='/img/icons.svg#icon-trending-up')
+                            i.fa-sharp.fa-solid.fa-road(class=`${carColor}-color`)
                             span.overview-box__label Travel
                             span.overview-box__text= `${car.travel} kms` 
                         .overview-box__detail
-                            svg.overview-box__icon
-                                use(xlink:href='/img/icons.svg#icon-star')
-                            span.overview-box__label Fuel Type
-                            span.overview-box__text=`${car.fuelType}`
-                        .overview-box__detail
-                            svg.overview-box__icon
-                                use(xlink:href='/img/icons.svg#icon-star')
+                            i.fa-solid.fa-location-dot(class=`${carColor}-color`)
                             span.overview-box__label City
                             span.overview-box__text= car.city
                         .overview-box__detail
-                            svg.overview-box__icon
-                                use(xlink:href='/img/icons.svg#icon-star')
+                            i.fa-solid.fa-wallet(class=`${carColor}-color`)
                             span.overview-box__label EMI
                             span.overview-box__text= car.emi
 
@@ -97,7 +85,6 @@ block content
     - if (newCarDetails)
         section.section-reviews
             .reviews
-
                 .reviews__card
                     .reviews__avatar
                         h6.reviews__user The Good
@@ -114,12 +101,12 @@ block content
         .cta
             .cta__img.cta__img--logo
                 img(src='/img/logo-white.png', alt='Car World logo')
-            img.cta__img.cta__img--1(src=`/img/`, alt=``)
-            img.cta__img.cta__img--2(src=`/img/`, alt=``) 
+            img.cta__img.cta__img--1(src=`${imageURL}${car.name}-cover.jpg`, alt=``)
+            //- img.cta__img.cta__img--2(src=`/img/`, alt=``) 
             .cta__content
-                h2.heading-secondary What are you waiting for?
+                h2.heading-secondary(class=`${carColor}-color`) What are you waiting for?
                 - let modelName = newCarDetails ? "NewCars" : "UsedCars"
-                button.btn.btn--green.span-all-rows#book-car(data-car-id=`${car._id}`, data-model-name=`${modelName}`)= ` Book ${car.name} now!`
+                button.btn.btn--green.span-all-rows#book-car(class=`${carColor}-bg`)(data-car-id=`${car._id}`, data-model-name=`${modelName}`)= ` Book ${car.name} now!`
 
 
     script(src='https://js.stripe.com/v3/')

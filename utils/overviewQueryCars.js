@@ -14,7 +14,7 @@ exports.queryCars = async (req, res, modelName) => {
         const excludedFields = ["sort", "limit", "page", "fields"];
         excludedFields.forEach(curr => delete queryObj[curr]);
     
-        // 1B. Advanced filtering: gte
+        // 1B. Advanced filtering: gte    
         let queryString = JSON.stringify(queryObj);
         queryString = queryString.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`);  
     

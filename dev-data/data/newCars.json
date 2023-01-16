@@ -7,7 +7,7 @@
         "bodyType": "suv",
         "mileage": 10.4, 
         "engine": 2995 ,
-        "transmission": "AMT",
+        "transmission": "Automatic",
         "fuelType": "Petrol",
         "seatingCapacity": 5,
         "summary": "The Mercedes AMG GT 4-Door Coupe is the world’s most powerful four-door coupe. It offers hooligan performance with its earth-shattering 900Nm of torque and an impressive handling, which is a Mercedes AMG trait. At Rs 2.42 crore (ex-showroom), it sure is expensive, but the strong performance and luxurious cabin is hard to find in such a body style.",
@@ -31,7 +31,7 @@
         "bodyType": "suv",
         "mileage": 17.52, 
         "engine": 998 ,
-        "transmission": "Manual, Clutchless Manual & Automatic",
+        "transmission": "Manual & Automatic",
         "fuelType": "Petrol & Diesel",
         "seatingCapacity": 5,
         "summary": "Hyundai Venue is a 5 seater Compact SUV available in a price range of ₹ 6.99 - 11.88 Lakh. It is available in 18 variants, 1 engine option and 3 transmission options : Manual, Clutchless Manual and Automatic (Dual Clutch). Other key specifications of the Venue include a Ground Clearance of 195 mm and Bootspace of 350 litres. The Venue is available in 8 colours. The mileage of Venue ranges from 17.52 kmpl to 23.4 kmpl.",
@@ -55,7 +55,7 @@
         "bodyType": "suv",
         "mileage": 10.2, 
         "engine": 2998,
-        "transmission": "AMT",
+        "transmission": "Automatic",
         "fuelType": "Petrol & Diesel",
         "seatingCapacity": 5,
         "summary": "The Mercedes AMG GT 4-Door Coupe is the world’s most powerful four-door coupe. It offers hooligan performance with its earth-shattering 900Nm of torque and an impressive handling, which is a Mercedes AMG trait. At Rs 2.42 crore (ex-showroom), it sure is expensive, but the strong performance and luxurious cabin is hard to find in such a body style.",
@@ -79,7 +79,7 @@
         "bodyType": "coupe",
         "mileage": 8.8, 
         "engine": 3982 ,
-        "transmission": "AMT",
+        "transmission": "Automatic",
         "fuelType": "Petrol",
         "seatingCapacity": 2,
         "summary": "The Mercedes AMG GT 4-Door Coupe is the world’s most powerful four-door coupe. It offers hooligan performance with its earth-shattering 900Nm of torque and an impressive handling, which is a Mercedes AMG trait. At Rs 2.42 crore (ex-showroom), it sure is expensive, but the strong performance and luxurious cabin is hard to find in such a body style.",
@@ -103,10 +103,10 @@
         "bodyType": "hatchback",
         "mileage": 22.94, 
         "engine": 1197 ,
-        "transmission": "Manual & AMT",
+        "transmission": "Manual & Automatic",
         "fuelType": "Petrol",
         "seatingCapacity": 5,
-        "summary": "Maruti Suzuki Baleno is a 5 seater Hatchback available in a price range of ₹ 6.35 - 9.49 Lakh. It is available in 7 variants, 1 engine option and 2 transmission options : Manual and AMT. Other key specifications of the Baleno include a Kerb Weight of 920 kg and Bootspace of 318 litres. The Baleno is available in 6 colours. The mileage of Baleno ranges from 22.35 kmpl to 22.94 kmpl.",
+        "summary": "Maruti Suzuki Baleno is a 5 seater Hatchback available in a price range of ₹ 6.35 - 9.49 Lakh. It is available in 7 variants, 1 engine option and 2 transmission options : Manual and Automatic. Other key specifications of the Baleno include a Kerb Weight of 920 kg and Bootspace of 318 litres. The Baleno is available in 6 colours. The mileage of Baleno ranges from 22.35 kmpl to 22.94 kmpl.",
         "good": [
             "Spacious cabin ",
             "Peppy refined engine"
@@ -149,10 +149,10 @@
         "bodyType": "sedan",
         "mileage": 23.26, 
         "engine": 1197 ,
-        "transmission": "Manual & AMT",
+        "transmission": "Manual & Automatic",
         "fuelType": "Petrol",
         "seatingCapacity": 5,
-        "summary": "Maruti Suzuki Dzire is a 5 seater Compact Sedan available in a price range of ₹ 6.09 - 9.13 Lakh. It is available in 7 variants, 1 engine option and 2 transmission options : Manual and AMT. Other key specifications of the Dzire include a Ground Clearance of 163 mm, Kerb Weight of 880 kg and Bootspace of 378 litres. The Dzire is available in 6 colours. The mileage of Dzire ranges from 23.26 kmpl to 24.12 kmpl.",
+        "summary": "Maruti Suzuki Dzire is a 5 seater Compact Sedan available in a price range of ₹ 6.09 - 9.13 Lakh. It is available in 7 variants, 1 engine option and 2 transmission options : Manual and Automatic. Other key specifications of the Dzire include a Ground Clearance of 163 mm, Kerb Weight of 880 kg and Bootspace of 378 litres. The Dzire is available in 6 colours. The mileage of Dzire ranges from 23.26 kmpl to 24.12 kmpl.",
         "good": [
             "Proportionate compact sedan stance",
             "Feature laden",
@@ -196,7 +196,7 @@
         "bodyType": "coupe",
         "mileage": 8.1, 
         "engine": 5204  ,
-        "transmission": "AMT",
+        "transmission": "Automatic",
         "fuelType": "Petrol",
         "seatingCapacity": 2,
         "summary": "The Mercedes AMG GT 4-Door Coupe is the world’s most powerful four-door coupe. It offers hooligan performance with its earth-shattering 900Nm of torque and an impressive handling, which is a Mercedes AMG trait. At Rs 2.42 crore (ex-showroom), it sure is expensive, but the strong performance and luxurious cabin is hard to find in such a body style.",
@@ -220,10 +220,10 @@
         "bodyType": "hatchback",
         "mileage": 23.2, 
         "engine": 1197 ,
-        "transmission": "Manual & AMT",
+        "transmission": "Manual & Automatic",
         "fuelType": "Petrol",
         "seatingCapacity": 5,
-        "summary": "Maruti Suzuki Swift is a 5 seater Hatchback available in a price range of ₹ 5.90 - 8.76 Lakh. It is available in 9 variants, 1 engine option and 2 transmission options : Manual and AMT. Other key specifications of the Swift include a Kerb Weight of 875 kg and Bootspace of 268 litres. The Swift is available in 9 colours. The mileage of Swift ranges from 23.2 kmpl to 23.76 kmpl.",
+        "summary": "Maruti Suzuki Swift is a 5 seater Hatchback available in a price range of ₹ 5.90 - 8.76 Lakh. It is available in 9 variants, 1 engine option and 2 transmission options : Manual and Automatic. Other key specifications of the Swift include a Kerb Weight of 875 kg and Bootspace of 268 litres. The Swift is available in 9 colours. The mileage of Swift ranges from 23.2 kmpl to 23.76 kmpl.",
         "good": [
             "Fun to drive",
             "Smooth, efficient engine",
@@ -270,10 +270,10 @@
         "bodyType": "suv",
         "mileage": 17 , 
         "engine": 1353 ,
-        "transmission": "Manual, Automatic",
+        "transmission": "Manual & Automatic",
         "fuelType": "Petrol & Diesel",
         "seatingCapacity": 5,
-        "summary": "Hyundai Creta is a 5 seater SUV available in a price range of ₹ 10.22 - 17.93 Lakh. It is available in 19 variants, 1 engine option and 4 transmission options : Manual, Automatic (CVT), Automatic (Torque Converter) and Automatic (Dual Clutch). Other key specifications of the Creta include a Ground Clearance of 190 mm and Bootspace of 433 litres. The Creta is available in 6 colours. The mileage of Creta ranges from 17 kmpl to 21 kmpl.",
+        "summary": "Hyundai Creta is a 5 seater SUV available in a price range of ₹ 10.22 - 17.93 Lakh. It is available in 19 variants, 1 engine option and 4 transmission options : Manual & Automatic (CVT), Automatic (Torque Converter) and Automatic (Dual Clutch). Other key specifications of the Creta include a Ground Clearance of 190 mm and Bootspace of 433 litres. The Creta is available in 6 colours. The mileage of Creta ranges from 17 kmpl to 21 kmpl.",
         "good": [
             "Refined motor",
             "Feature-laden",
@@ -294,10 +294,10 @@
         "bodyType": "hatchback",
         "mileage": 19.6, 
         "engine": 998 ,
-        "transmission": "Manual, Automatic",
+        "transmission": "Manual & Automatic",
         "fuelType": "Petrol & Diesel",
         "seatingCapacity": 5,
-        "summary": "Hyundai i20 is a 5 seater Hatchback available in a price range of ₹ 6.98 - 11.47 Lakh. It is available in 24 variants, 1 engine option and 4 transmission options : Manual, Automatic (CVT), Clutchless Manual and Automatic (Dual Clutch). Other key specifications of the i20 include a Ground Clearance of 170 mm and Bootspace of 311 litres. The i20 is available in 8 colours. The mileage of i20 ranges from 19.65 kmpl to 25.2 kmpl.",
+        "summary": "Hyundai i20 is a 5 seater Hatchback available in a price range of ₹ 6.98 - 11.47 Lakh. It is available in 24 variants, 1 engine option and 4 transmission options : Manual & Automatic (CVT), Clutchless Manual and Automatic (Dual Clutch). Other key specifications of the i20 include a Ground Clearance of 170 mm and Bootspace of 311 litres. The i20 is available in 8 colours. The mileage of i20 ranges from 19.65 kmpl to 25.2 kmpl.",
         "good": [
             "Conspicuous styling",
             "Feature-loaded, spacious interior with safety equipment",
@@ -318,10 +318,10 @@
         "bodyType": "sedan",
         "mileage": 17.7, 
         "engine": 998 ,
-        "transmission": "Manual, Automatic",
+        "transmission": "Manual & Automatic",
         "fuelType": "Petrol & Diesel",
         "seatingCapacity": 5,
-        "summary": "Hyundai Verna is a 5 seater Sedan available in a price range of ₹ 9.32 - 15.36 Lakh. It is available in 12 variants, 1 engine option and 4 transmission options : Manual, Automatic (CVT), Automatic (Torque Converter) and Automatic (Dual Clutch). Other key specifications of the Verna include a Ground Clearance of 165 mm and Bootspace of 480 litres. The Verna is available in 6 colours. The mileage of Verna ranges from 17.7 kmpl to 25 kmpl.",
+        "summary": "Hyundai Verna is a 5 seater Sedan available in a price range of ₹ 9.32 - 15.36 Lakh. It is available in 12 variants, 1 engine option and 4 transmission options : Manual & Automatic (CVT), Automatic (Torque Converter) and Automatic (Dual Clutch). Other key specifications of the Verna include a Ground Clearance of 165 mm and Bootspace of 480 litres. The Verna is available in 6 colours. The mileage of Verna ranges from 17.7 kmpl to 25 kmpl.",
         "good": [
             "Sharp, stand-out styling",
             "Feature-loaded interiors",
@@ -366,7 +366,7 @@
         "bodyType": "sedan",
         "mileage": 11.5, 
         "engine": 1993 ,
-        "transmission": "AMT",
+        "transmission": "Automatic",
         "fuelType": "Petrol & Diesel",
         "seatingCapacity": 5,
         "summary": "The Mercedes AMG GT 4-Door Coupe is the world’s most powerful four-door coupe. It offers hooligan performance with its earth-shattering 900Nm of torque and an impressive handling, which is a Mercedes AMG trait. At Rs 2.42 crore (ex-showroom), it sure is expensive, but the strong performance and luxurious cabin is hard to find in such a body style.",
@@ -390,10 +390,10 @@
         "price":  7.39,
         "mileage": 16 , 
         "engine": 1199 ,
-        "transmission": "Manual & AMT",
+        "transmission": "Manual & Automatic",
         "fuelType": "Petrol & Diesel",
         "seatingCapacity": 5,
-        "summary": "Tata Nexon is a 5 seater Compact SUV available in a price range of ₹ 7.39 - 13.74 Lakh. It is available in 52 variants, 1 engine option and 2 transmission options : Manual and AMT. Other key specifications of the Nexon include a Ground Clearance of 209 mm and Bootspace of 350 litres. The Nexon is available in 7 colours. The mileage of Nexon ranges from 16 kmpl to 22.4 kmpl.",
+        "summary": "Tata Nexon is a 5 seater Compact SUV available in a price range of ₹ 7.39 - 13.74 Lakh. It is available in 52 variants, 1 engine option and 2 transmission options : Manual and Automatic. Other key specifications of the Nexon include a Ground Clearance of 209 mm and Bootspace of 350 litres. The Nexon is available in 7 colours. The mileage of Nexon ranges from 16 kmpl to 22.4 kmpl.",
         "good": [
             "Upmarket looks, five-star G-NCAP safety",
             "Spacious cabin compared to rivals",
@@ -583,10 +583,10 @@
         "price": 8.99,
         "mileage": 15.7, 
         "engine": 1353,
-        "transmission": "Manual, Automatic",
+        "transmission": "Manual & Automatic",
         "fuelType": "Petrol & Diesel",
         "seatingCapacity": 6,
-        "summary": "Kia Carens is a 6 seater SUV available in a price range of ₹ 8.99 - 16.99 Lakh. It is available in 19 variants, 1 engine option and 3 transmission options : Manual, Automatic (Dual Clutch) and Automatic (Torque Converter). Other key specifications of the Carens include a Ground Clearance of 195 mm and Bootspace of 216 litres. The Carens is available in 8 colours. The mileage of Carens ranges from 15.7 kmpl to 21.3 kmpl.",
+        "summary": "Kia Carens is a 6 seater SUV available in a price range of ₹ 8.99 - 16.99 Lakh. It is available in 19 variants, 1 engine option and 3 transmission options : Manual & Automatic (Dual Clutch) and Automatic (Torque Converter). Other key specifications of the Carens include a Ground Clearance of 195 mm and Bootspace of 216 litres. The Carens is available in 8 colours. The mileage of Carens ranges from 15.7 kmpl to 21.3 kmpl.",
         "good": [
             "Powertrain, variant options",
             "Usability of third-row"
@@ -605,10 +605,10 @@
         "price":  9.95 ,
         "mileage": 16.1 , 
         "engine": 1353 ,
-        "transmission": "Manual, Automatic",
+        "transmission": "Manual & Automatic",
         "fuelType": "Petrol & Diesel",
         "seatingCapacity": 5,
-        "summary": "Kia Seltos is a 5 seater SUV available in a price range of ₹ 9.95 - 18.19 Lakh. It is available in 22 variants, 1 engine option and 5 transmission options : Manual, Clutchless Manual, Automatic (Torque Converter), Automatic (CVT) and Automatic (Dual Clutch). Other key specifications of the Seltos include a Ground Clearance of 190 mm and Bootspace of 433 litres. The Seltos is available in 16 colours. The mileage of Seltos ranges from 16.1 kmpl to 20.83 kmpl.",
+        "summary": "Kia Seltos is a 5 seater SUV available in a price range of ₹ 9.95 - 18.19 Lakh. It is available in 22 variants, 1 engine option and 5 transmission options : Manual, Clutchless Manual & Automatic (Torque Converter), Automatic (CVT) and Automatic (Dual Clutch). Other key specifications of the Seltos include a Ground Clearance of 190 mm and Bootspace of 433 litres. The Seltos is available in 16 colours. The mileage of Seltos ranges from 16.1 kmpl to 20.83 kmpl.",
         "good": [
             "Exterior design",
             "Interior fit and finish",
@@ -617,6 +617,30 @@
         "bad": [
             "Inconsistent ride quality",
             "Some trims are too expensive"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Mercedes",
+        "name": "gle",
+        "rating": 4.5,
+        "bodyType": "suv",
+        "price": 88.12,
+        "mileage": 9.7, 
+        "engine": 2999 ,
+        "transmission": "Automatic",
+        "fuelType": "Diesel & Petrol",
+        "seatingCapacity": 5,
+        "summary": "Mercedes-Benz GLE is a 5 seater Luxury available in a price range of Rs. 88.00 Lakh - 1.05 Cr*. It is available in 3 variants, 3 engine options that are BS6 compliant and a single Automatic transmission. Other key specifications of the GLE include a kerb weight of 2150 Kg, ground clearance of 200 mm and boot space of 825 Liters. The GLE is available in 8 colours. Over 20 User reviews basis Mileage, Performance, Price and overall experience of users for Mercedes-Benz GLE.",
+        "good": [
+            "Modern features",
+            "Powertrain options",
+            "Long-wheelbase translates into extra cabin space"
+        ],
+        "bad": [
+            "Expensive",
+            "Slow nine-speed gearbox",
+            "Underpowered"
         ],
         "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
     },
@@ -652,10 +676,10 @@
         "price": 6.95 ,
         "mileage": 18.2 , 
         "engine": 998 ,
-        "transmission": "Manual, Automatic",
+        "transmission": "Manual & Automatic",
         "fuelType": "Petrol & Diesel",
         "seatingCapacity": 5,
-        "summary": "Kia Sonet is a 5 seater Compact SUV available in a price range of ₹ 6.95 - 13.68 Lakh. It is available in 27 variants, 1 engine option and 4 transmission options : Manual, Clutchless Manual, Automatic (Dual Clutch) and Automatic (Torque Converter). Other key specifications of the Sonet include a Bootspace of 392 litres. The Sonet is available in 11 colours. The mileage of Sonet ranges from 18.2 kmpl to 24.1 kmpl.",
+        "summary": "Kia Sonet is a 5 seater Compact SUV available in a price range of ₹ 6.95 - 13.68 Lakh. It is available in 27 variants, 1 engine option and 4 transmission options : Manual, Clutchless Manual & Automatic (Dual Clutch) and Automatic (Torque Converter). Other key specifications of the Sonet include a Bootspace of 392 litres. The Sonet is available in 11 colours. The mileage of Sonet ranges from 18.2 kmpl to 24.1 kmpl.",
         "good": [
             "Flamboyant styling",
             "Easy to drive, refined motors",
@@ -688,28 +712,6 @@
         "bad": [
             "Can't compete with similarly-priced SUVs",
             "Ride quality"
-        ],
-        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
-    },
-    {
-        "brand": "Mercedes",
-        "name": "c-class",
-        "rating": 4.7,
-        "bodyType": "sedan",
-        "price": 49.99,
-        "mileage": 14, 
-        "engine": 1950 ,
-        "transmission": "Automatic",
-        "fuelType": "Petrol & Diesel",
-        "seatingCapacity": 5,
-        "summary": "Mercedes-Benz C Class is a Sedan available in a price range of ₹ 49.99 - 51.72 Lakh. It is available in 2 variants, 1 engine option. Other key specifications of the C Class include a Ground Clearance of 157 mm and Bootspace of 480 litres. The C Class is available in 6 colours.",
-        "good": [
-            "Premium, well-finished interiors",
-            "Spacious cabin"
-        ],
-        "bad": [
-            "Expensive vis a vis rivals",
-            "Stiff low-speed ride quality"
         ],
         "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
     },
@@ -802,6 +804,30 @@
             "Exorbitant",
             "Ground clearance",
             "Urban driving is challenging"
+        ],
+        "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+    },
+    {
+        "brand": "Toyota",
+        "name": "fortuner",
+        "rating": 4.7,
+        "bodyType": "suv",
+        "price": 37.93,
+        "mileage": 10.1, 
+        "engine": 2755 ,
+        "transmission": "Automatic",
+        "fuelType": "Diesel & Petrol",
+        "seatingCapacity": 7,
+        "summary": "Toyota Fortuner is a 7 seater SUV available in a price range of Rs. 32.59 - 50.49 Lakh*. It is available in 9 variants, 2 engine options that are BS6 compliant and 2 transmission options: Automatic & Manual. Other key specifications of the Fortuner include a kerb weight of and boot space of Liters. The Fortuner is available in 9 colours. Over 736 User reviews basis Mileage, Performance, Price and overall experience of users for Toyota Fortuner.",
+        "good": [
+            "More powerful diesel engine",
+            "Looks sportier",
+            "comfortable cabin"
+        ],
+        "bad": [
+            "No sunroof",
+            "Costlier ",
+            "Doesn't have 11-speaker music system"
         ],
         "images": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
     }

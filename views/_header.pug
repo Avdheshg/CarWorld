@@ -1,6 +1,8 @@
 
 - let url = newCarDetails ? "newCars" : "usedCars";
 - let homeBtnText = newCarDetails ? "New Cars" : "used Cars";
+- let carColor = newCarDetails ? "new-cars" : "used-cars"
+
 header.header
     nav.nav.nav--tours
         a.nav__el(href=`/${url}`)= `All ${homeBtnText}`
@@ -26,7 +28,7 @@ header.header
     .filter-btns
         //- ================    Budget      ================
         .dropdown
-            button.dropbtn Budget 
+            button.dropbtn(class=`${carColor}-bg`) Budget 
             .dropdown-content
                 //- a(href="/newCars?price[gte]=0&price[lte]=10") 0-10L   
                 a(href=`/${url}?price[gte]=0&price[lte]=10`) 0-10L   
@@ -37,11 +39,13 @@ header.header
 
         //- ================    Brand      ================
         .dropdown
-            button.dropbtn Brand 
+            button.dropbtn(class=`${carColor}-bg`) Brand 
             .dropdown-content
                 a(href=`/${url}?brand=BMW`) BMW
                 a(href=`/${url}?brand=Mercedes`) Mercedes
                 a(href=`/${url}?brand=Maruti Suzuki`) Maruti Suzuki
+                a(href=`/${url}?brand=Toyota`) Toyota
+
                 
                 - if (newCarDetails)
                     a(href=`/${url}?brand=Audi`) Audi   
@@ -52,7 +56,6 @@ header.header
 
                 - if (!newCarDetails)
                     a(href=`/${url}?brand=Renault`) Renault   
-                    a(href=`/${url}?brand=Toyota`) Toyota
                     a(href=`/${url}?brand=MG`) MG
                     a(href=`/${url}?brand=Skoda`) Skoda
                     a(href=`/${url}?brand=Jaguar`) Jaguar
@@ -60,7 +63,7 @@ header.header
 
         //- =============   Sort By    ================
         .dropdown
-            button.dropbtn Sort By 
+            button.dropbtn(class=`${carColor}-bg`) Sort By 
             .dropdown-content
                 a(href=`/${url}?sort=price`) Price
                 a(href=`/${url}?sort=mileage`) Mileage
