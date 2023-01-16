@@ -14,6 +14,7 @@ const usedCarsRouter = require('./routes/usedCarRoutes');
 const userRouter = require("./routes/userRoutes");
 const viewRouter = require("./routes/viewRoutes");
 const bookingRouter = require('./routes/bookingRoutes');
+const authController = require("./controllers/authController");
 // const asd = require('./dev-data/data/import-dev-data');
 
 const app = express();    
@@ -43,7 +44,7 @@ app.use((req, res, next) => {
     res.locals.homeRoute = "usedCars"; 
     next();
 })
-app.use("/usedCars", usedCarsRouter);   
+app.use("/usedCars", usedCarsRouter);       
 
 app.use("/bookings", bookingRouter);           
    
@@ -59,8 +60,15 @@ app.get('/order/success/:car', async (req, res) => {
 // ===========
 
 // at home route, sending the Index file
-app.use("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/index.html"));
+app.use("/", authController.isLoggedIn, (req, res) => {
+    // console.log("app.js, / req.cookies", req.cookies);
+    let isLoggedIn = false;
+    if (res.locals.user !== undefined) {
+        isLoggedIn = true;
+    }
+    res.status(200).render("index", {
+        isLoggedIn
+    })
 }); 
 
 module.exports = app;  

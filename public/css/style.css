@@ -1543,3 +1543,6 @@ i {
   object-fit: cover;
 }
 
+.navbar-brand {
+  margin-top: 3rem;
+}

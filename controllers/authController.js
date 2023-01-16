@@ -189,6 +189,10 @@ exports.isLoggedIn = async (req, res, next) => {
     if (req.cookies.jwt) {    
       // 1. Verify the token   
       
+      if (req.cookies.jwt === "") {
+        throw "New token";
+      }
+
       const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET);
 
       // 2. check if user still exists
@@ -205,6 +209,7 @@ exports.isLoggedIn = async (req, res, next) => {
       
       // Here means, user is logged in
       res.locals.user = currentUser;
+      // console.log("res.locals.user", res.locals.user);
       return next();
     } 
   } catch (err) {
