@@ -24,7 +24,7 @@ block content
         .overview-box
             div
                 .overview-box__group
-                    h2.heading-secondary.ma-bt-lg Details 
+                    h2.heading-secondary.ma-bt-lg.details-heading  Details 
                     .overview-box__detail
                         i.fa-solid.fa-circle-dot(class=`${carColor}-color`)
                         span.overview-box__label Mileage
@@ -93,10 +93,9 @@ block content
 
                 .reviews__card
                     .reviews__avatar
-                        h6.reviews__user Needs Improvement
+                        h6.reviews__user The Bad
                     each badReview in car.bad
-                        p.reviews__text= `${badReview}` 
-                
+                        p.reviews__text= `${badReview}`
     section.section-cta
         .cta
             .cta__img.cta__img--logo

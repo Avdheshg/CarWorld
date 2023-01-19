@@ -48,7 +48,8 @@ const oldCarsSchema = new mongoose.Schema({
     }, 
     summary: {
         type: String
-    }
+    },
+    coverLink: String
 });
 
 const UsedCar = mongoose.model('UsedCar', oldCarsSchema);

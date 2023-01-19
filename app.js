@@ -52,10 +52,13 @@ app.use("/bookings", bookingRouter);
 app.use("/api/v1/users", userRouter);       
 
 // ===========    
-const stripe = require('stripe')('sk_test_tR3PYbcVNZZ796tH88S4VQ2u');
+const stripe = require('stripe')('sk_test_tR3PYbcVNZZ796tH88S4VQ2u');   
 
 app.get('/order/success/:car', async (req, res) => {  
   res.status(200).sendFile(`${__dirname}/paymentSuccess.html`);
+//   res.status(200).render("paymentSuccess", {
+//     carName: req.params.car
+//   });
 });
 // ===========
 
@@ -94,6 +97,9 @@ module.exports = app;
 
 
 /* 
+
+make home btns smaller
+check why stripe car name is not capitalize
 
 Brand Names
     common

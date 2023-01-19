@@ -51,6 +51,7 @@ const newCarsSchema = new mongoose.Schema({
     summary: {
         type: String
     },
+    coverLink: String,
     good: [String],
     bad: [String],
     images: [String]

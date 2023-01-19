@@ -29,20 +29,9 @@ mongoose.connect(DB, {
 })
 .then( () => console.log('DB connection successful') );
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`App is running on the port ${port}`);
 });
-
-// handling all the rejected promise errors. Ex: if messed up with DB pass
-// process.on('unhandledRejection', err => {
-//   console.log(err.name, err.message);
-// });
-
-// // handling uncaught Exceptions. Ex: logging something which doesn't exists
-// process.on('uncaughtException', err => {   
-//   // console.log(err.name, err.message);
-//   console.log(err);
-// });
 
    

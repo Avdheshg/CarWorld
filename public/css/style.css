@@ -324,7 +324,7 @@ body {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-    flex-direction: column;
+    /* flex-direction: column; */
   }
 }
 .header__logo img {
@@ -338,6 +338,7 @@ body {
     margin-bottom: 1.5rem;
   }
 }
+
 
 .section-header {
   position: relative;
@@ -1546,3 +1547,450 @@ i {
 .navbar-brand {
   margin-top: 3rem;
 }
+
+
+/* -- */
+
+/* -- */
+/* LOGIN PAGE */
+@media only screen and (max-width: 30.5em) {
+  .form__btns {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 50.5em) {
+
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0rem 5rem;
+    height: 10rem;
+    justify-content: center;
+  }
+  .header__logo {
+    order: -1;
+    /* margin-bottom: 1.5rem; */
+    display: none;
+  }
+  
+  /* all used/new cars btn */
+  .nav--tours {
+    margin-bottom: 0.3rem;
+  }
+
+  /* signup btn */
+  .nav__el--cta {
+    padding: 0.5rem 3rem;
+  }
+  
+  /* signup btn */
+  .nav__el--cta {
+    padding: 0.5rem 2.2rem;
+  }
+
+  /* main div */
+  .main {
+    padding: 8rem 2rem;
+  }
+
+  .login-form {
+    padding: 5rem 3rem;
+  }
+
+}
+
+/* ==================== OVERVIEW PAGE ====================    ====================  */
+
+/* 80em = 1280px
+1em = 16px 
+
+100px = 62.5*/
+@media only screen and (max-width: 62.5em) {
+  html {
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+  }
+    body {
+      /* background-color: #00AE89; */
+      padding: 0 !important;
+    overflow-x: hidden;
+
+    }
+
+    .main {
+      padding: 8rem 1rem;
+    }
+
+    /* green btns */
+    .btn--small {
+      padding: 1rem 2rem !important;
+      font-size: 1.4rem !important;
+    }
+
+    /* card container which contains all the cards */
+    .card-container {
+      max-width: 100rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 2rem;
+      
+    }
+
+    /* card icons */
+    .card__details {
+      grid-row-gap: 1.75rem;
+      grid-column-gap: 1rem;
+      padding: 2.5rem 1rem;
+    }
+
+    /* contains price */
+    .card__footer {
+      padding: 2.5rem 0.5rem;
+      font-size: 1.2rem;
+      grid-column-gap: 0rem;
+    }
+
+    /* =============================================================    book now btn */
+    .reviews {
+      /* padding: 5rem 0;
+      grid-auto-flow: initial; */
+      display: flex;
+    }
+
+    /*   book now btn  */
+    .cta {
+      display: flex;
+    }
+
+    .cta__content {
+      display: flex;
+    }
+
+    .footer {
+      display: flex;
+    }
+
+     /* Header  */
+    .section-header {
+      height: 56vw;
+    }
+
+    .heading-primary span {
+      padding: 0;
+    }
+
+}
+
+/* 700px */
+@media only screen and (max-width: 43.5em) {
+  
+  .header {
+    flex-direction: row;
+    font-size: 1.2rem;
+    padding: 0rem;
+    height: 5rem;
+    justify-content: space-between;
+  }
+
+  /* all new cars/used cars and logout btn */
+  .nav--tours,
+  .nav--user {
+    flex: 0 1 30%;
+  }
+
+  .nav__el, .nav__el:link, .nav__el:visited{
+    font-size: 1.2rem;
+  }
+
+  /* logout btn */
+  .nav__el:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  /* user photo */
+  .user-photo {
+    display: none;
+  }
+
+  .dropbtn {
+    padding: 10px 16px;
+    font-size: 1.2rem;
+  }
+
+  .alias__routeBtns {
+    /* justify-content: space-between; */
+
+  }
+
+  .search__cars .btn--small {
+    font-size: 1.2rem !important;
+  }
+
+  /* card container which contains all the cards */
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 1.2rem;
+  }
+
+  /* individual card icons */
+  .card__data {
+    font-size: 1.1rem;
+  }
+
+  /* name of car */
+  .heading-tertirary {
+    font-size: 2.2rem;
+  }
+  
+  /* ======================================  Header  */
+  /* main heading = name of car  */
+  .heading-primary {
+    font-size: 3rem;
+    width: 100%;
+  }
+
+  .section-header {
+    height: 56vw;
+  }
+
+  /*  */
+  .section-description {
+    flex-direction: column-reverse;
+    
+  }
+
+  /* details page */
+  /* about the car */
+  .description-box {
+    padding-top: 10rem;
+    padding-bottom: 4rem;
+  }
+  .overview-box {
+    /* padding: 4rem 0 10rem 0; */
+    padding-bottom: 10rem;
+    padding-top: 5rem;
+  }
+  .overview-box > div {
+    /* background-color: bisque; */
+    width: 100vw;
+  }
+
+  /* details heading */
+  .overview-box__group {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .details-heading {
+    grid-column: 1/3;
+  }
+
+
+  /* reviews */
+  .reviews {
+    display: flex;
+    grid-column-gap: 1rem;
+    padding: 0rem;
+  }
+
+  .reviews__card {
+    width: 30rem;
+    padding: 3rem 2rem;
+  }
+
+  /* buy now box */
+  .section-cta {
+    margin-top: -14rem;
+  }
+
+  .cta {
+    display: flex;
+    height: 20vh;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cta__content {
+    display: flex;
+    flex-direction: column;
+    margin-left: -10rem;
+    text-align: center;
+  }
+
+  .cta__img {
+    height: 8rem;
+    width: 8rem;
+  }
+
+
+}
+
+/* 500px */
+@media only screen and (max-width: 31.5em) {
+
+    .header {
+        flex-direction: row;
+        font-size: 1.2rem;
+        padding: 0rem;
+        height: 5rem;
+        justify-content: space-between;
+    }
+
+    /* all new cars/used cars and logout btn */
+    .nav--tours,
+    .nav--user {
+      flex: 0 1 30%;
+    }
+
+    /* main heading = name of car  */
+    /* .heading-primary {
+      width: 100%;
+    } */
+
+    .heading-box__group {
+      width: 40rem;
+      color: #f7f7f7;
+      justify-content: center;
+    }
+
+    /* .nav--user {
+      text-align: right;
+    } */
+
+    .nav__el, .nav__el:link, .nav__el:visited{
+      font-size: 1.2rem;
+    }
+
+    /* logout btn */
+    .nav__el:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    /* user photo */
+    .user-photo {
+      display: none;
+    }
+
+    /* green btns */
+    .btn--small,
+    .filter-btns {
+      padding: 1rem 2rem !important;
+      font-size: 1.2rem !important;
+    }
+
+    /* Filter btns */
+    .filter-btns {
+      padding: 0rem !important;
+    }
+    .dropbtn {
+      width: 100px;
+      background-color: #55c57a;
+      color: white;
+      padding: 0.6rem;
+      font-size: 1.2rem;
+      border: none;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* alias btns */
+    .alias__routeBtns {
+      display: none;
+    }
+
+    .main {
+      padding: 4rem 1rem;
+    }
+
+    /* card container which contains all the cards */
+    .card-container {
+      grid-template-columns: repeat(2, 1fr);
+      font-size: 1.2rem;
+    }
+
+    /* card height */
+    .card__picture {
+      height: 14rem;
+    }
+
+    /* name of car */
+    .heading-tertirary {
+      font-size: 1.5rem;
+      margin-right: -1rem;
+    }
+
+    .card__details {
+      grid-row-gap: 1rem;
+      grid-column-gap: 1rem;
+      padding: 2.5rem 1rem;
+      display: none;
+    }
+
+    /* individual card icons */
+    .card__data {
+      font-size: 1.1rem;
+    }
+
+    /* car details */
+    .overview-box__group {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: 1fr;
+    }
+
+    /* book now */
+    .cta__img {
+      display: none;
+    }
+
+    .cta__content {
+      margin-left: -17rem;
+      text-align: center;
+    }
+  
+    .overview-box__detail {
+      flex-direction: column;
+    }
+
+    .overview-box__detail {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: baseline;
+    }
+
+    /* reviews section */
+    .reviews__card {
+      padding: 2rem 1rem;
+    } 
+
+    /* book now header */
+    .cta__content h2 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+}
+
+/* 
+  in case of 2 media queries for same width, the later will take precedence
+  in case max width, the smaller should come last
+
+*/
+
+/* ==================== OVERVIEW PAGE ====================    ====================  */
+
+
+/* 
+    overview box 
+    font size, color etc for smaller width
+*/
+

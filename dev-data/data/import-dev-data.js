@@ -52,7 +52,7 @@ const importData = async () => {
 const importDataUsedCars = async () => {
   try {
     const cars = await UsedCars.create(usedCars);
-    console.log("Data successfully loaded ***********", cars);
+    // console.log("Data successfully loaded ***********", cars);
   } catch (err) {
     console.log(err);
   }
@@ -80,9 +80,9 @@ const deleteUsedCars = async () => {
   process.exit();
 };
 
-if (process.argv[2] === "--import") {
+if (process.argv[2] === "--importNewCars") {
   importData();
-} else if (process.argv[2] === "--import-used") {
+} else if (process.argv[2] === "--importUsedCars") {
   importDataUsedCars();
 } else if (process.argv[2] === "--deleteNewCars") {
   deleteNewCars();
