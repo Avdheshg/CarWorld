@@ -1686,6 +1686,12 @@ i {
       padding: 0;
     }
 
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
 }
 
 /* 700px */
