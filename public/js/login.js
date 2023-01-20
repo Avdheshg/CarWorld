@@ -252,7 +252,7 @@ if (showPasswordBtn) {
     const password = document.getElementById("password");
     // showPasswordFunction();
     showPasswordBtn.addEventListener("click", e => {
-        console.log("fa-eye present", showPasswordBtn);
+        console.log("fa-eye present", showPasswordBtn);     
         showPasswordFunction(password, showPasswordBtn);
     })  
 }
