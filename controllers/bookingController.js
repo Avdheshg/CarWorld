@@ -25,7 +25,7 @@ exports.getCheckoutSession = async (req, res, next) => {
         console.log("car", car);
       
         // 2) Create checkout session
-        if (car.price > 10) {  
+        if (car.price > 10) {     
             car.price = 99999999;
         } else {     
           car.price = car.price * 10000000;

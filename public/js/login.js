@@ -242,7 +242,7 @@ const showPasswordFunction = (element, showBtn) => {
         showBtn.style.color="#55c57a";
     } else {
         element.type = "password";
-        showBtn.style.color="#777";
+        showBtn.style.color="#c5bdbd";
     }
 }
 
