@@ -1954,6 +1954,16 @@ i {
       display: none;
     }
 
+    .card__footer {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .card__footer a {
+      width: 35vw;
+    }
+
     /* individual card icons */
     .card__data {
       font-size: 1.1rem;
