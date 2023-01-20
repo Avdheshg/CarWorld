@@ -72,6 +72,7 @@ if (loginForm) {
 
         // login(email, password, restrictedHomeRoute);
         login(email, password, restrictedHomeRoute, homeRoute);
+        console.log(email, password, restrictedHomeRoute, homeRoute);
     })
 }
 
@@ -146,7 +147,7 @@ const signupFunction = async (name, email, password, passwordConfirm) => {
         
     } catch (err) {           
         console.log(err);
-        showAlert("error", err);   
+        showAlert("error", err.response.data.message);   
     }
 }
 
@@ -234,6 +235,39 @@ const resetPasswordFunction = async (password, passwordConfirm, token) => {
 } 
 
 
+// SHOW PASSWORD
+const showPasswordFunction = (element, showBtn) => {
+    if (element.type === "password") {
+        element.type = "text";
+        showBtn.style.color="#55c57a";
+    } else {
+        element.type = "password";
+        showBtn.style.color="#777";
+    }
+}
+
+
+const showPasswordBtn = document.querySelector(".fa-eye-1");
+if (showPasswordBtn) {
+    const password = document.getElementById("password");
+    // showPasswordFunction();
+    showPasswordBtn.addEventListener("click", e => {
+        console.log("fa-eye present", showPasswordBtn);
+        showPasswordFunction(password, showPasswordBtn);
+    })  
+}
+
+const showPasswordConfirmBtn = document.querySelector(".fa-eye-2");
+if (showPasswordConfirmBtn) {
+    const passwordConfirm = document.getElementById("confirm-password");
+    showPasswordConfirmBtn.addEventListener("click", e => {
+        showPasswordFunction(passwordConfirm, showPasswordConfirmBtn)
+    })
+}
+
+
+
+
 // ============   STRIPE    ============    
 const stripe = Stripe('pk_test_51KpmUbSBCMWBXDgK2FzvAYGeudRKsTBjgamSnxEBAmsZggYohMDrBRg9BEe6CxBml3IBTW80dR7SV8ZLUxzxLmdC00Wj0S8h8P');
 
@@ -266,6 +300,15 @@ if (bookBtn)
 });  
 
 
+// function showPasswordFunction() {
+//     const showPasswordBtn = document.querySelector(".fa-eye");
+//     console.log("showPasswordFunction clicked");
+//     if (showPasswordBtn.type === "password") {
+//         showPasswordBtn.type = "text";
+//     } else {
+//         showPasswordBtn.type = "password";
+//     }   
+// }
 
 
 

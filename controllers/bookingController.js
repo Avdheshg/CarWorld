@@ -39,7 +39,7 @@ exports.getCheckoutSession = async (req, res, next) => {
         carName = carName.charAt(0).toUpperCase() + carName.slice(1);
         console.log(carName);
 
-        const cardDetails = "Card Number: " + "4242 4242 4242"  + " Expiry: " + "Any date(future)"  + " CVV: " + "Any 3 digits"; 
+        const cardDetails = "Card Number: " + "4242 4242 4242 4242"  + " Expiry: " + "Any date(future)"  + " CVV: " + "Any 3 digits"; 
 
         const sendCar = `${car.brand} ${carName}`;
         const session = await stripe.checkout.sessions.create({

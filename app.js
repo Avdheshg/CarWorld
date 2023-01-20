@@ -35,11 +35,12 @@ app.use(cookieParser());
 console.log("*** app.js  ***");
 
 app.use((req, res, next) => {
-    res.locals.homeRoute = "newCars"; 
+    res.locals.homeRoute = "newCars";   
     next();
 })
-// Mounting the Routers
+// Mounting the Routers    
 app.use("/newCars", newCarsRouter); 
+
 app.use((req, res, next) => {
     res.locals.homeRoute = "usedCars"; 
     next();

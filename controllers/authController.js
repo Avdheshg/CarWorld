@@ -52,11 +52,17 @@ exports.signup = async (req, res, next) => {
       password: req.body.password,
       passwordConfirm: req.body.passwordConfirm,
       // passwordChangedAt: req.body.passwordChangedAt
-    });
+    }); 
 
     createSendToken(newUser, 201, res);
-    
-  } catch (err) {
+
+  } catch (err) {   
+    if (err.name === "ValidationError") {
+      err = "Passwords are not matching";
+      console.log(err);                                       
+      // err = err.name;
+    }
+    console.log(err);                                       
     res.status(404).json({
       status: "fail",
       message: err,
@@ -172,7 +178,11 @@ exports.protect = async (req, res, next) => {
       restrictedHomeRoute = `${req.params.carName}`;      
     }
       console.log("protect MW error and no token present, so sending the Login Form. Error => ", err);
-      return res.status(200).render("login", {title: "Login", restrictedHomeRoute, homeRoute: res.locals.homeRoute});
+      return res.status(200).render("login", {
+        title: "Login", 
+        restrictedHomeRoute, 
+        homeRoute: res.locals.homeRoute
+      });     
   }  
       
   // console.log("protect MW, and calling the next MW");

@@ -1269,6 +1269,7 @@ body {
   box-sizing: border-box;
   /* Pseudo element (a visible thing that isn't really in the DOM).
       Also needs -ms- */
+  
 }
 .form__input:focus {
   outline: none;
@@ -1546,6 +1547,18 @@ i {
 
 .navbar-brand {
   margin-top: 3rem;
+}
+
+/* show password */
+.password__show {
+  position: relative;
+}
+.fa-eye {
+  position: absolute;
+  right: 1%;
+  top: 30%;
+  font-size: 1.5rem;
+  /* color: in; */
 }
 
 
