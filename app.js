@@ -97,10 +97,8 @@ module.exports = app;
 
 
 
-/* 
 
-make home btns smaller
-check why stripe car name is not capitalize
+/* 
 
 Brand Names
     common
@@ -143,12 +141,6 @@ Car Fields
 
 
 */
-
-
-
-
-
-
 
 
 

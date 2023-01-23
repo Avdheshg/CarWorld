@@ -475,7 +475,15 @@ h6,
     }
 } */
 
-
+.youtube-btn {
+    color: #FF0000;
+    margin-top: 0.2rem;
+    font-size: 1.4rem;
+}
+.youtube-btn:hover{
+    color: #FF0000;
+    text-decoration: none;
+}
 
 
 
