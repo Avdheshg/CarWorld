@@ -1,0 +1,76 @@
+extends base
+
+block content 
+    //- p=`Total cars = ${length}`
+    main.main  
+        .card-container
+            
+            each car in cars
+                .card 
+                    .card__header
+                        .card__picture
+                            .card__picture-overlay &nbsp;
+                            img.card__picture-img(src=`${imageURL}${car.name}-cover.jpg`, alt=`${car.name}`)
+                        h3.heading-tertirary
+                            span(class=`${carColor}-bg`)= car.name
+
+                    .card__details
+                        h4.card__sub-heading= `${car.brand} `
+                        .card__data
+                            i.fa.fa-car(class=`${carColor}-color` style="margin-right: 8px;")
+                            span= car.bodyType 
+                        .card__data
+                            i.fa-solid.fa-gas-pump(class=`${carColor}-color`)
+                            span= car.fuelType 
+                        .card__data
+                            i.fa-solid.fa-circle-dot(class=`${carColor}-color`)
+                            span= `${car.mileage} kmpl`
+
+                        - if (title === "New Cars")
+                            .card__data
+                                i.fa-solid.fa-user(class=`${carColor}-color` style="margin-right: 8px;") 
+                                span= car.seatingCapacity 
+                            .card__data
+                                i.fa-solid.fa-gauge-high(class=`${carColor}-color`)
+                                span= `${car.engine} cc`
+                            .card__data
+                                i.fa-solid.fa-gear(class=`${carColor}-color`)
+                                span= car.transmission 
+
+                        - if (title === "Used Cars")
+                            .card__data
+                                i.fa-sharp.fa-solid.fa-road(class=`${carColor}-color`)
+                                span= `${car.travel} kms`
+                            .card__data
+                                i.fa-solid.fa-location-dot(class=`${carColor}-color`)
+                                span= car.city
+                            .card__data
+                                i.fa-solid.fa-wallet(class=`${carColor}-color`)
+                                span= car.emi
+
+                    .card__footer
+                        p   
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                            span.card__footer-value= ` ${car.price} Lakh`
+                            span.card__footer-text 
+                        p.card__ratings
+                            - if (title === "New Cars")
+                                span.card__footer-value= `Rating: ${car.rating} / 5`
+                                span.card__footer-text
+                        - let resource = title === "New Cars" ? "newCars" : "usedCars"
+                            a.btn.btn--green.btn--small(href=`/${resource}/${car.name}` class=`${carColor}-bg`) Details 
+
+    //- =================       Pagination     =================
+    //- paginateURL : coming from newCarsController
+    //- - let active, inactive
+    - let active = newCarDetails ? "active" : "used-active";
+    - let inactive = newCarDetails ? "inactive" : "used-inactive";
+    - if (!aliasRoues)
+        .search__cars
+            - for (var i = 1; i <= `${paginationBtnCount}`; i++)  
+                //- a.btn.btn--small(class=`pagination__${i === paginationActiveBtn ? 'active' : 'inactive'}` href=`${paginateURL}page=${i}`)= `${i}`                      
+                a.btn.btn--small(class=`pagination__${i === paginationActiveBtn ? `${active}` : `${inactive}`}` href=`${paginateURL}page=${i}`)= `${i}`                      
+
+
+
+

@@ -1,0 +1,417 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Car World | A car for every need
+    // Favicon
+    link(href='home_dep/home_img/favicon.ico', rel='icon')
+    // Google Web Fonts
+    link(href='https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap', rel='stylesheet')
+    // Font Awesome
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css', rel='stylesheet')
+    // Libraries Stylesheet
+    link(href='/home_dep/home_lib/owlcarousel/assets/owl.carousel.min.css', rel='stylesheet')
+    link(href='/home_dep/home_lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css', rel='stylesheet')
+    // Customized Bootstrap Stylesheet
+    link(href='/home_dep/home_css/bootstrap.min.css', rel='stylesheet')
+    // Template Stylesheet
+    link(href='/home_dep/home_css/style.css', rel='stylesheet')
+  body
+    // Search Start
+    // <div class="container-fluid bg-white pt-3 px-lg-5">
+    .container-fluid.bg-white.px-lg-5
+      .row.mx-n2
+        .col-xl-2.col-lg-4.col-md-6.px-2
+        .col-xl-2.col-lg-4.col-md-6.px-2
+        .col-xl-2.col-lg-4.col-md-6.px-2
+        .col-xl-2.col-lg-4.col-md-6.px-2
+        .col-xl-2.col-lg-4.col-md-6.px-2
+        .col-xl-2.col-lg-4.col-md-6.px-2
+    // Search End
+    // Carousel Start
+    .container-fluid.p-0(style='margin-bottom: 90px;')
+      // Navbar Start
+      #header-carousel.carousel.slide(data-ride='carousel')
+        .container-fluid.position-absolute.nav-bar.p-0
+          .position-relative.px-lg-5(style='z-index: 9;')
+            nav.navbar.navbar-expand-lg.navbar-dark.py-3.py-lg-0.pl-3.pl-lg-5
+              a.navbar-brand(href='')
+                h1.text-uppercase.text-primary.mb-1.mt-2 Car World
+              button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse')
+                span.navbar-toggler-icon
+              #navbarCollapse.collapse.navbar-collapse.justify-content-between.px-3
+                | if (!isLoggedIn)
+                .navbar-nav.ml-auto.py-0
+                  a.nav-item.nav-link.active(href='/api/v1/users/login') Login
+                  a.nav-item.nav-link(href='/api/v1/users/signup') Signup
+                                          //- if (isLoggedIn)
+                                          //-     
+                .navbar-nav.ml-auto.py-0
+                  | //-         
+                  a.nav__el(style='width: 20px')
+                    img(src='/img/defaultUser.jpg', alt='Photo of user')
+                                            //-         //- 
+                  a.nav-item.nav-link(href='/api/v1/users/signup') Signup
+                                            //-
+        // Navbar End
+        .carousel-inner
+          .carousel-item.active
+            img.w-100(style='margin-top:-12rem', src='home_dep/home_img/carousel-1.jpg', alt='Image')
+            .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+              .p-3(style='max-width: 900px; margin-top: 6rem;')
+                // <h4 class="text-white text-uppercase  mb-md-3">Buy A New Car</h4>
+                h1.display-1.text-white(style='margin-bottom: 24rem;') We Have Best Cars
+                a.button.btn--green.btn--small(href='/newCars') New Cars
+                a.button.btn--green.btn--small.btn--usedCar(href='/usedCars') Used Cars
+          .carousel-item
+            img.w-100(src='home_dep/home_img/carousel-2.jpg', alt='Image')
+            .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+              .p-3(style='max-width: 900px;')
+                // <h4 class="text-white text-uppercase mb-md-3">Buy A Used Car</h4>
+                h1.display-1.text-white(style='margin-bottom: 24rem;') We Have Quality Cars
+                a.button.btn--green.btn--small(href='/newCars') New Cars
+                a.button.btn--green.btn--small.btn--usedCar(href='/usedCars') Used Cars
+        a.carousel-control-prev(href='#header-carousel', data-slide='prev')
+          //
+            <div class="" style="width: 45px; height: 45px;">
+            <span class="carousel-control-prev-icon mb-n2"></span>
+            </div>
+        a.carousel-control-next(href='#header-carousel', data-slide='next')
+          //
+            <div class="btn btn-dark" style="width: 45px; height: 45px;">
+            <span class="carousel-control-next-icon mb-n2"></span>
+            </div>
+    // Carousel End
+    // About Start
+    .container-fluid.py-5
+      .container.pt-5.pb-3
+        h1.display-1.primary-text.text-center 01
+        |  
+        h1.display-4.text-uppercase.text-center.mb-5
+          | Welcome To 
+          span.primary-text Car World
+        .row.justify-content-center
+          .col-lg-10.text-center
+            img.w-75.mb-4(src='home_dep/home_img/about.png', alt='')
+            p
+              | Our 
+              b Mission
+              |  is to bring 
+              b Joy
+              |  and 
+              b Delight
+              |  to the process of car buying, we offer a bouquet of reliable tools and services to help car consumers decide on buying the right car and at the right price. Car World is  a leading car search venture that helps users buy cars that are right for them. We have rich automotive content such as detailed specs and prices, pictures of all car brands and models available. The company has tie-ups with many auto manufacturers, more than 4000 car dealers and numerous financial institutions to facilitate the purchase of vehicles.
+        .row.mt-3
+          .col-lg-4.mb-2
+            .d-flex.align-items-center.bg-light.p-4.mb-4(style='height: 150px;')
+              .d-flex.align-items-center.justify-content-center.flex-shrink-0.bg-primary-color.ml-n4.mr-4(style='width: 100px; height: 100px;')
+                i.fa.fa-2x.fa-headset.text-secondary
+              h4.text-uppercase.m-0 24/7 Car Buying Support
+          .col-lg-4.mb-2
+            .d-flex.align-items-center.bg-secondary.p-4.mb-4(style='height: 150px;')
+              .d-flex.align-items-center.justify-content-center.flex-shrink-0.bg-primary-color.ml-n4.mr-4(style='width: 100px; height: 100px;')
+                i.fa.fa-2x.fa-car.text-secondary
+              h4.text-light.text-uppercase.m-0 Car Reservation Anytime
+          .col-lg-4.mb-2
+            .d-flex.align-items-center.bg-light.p-4.mb-4(style='height: 150px;')
+              .d-flex.align-items-center.justify-content-center.flex-shrink-0.bg-primary-color.ml-n4.mr-4(style='width: 100px; height: 100px;')
+                i.fa.fa-2x.fa-map-marker-alt.text-secondary
+              h4.text-uppercase.m-0 Lots Of Pickup Locations
+    // About End
+    // Services Start
+    .container-fluid.py-5
+      .container.pt-5.pb-3
+        h1.display-1.primary-text.text-center 02
+        h1.display-4.text-uppercase.text-center.mb-5 Our Services
+        .row
+          .col-lg-4.col-md-6.mb-2
+            .service-item.d-flex.flex-column.justify-content-center.px-4.mb-4
+              .d-flex.align-items-center.justify-content-between.mb-3
+                .d-flex.align-items-center.justify-content-center.bg-primary-color.ml-n4(style='width: 80px; height: 80px;')
+                  i.fa.fa-2x.fa-car.text-secondary
+                h1.display-2.text-white.mt-n2.m-0 01
+              h4.text-uppercase.mb-3 Cars
+              p.m-0
+                | Are you planning on buying a new car? Well, we know that with so many options available out there.
+          .col-lg-4.col-md-6.mb-2
+            .service-item.active.d-flex.flex-column.justify-content-center.px-4.mb-4
+              .d-flex.align-items-center.justify-content-between.mb-3
+                .d-flex.align-items-center.justify-content-center.bg-primary-color.ml-n4(style='width: 80px; height: 80px;')
+                  i.fa.fa-2x.fa-money-check-alt.text-secondary
+                h1.display-2.text-white.mt-n2.m-0 02
+              h4.text-uppercase.mb-3 Car Financing
+              p.m-0
+                | Get instant car loan eligibility with upto 100% financing from leading banks at best Interest Rates, EMI for your new car and used car purchase.
+          .col-lg-4.col-md-6.mb-2
+            .service-item.d-flex.flex-column.justify-content-center.px-4.mb-4
+              .d-flex.align-items-center.justify-content-between.mb-3
+                .d-flex.align-items-center.justify-content-center.bg-primary-color.ml-n4(style='width: 80px; height: 80px;')
+                  i.fa.fa-2x.fa-taxi.text-secondary
+                h1.display-2.text-white.mt-n2.m-0 03
+              h4.text-uppercase.mb-3 Car Inspection
+              p.m-0 Read car reviews, first drive impressions, road tests done by our team.
+    // Services End
+    // Banner Start
+    .container-fluid.py-5
+      .container.py-5
+        .bg-banner.py-5.px-4.text-center
+          .py-5
+            h1.display-1.text-uppercase.primary-text.mb-4 50% OFF
+            h1.text-uppercase.text-light.mb-4 Special Offer For New Members
+            p.mb-4 Only for Sunday, every month
+            a.button.btn--green.btn--small.mt-2.py-3.px-5(href='/api/v1/users/signup') Register Now
+    // Banner End
+    // Buy A Car Start
+    .container-fluid.py-5
+      .container.pt-5.pb-3
+        h1.display-1.primary-text.text-center 03
+        h1.display-4.text-uppercase.text-center.mb-5 Find Your Car
+        .row
+          .col-lg-4.col-md-6.mb-2
+            .rent-item.mb-4
+              img.img-fluid.mb-4(src='home_dep/home_img/car-rent-1.png', alt='')
+              h4.text-uppercase.mb-4 Mercedes AMG GT
+              .d-flex.justify-content-center.mb-4
+                .px-2
+                  i.fa.fa-car.primary-text.mr-1
+                  span Coupe
+                .px-2.border-left.border-right
+                  i.fa.fa-cogs.primary-text.mr-1
+                  span AUTO
+                .px-2
+                  i.fa.fa-road.primary-text.mr-1
+                  span 3982 cc
+              a.button.btn--green.btn--ex-small.px-3(href='/newCars/amg-gt') Details
+          .col-lg-4.col-md-6.mb-2
+            .rent-item.active.mb-4
+              img.img-fluid.mb-4(src='home_dep/home_img/car-rent-2.png', alt='')
+              h4.text-uppercase.mb-4 BMW X5
+              .d-flex.justify-content-center.mb-4
+                .px-2
+                  i.fa.fa-car.primary-text.mr-1
+                  span SUV
+                .px-2.border-left.border-right
+                  i.fa.fa-cogs.primary-text.mr-1
+                  span AUTO
+                .px-2
+                  i.fa.fa-road.primary-text.mr-1
+                  span 4395 cc
+              a.button.btn--green.btn--ex-small.px-3(href='/newCars/x5') Details
+          .col-lg-4.col-md-6.mb-2
+            .rent-item.mb-4
+              img.img-fluid.mb-4(src='home_dep/home_img/car-rent-3.png', alt='')
+              h4.text-uppercase.mb-4 Audi RS7
+              .d-flex.justify-content-center.mb-4
+                .px-2
+                  i.fa.fa-car.primary-text.mr-1
+                  span Sedan
+                .px-2.border-left.border-right
+                  i.fa.fa-cogs.primary-text.mr-1
+                  span AUTO
+                .px-2
+                  i.fa.fa-road.primary-text.mr-1
+                  span 3996 cc
+              a.button.btn--green.btn--ex-small.px-3(href='/newCars/rs7') Details
+          .col-lg-4.col-md-6.mb-2
+            .rent-item.mb-4
+              img.img-fluid.mb-4(src='home_dep/home_img/car-rent-4.png', alt='')
+              h4.text-uppercase.mb-4 Audi Q7
+              .d-flex.justify-content-center.mb-4
+                .px-2
+                  i.fa.fa-car.primary-text.mr-1
+                  span SUV
+                .px-2.border-left.border-right
+                  i.fa.fa-cogs.primary-text.mr-1
+                  span AUTO
+                .px-2
+                  i.fa.fa-road.primary-text.mr-1
+                  span 1984 cc
+              a.button.btn--green.btn--ex-small.px-3(href='/newCars/q7') Details
+          .col-lg-4.col-md-6.mb-2
+            .rent-item.mb-4
+              img.img-fluid.mb-4(src='home_dep/home_img/car-rent-5.png', alt='')
+              h4.text-uppercase.mb-4 Mercedes Benz CLA
+              .d-flex.justify-content-center.mb-4
+                .px-2
+                  i.fa.fa-car.primary-text.mr-1
+                  span Sedan
+                .px-2.border-left.border-right
+                  i.fa.fa-cogs.primary-text.mr-1
+                  span AUTO
+                .px-2
+                  i.fa.fa-road.primary-text.mr-1
+                  span 1993 cc
+              a.button.btn--green.btn--ex-small.px-3(href='/newCars/cla') Details
+          .col-lg-4.col-md-6.mb-2
+            .rent-item.mb-4
+              img.img-fluid.mb-4(src='home_dep/home_img/car-rent-6.png', alt='')
+              h4.text-uppercase.mb-4 Audi R8
+              .d-flex.justify-content-center.mb-4
+                .px-2
+                  i.fa.fa-car.primary-text.mr-1
+                  span Coupe
+                .px-2.border-left.border-right
+                  i.fa.fa-cogs.primary-text.mr-1
+                  span AUTO
+                .px-2
+                  i.fa.fa-road.primary-text.mr-1
+                  span 5204 cc
+              a.button.btn--green.btn--ex-small.px-3(href='/newCars/r8') Details
+    // Rent A Car End
+    // Team Start
+    .container-fluid.py-5
+      .container.py-5
+        h1.display-1.primary-text.text-center 04
+        h1.display-4.text-uppercase.text-center.mb-5 Meet Our Team
+        .owl-carousel.team-carousel.position-relative(style='padding: 0 30px;')
+          .team-item
+            img.img-fluid.w-100(style='height: 270px; transform: scaleY(1.1);', src='/home_dep/home_img/avdhesh.png', alt='Avdhesh Image')
+            .position-relative.py-4
+              h4.text-uppercase Avdhesh Gautam
+              p.m-0 Software Developer
+              .team-social.position-absolute.w-100.h-100.d-flex.align-items-center.justify-content-center
+                a.btn.btn-lg.btn-primary.btn-lg-square.mx-1(href='https://www.linkedin.com/in/avduesh-gautam-829569174/', target='_blank')
+                  i.fab.fa-linkedin-in
+          .team-item
+            img.img-fluid.w-100(src='home_dep/home_img/team-1.jpg', alt='')
+            .position-relative.py-4
+              h4.text-uppercase Fred James
+              p.m-0 Designer
+              .team-social.position-absolute.w-100.h-100.d-flex.align-items-center.justify-content-center
+                a.btn.btn-lg.btn-primary.btn-lg-square.mx-1(href='https://www.linkedin.com/in/avduesh-gautam-829569174/', target='_blank')
+                  i.fab.fa-linkedin-in
+          .team-item
+            img.img-fluid.w-100(src='home_dep/home_img/team-3.jpg', alt='')
+            .position-relative.py-4
+              h4.text-uppercase Billy Davis
+              p.m-0 Management Lead
+              .team-social.position-absolute.w-100.h-100.d-flex.align-items-center.justify-content-center
+                a.btn.btn-lg.btn-primary.btn-lg-square.mx-1(href='https://www.linkedin.com/in/avduesh-gautam-829569174/', target='_blank')
+                  i.fab.fa-linkedin-in
+          .team-item
+            img.img-fluid.w-100(src='home_dep/home_img/team-4.jpg', alt='')
+            .position-relative.py-4
+              h4.text-uppercase Samuel White
+              p.m-0 QA
+              .team-social.position-absolute.w-100.h-100.d-flex.align-items-center.justify-content-center
+                a.btn.btn-lg.btn-primary.btn-lg-square.mx-1(href='https://www.linkedin.com/in/avduesh-gautam-829569174/', target='_blank')
+                  i.fab.fa-linkedin-in
+    // Team End
+    // Mercedes OR BMW Start
+    .container-fluid.py-5
+      .container.py-5
+        .row.mx-0
+          .col-lg-6.px-0
+            .px-5.bg-secondary.d-flex.align-items-center.justify-content-between(style='height: 350px;')
+              img.img-fluid.flex-shrink-0.ml-n5.w-50.mr-4(src='home_dep/home_img/banner-left.png', alt='')
+              .text-right
+                h3.text-uppercase.text-light.mb-3 Looking for a Mercedes?
+                p.mb-4
+                  | Mercedes-Benz is the worlds most recognizable luxury automotive brand for a reason
+                a.button.btn--green.btn--ex-small.py-2.px-4(href='/newCars?brand=Mercedes') Mercedes Cars
+          .col-lg-6.px-0
+            .px-5.bg-dark.d-flex.align-items-center.justify-content-between(style='height: 350px;')
+              .text-left
+                h3.text-uppercase.text-light.mb-3 Looking for a BMW?
+                p.mb-4
+                  | BMW is known for creating cars that are beautifully designed, deliver sheer driving pleasure with driving control and safety
+                a.button.btn--green.btn--ex-small.py-2.px-4(style='margin-top: 10px;', href='/newCars?brand=BMW') BMW Cars
+              img.img-fluid.flex-shrink-0.mr-n5.w-50.ml-4(src='home_dep/home_img/banner-right.png', alt='')
+    // Banner End
+    // Testimonial Start
+    .container-fluid.py-5
+      .container.py-5
+        h1.display-1.primary-text.text-center 05
+        h1.display-4.text-uppercase.text-center.mb-5 Our Client&apos;s Say
+        .owl-carousel.testimonial-carousel
+          .testimonial-item.d-flex.flex-column.justify-content-center.px-4
+            .d-flex.align-items-center.justify-content-between.mb-3
+              img.img-fluid.ml-n4(src='home_dep/home_img/testimonial-1.jpg', alt='')
+              h1.display-2.text-white.m-0.fa.fa-quote-right
+            h4.text-uppercase.mb-2 Lewis Hardy
+            p.m-0
+              | I purchased a Maruti Suzuki swift from Car World and I strongly recommend Car World for buying cars.
+          .testimonial-item.d-flex.flex-column.justify-content-center.px-4
+            .d-flex.align-items-center.justify-content-between.mb-3
+              img.img-fluid.ml-n4(src='home_dep/home_img/testimonial-2.jpg', alt='')
+              h1.display-2.text-white.m-0.fa.fa-quote-right
+            h4.text-uppercase.mb-2 Janice Shelton
+            p.m-0
+              | Best place to buy &amp; sell for used car completely reliable &amp; transparent, A must reccomendable one point for used car solution
+          .testimonial-item.d-flex.flex-column.justify-content-center.px-4
+            .d-flex.align-items-center.justify-content-between.mb-3
+              img.img-fluid.ml-n4(src='home_dep/home_img/testimonial-3.jpg', alt='')
+              h1.display-2.text-white.m-0.fa.fa-quote-right
+            h4.text-uppercase.mb-2 Wade Anderson
+            p.m-0 I had a great experience. Car World gives 1 year warranty and 3 free services
+          .testimonial-item.d-flex.flex-column.justify-content-center.px-4
+            .d-flex.align-items-center.justify-content-between.mb-3
+              img.img-fluid.ml-n4(src='home_dep/home_img/testimonial-4.jpg', alt='')
+              h1.display-2.text-white.m-0.fa.fa-quote-right
+            h4.text-uppercase.mb-2 Rose Garrett
+            p.m-0 I bought a Mercedes from Car World and it was a wonderful experience
+    // Testimonial End
+    // Footer Start
+    .container-fluid.bg-secondary.py-5.px-sm-3.px-md-5(style='margin-top: 90px;')
+      .row.pt-5
+        .col-lg-3.col-md-6.mb-5
+          h4.text-uppercase.text-light.mb-4 Get In Touch
+          p.mb-2
+            i.fa.fa-map-marker-alt.text-white.mr-3
+            | 123 Street, New Delhi, India
+          p.mb-2
+            i.fa.fa-phone-alt.text-white.mr-3
+            | +012 345 67890
+          p
+            i.fa.fa-envelope.text-white.mr-3
+            | avdheshg804@gmail.com
+          h6.text-uppercase.text-white.py-2 Follow Us
+          .d-flex.justify-content-start
+            a.btn.btn-lg.btn-dark.btn-lg-square.mr-2(href='https://www.linkedin.com/in/avduesh-gautam-829569174/', target='_blank')
+              i.fab.fa-linkedin-in
+        .col-lg-9.col-md-6.mb-5
+          h4.text-uppercase.text-light.mb-4 Car Gallery
+          .row.mx-n1
+            .col-2.px-1.mb-2
+              a
+                img.w-100(src='home_dep/home_img/gallery-1.jpg', alt='')
+            .col-2.px-1.mb-2
+              a
+                img.w-100(src='home_dep/home_img/gallery-2.jpg', alt='')
+            .col-2.px-1.mb-2
+              a
+                img.w-100(src='home_dep/home_img/gallery-3.jpg', alt='')
+            .col-2.px-1.mb-2
+              a
+                img.w-100(src='home_dep/home_img/gallery-4.jpg', alt='')
+            .col-2.px-1.mb-2
+              a
+                img.w-100(src='home_dep/home_img/gallery-5.jpg', alt='')
+            .col-2.px-1.mb-2
+              a
+                img.w-100(src='home_dep/home_img/gallery-6.jpg', alt='')
+    .container-fluid.bg-dark.py-4.px-sm-3.px-md-5
+      p.mb-2.text-center.text-body
+        | &copy; 
+        a(href='/') Car World
+        | . All Rights Reserved.
+      p.m-0.text-center.text-body
+        | Developed by 
+        a(href='https://www.linkedin.com/in/avduesh-gautam-829569174/', target='_blank') Avdhesh Gautam
+    // Footer End
+    // Back to Top
+    a.btn.btn-lg.btn-primary.btn-lg-square.back-to-top(href='#')
+      i.fa.fa-angle-double-up
+    // JavaScript Libraries
+    script(src='https://code.jquery.com/jquery-3.4.1.min.js')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js')
+    script(src='/home_dep/home_lib/easing/easing.min.js')
+    script(src='/home_dep/home_lib/waypoints/waypoints.min.js')
+    script(src='/home_dep/home_lib/owlcarousel/owl.carousel.min.js')
+    script(src='/home_dep/home_lib/tempusdominus/js/moment.min.js')
+    script(src='/home_dep/home_lib/tempusdominus/js/moment-timezone.min.js')
+    script(src='/home_dep/home_lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')
+    // Template Javascript
+    script(src='/home_dep/home_js/main.js')
+
+    

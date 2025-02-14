@@ -1,0 +1,85 @@
+
+- let url = newCarDetails ? "newCars" : "usedCars";
+- let homeBtnText = homeRoute === "newCars" ? "New Cars" : "Used Cars";
+- let carColor = newCarDetails ? "new-cars" : "used-cars"
+
+header.header
+    //- p= `${homeRoute} ${homeBtnText}`
+    nav.nav.nav--tours
+        a.nav__el(href=`/${url}`)= `All ${homeBtnText}`
+    .header__logo
+        a(href="/")
+            img(src='/img/logo-white.png' alt='logo')
+    nav.nav.nav--user
+        //- Show user btns instaed of Login and Logout, From authController: protect MW
+        - if (user || isOverviewPage)   
+            //- a.nav__el.nav__el--logout(href='/login') Log out
+            a.nav__el.nav__el--logout Log out
+            a.nav__el.user-photo
+                img.nav__user-img(src=`/img/defaultUser.jpg` alt=`Photo of user`)
+                //- span= user.name.split(' ')[0]
+        - else
+            - if (title === "Login")
+            a.nav__el.nav__el--cta(href='/api/v1/users/signup') Sign up
+            
+
+//- Show filter btns only for overview page, From newCarsController
+- if (isOverviewPage)     
+    .filter-btns
+        //- ================    Budget      ================
+        .dropdown
+            button.dropbtn(class=`${carColor}-bg`) Budget 
+            .dropdown-content
+                //- a(href="/newCars?price[gte]=0&price[lte]=10") 0-10L   
+                a(href=`/${url}?price[gte]=0&price[lte]=10`) 0-10L   
+                a(href=`/${url}?price[gte]=10&price[lte]=20`) 10-20L
+                a(href=`/${url}?price[gte]=20&price[lte]=30`) 20-30L
+                a(href=`/${url}?price[gte]=30&price[lte]=40`) 30-40L
+                a(href=`/${url}?price[gte]=50`) Above 50L
+
+        //- ================    Brand      ================
+        .dropdown
+            button.dropbtn(class=`${carColor}-bg`) Brand 
+            .dropdown-content
+                a(href=`/${url}?brand=BMW`) BMW
+                a(href=`/${url}?brand=Mercedes`) Mercedes
+                a(href=`/${url}?brand=Maruti Suzuki`) Maruti Suzuki
+                a(href=`/${url}?brand=Toyota`) Toyota
+
+                
+                - if (newCarDetails)
+                    a(href=`/${url}?brand=Audi`) Audi   
+                    a(href=`/${url}?brand=Hyundai`) Hyundai
+                    a(href=`/${url}?brand=Tata`) Tata
+                    a(href=`/${url}?brand=Mahindra`) Mahindra
+                    a(href=`/${url}?brand=Kia`) Kia
+
+                - if (!newCarDetails)
+                    a(href=`/${url}?brand=Renault`) Renault   
+                    a(href=`/${url}?brand=MG`) MG
+                    a(href=`/${url}?brand=Skoda`) Skoda
+                    a(href=`/${url}?brand=Jaguar`) Jaguar
+                    a(href=`/${url}?brand=Lexus`) Lexus
+
+        //- =============   Sort By    ================
+        .dropdown
+            button.dropbtn(class=`${carColor}-bg`) Sort By 
+            .dropdown-content
+                a(href=`/${url}?sort=price`) Price
+                a(href=`/${url}?sort=mileage`) Mileage
+
+                - if (newCarDetails)
+                    a(href=`/${url}?sort=rating`) Rating
+                    a(href=`/${url}?sort=engine`) Power
+                    a(href=`/${url}?sort=seatingCapacity`) Capacity
+                
+                - if (!newCarDetails)
+                    a(href=`/${url}?sort=travel`) Travel
+                    a(href=`/${url}?sort=emi`) EMI
+
+                
+    - if (newCarDetails)
+        .search__cars.alias__routeBtns
+            a.btn.btn--green.btn--small(href='/newCars/top-rated') Top Rated Cars
+            a.btn.btn--green.btn--small(href='/newCars/top-efficient') Top Efficient Cars
+            a.btn.btn--green.btn--small(href='/newCars/top-powerful') Top Powerful Cars     

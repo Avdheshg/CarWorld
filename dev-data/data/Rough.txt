@@ -1,0 +1,43 @@
+ "": "Mercedes",
+        "": "c-class",
+        ": 4.7,
+        ": "sedan",
+        ": 49.99,
+        ": 14, 
+        ": 1950 ,
+        ": "Automatic",
+        ": "Petrol & Diesel",
+        ": 5,
+        ": "Mercedes-Benz C Class is a Sedan available in a price range of ₹ 49.99 - 51.72 Lakh. It is available in 2 variants, 1 engine option. Other key specifications of the C Class include a Ground Clearance of 157 mm and Bootspace of 480 litres. The C Class is available in 6 colours.",
+        "good": [
+            "Premium, well-finished interiors",
+            "Spacious cabin"
+        ],
+        "bad": [
+            "Expensive vis a vis rivals",
+            "Stiff low-speed ride quality"
+        ],
+        "": ["tour-9-1.jpg", "tour-9-2.jpg", "tour-9-3.jpg"]
+
+
+brand
+name
+bodyType
+price
+mileage
+engine
+transmission
+fuelType
+seatingCapacity
+summary
+images
+
+brand  
+name
+bodyType
+fuelType
+travel
+summary
+
+price
+mileage

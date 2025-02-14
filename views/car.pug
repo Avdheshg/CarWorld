@@ -1,0 +1,148 @@
+extends base
+
+block content 
+    section.section-header
+        .header__hero
+            .header__hero-overlay &nbsp;
+            img.header__hero-img(src=`${imageURL}${car.name}-cover.jpg`, alt='Car image')
+
+        .heading-box
+            h1.heading-primary
+                span(class=`${carColor}-bg`)=  `${car.brand} ${car.name}`
+            .heading-box__group
+                .heading-box__detail
+                    svg.heading-box__icon
+                        //- use(xlink:href='/img/icons.svg#icon-clock')
+                    <i class="fa-solid fa-indian-rupee-sign"> </i> 
+                    span.heading-box__text= ` ${car.price} Lakh` 
+                - if (newCarDetails)
+                    .heading-box__detail
+                        <i class="fa fa-star" style="font-size:24px;margin-right:4px;color:#fff"></i>
+                        span.heading-box__text= `${car.rating} / 5`
+
+    section.section-description
+        .overview-box
+            div
+                .overview-box__group
+                    h2.heading-secondary.ma-bt-lg.details-heading  Details 
+                    .overview-box__detail
+                        i.fa-solid.fa-circle-dot(class=`${carColor}-color`)
+                        span.overview-box__label Mileage
+                        span.overview-box__text= `${car.mileage} KMPL` 
+                    .overview-box__detail
+                        i.fa.fa-car(class=`${carColor}-color`)
+                        span.overview-box__label Body Type
+                        span.overview-box__text= car.bodyType  
+                    .overview-box__detail
+                        i.fa-solid.fa-user(class=`${carColor}-color`)
+                        span.overview-box__label Seating Capacity
+                        span.overview-box__text= car.seatingCapacity 
+                    .overview-box__detail
+                        i.fa-solid.fa-gas-pump(class=`${carColor}-color`)
+                        span.overview-box__label Fuel Type
+                        span.overview-box__text=`${car.fuelType}`
+
+                    - if (newCarDetails) 
+                        .overview-box__detail
+                            i.fa-solid.fa-gauge-high(class=`${carColor}-color`)
+                            span.overview-box__label Engine
+                            span.overview-box__text= `${car.engine} cc`
+                        .overview-box__detail
+                            i.fa-solid.fa-gear(class=`${carColor}-color`)
+                            span.overview-box__label Transmission
+                            span.overview-box__text=`${car.transmission}`
+
+                    - if (!newCarDetails)
+                        .overview-box__detail
+                            i.fa-sharp.fa-solid.fa-road(class=`${carColor}-color`)
+                            span.overview-box__label Travel
+                            span.overview-box__text= `${car.travel} kms` 
+                        .overview-box__detail
+                            i.fa-solid.fa-location-dot(class=`${carColor}-color`)
+                            span.overview-box__label City
+                            span.overview-box__text= car.city
+                        .overview-box__detail
+                            i.fa-solid.fa-wallet(class=`${carColor}-color`)
+                            span.overview-box__label EMI
+                            span.overview-box__text= car.emi
+
+        .description-box
+            h2.heading-secondary.ma-bt-lg= `About ${car.brand} ${car.name}`
+            p.description__text= car.summary 
+
+    section.section-pictures
+        .picture-box
+            img.picture-box__img.picture-box__img--1(src=`${imageURL}${car.name}-1.jpg`, alt=`${car.name} image-1`)
+            //- p= {console.log(src)}; 
+        .picture-box
+            img.picture-box__img.picture-box__img--2(src=`${imageURL}${car.name}-2.jpg`, alt=`${car.name} image-2`)
+        .picture-box
+            img.picture-box__img.picture-box__img--3(src=`${imageURL}${car.name}-3.jpg`, alt=`${car.name} image-3`)
+
+    //- section.section-map
+    //-     #map
+
+    - if (newCarDetails)
+        section.section-reviews
+            .reviews
+                .reviews__card
+                    .reviews__avatar
+                        h6.reviews__user The Good
+                    each goodReview in car.good
+                        p.reviews__text= `${goodReview}`  
+
+                .reviews__card
+                    .reviews__avatar
+                        h6.reviews__user The Bad
+                    each badReview in car.bad
+                        p.reviews__text= `${badReview}`
+    section.section-cta
+        .cta
+            .cta__img.cta__img--logo
+                img(src='/img/logo-white.png', alt='Car World logo')
+            img.cta__img.cta__img--1(src=`${imageURL}${car.name}-cover.jpg`, alt=``)
+            //- img.cta__img.cta__img--2(src=`/img/`, alt=``) 
+            .cta__content
+                h2.heading-secondary(class=`${carColor}-color`) What are you waiting for?
+                - let modelName = newCarDetails ? "NewCars" : "UsedCars"
+                button.btn.btn--green.span-all-rows#book-car(class=`${carColor}-bg`)(data-car-id=`${car._id}`, data-model-name=`${modelName}`)= ` Book ${car.name} now!`
+
+
+    script(src='https://js.stripe.com/v3/')
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

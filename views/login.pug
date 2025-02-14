@@ -1,0 +1,30 @@
+extends base
+
+block content
+  main.main
+    .login-form
+      h2.heading-secondary.ma-bt-lg Log into your account
+      form.form.form--login
+        .form__group
+          label.form__label(for='email') Email address            
+          input#email.form__input(type='email', placeholder='you@example.com', required, value="")
+        .form__group.ma-bt-md
+          label.form__label(for='password') Pabssword     
+          .password__show           
+            input#password.form__input(type='password', placeholder='••••••••',value="", required, minlength='8')
+            i.fa-solid.fa-eye.fa-eye-1
+            //- i.fa-solid.fa-eye(onclick="showPasswordFunction()")
+            //- <i class="fa-solid fa-eye"></i>
+        .form__group.form__btns
+          button.btn.btn--green#login-btn(data-home-route=`${homeRoute}`) Login
+          a.forgot-password(href="/api/v1/users/forgotPassword") Forgot Password
+        .form__group
+          label.form__input(style="padding: 0.4rem 1rem;") Test email: 
+            b test1@gmail.com 
+          label.form__input(style="padding: 0.4rem 1rem;") Test password: 
+            b wqe980l123
+
+    input#restricted-home(type='hidden', value=`${restrictedHomeRoute}`)       
+      
+
+             
