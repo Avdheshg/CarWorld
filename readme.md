@@ -9,8 +9,8 @@ https://carworld.onrender.com/
 
 
 ## 🔗 Links
-[![Live](https://img.shields.io/badge/Live-55c57a?style=for-the-badge&logo=ko-fi&logoColor=white)](https://carworld.up.railway.app/)
-[![](https://img.shields.io/badge/youtube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=F7uBd9ZrlPw&ab_channel=AvdueshGautam)
+[![Live](https://img.shields.io/badge/Live-55c57a?style=for-the-badge&logo=ko-fi&logoColor=white)](https://carworld.onrender.com/)
+[![](https://img.shields.io/badge/youtube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=CeqtpXjIuFk&t=1s&ab_channel=AvdueshGautam)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/avduesh-gautam-829569174/)
 
 
