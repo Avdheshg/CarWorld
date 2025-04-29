@@ -67,28 +67,36 @@ Install my-project with npm
 
 ## Screenshots
 
-Home Page Part - 1
+** Home Page Part - 1 **
+
 ![App Screenshot](https://static.wixstatic.com/media/82f92b_1cd2c05349f14ba3bad75087ceea7027~mv2.png)
 
-Home Page Part - 2
+** Home Page Part - 2 **
+
 ![App Screenshot](https://static.wixstatic.com/media/82f92b_040d88de4ac741b58855e831335f32dd~mv2.png)
 
-Part - 3
+** Part - 3 **
+
 ![App Screenshot](https://static.wixstatic.com/media/82f92b_4aa5da6875654bb6afdec0574f81fda6~mv2.png)
 
-Login Page
+** Login Page **
+
 ![App Screenshot](https://static.wixstatic.com/media/82f92b_c544509094e1454fb23742b594d0a781~mv2.png)
 
-Signup Page
+** Signup Page **
+
 ![App Screenshot](https://static.wixstatic.com/media/82f92b_c8752fe48cd44ba8a39e2baa836c17a9~mv2.png)
 
-New Cars Page
+** New Cars Page **
+
 ![App Screenshot](https://static.wixstatic.com/media/82f92b_10503c29fd044ea9b559f68247e0e2e2~mv2.png)
 
-Stripe Payment Page
+** Stripe Payment Page **
+
 ![App Screenshot](https://static.wixstatic.com/media/82f92b_bac59289bfa443e780360c2e145ca6f9~mv2.png)
 
-Used Cars Page
+** Used Cars Page **
+
 ![App Screenshot](https://static.wixstatic.com/media/82f92b_c68d241e897d47f58206a4e6675c9e54~mv2.png)
 
 
